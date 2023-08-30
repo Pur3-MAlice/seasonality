@@ -1,1 +1,1 @@
-web: gunicorn seasontotaste.wsgi
+web: gunicorn seasonality.wsgi
