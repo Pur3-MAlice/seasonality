@@ -30,7 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-pur3malice-seasonality-elodkbu0pyc.ws-eu104.gitpod.io', ' ']
+ALLOWED_HOSTS = [
+    '8000-pur3malice-seasonality-elodkbu0pyc.ws-eu104.gitpod.io',
+    'seasonality-c30a72c679d8.herokuapp.com'
+    ]
 
 
 # Application definition
