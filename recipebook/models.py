@@ -17,6 +17,12 @@ class Recipe(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    ingredients = models.TextField(default='placeholder')
+    calories = models.IntegerField(default=0)
+    fat = models.IntegerField(default=0)
+    protein = models.IntegerField(default=0)
+    carbs = models.IntegerField(default=0)
+    servs = models.IntegerField(default=0)
 
     class Meta:
         ordering = ["-created_on"]
