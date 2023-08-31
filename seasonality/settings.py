@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-pur3malice-seasonality-elodkbu0pyc.ws-eu104.gitpod.io',
+    '8000-pur3malice-seasonality-6l45kk72ujl.ws-eu104.gitpod.io',
     'seasonality-c30a72c679d8.herokuapp.com'
     ]
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'recipebook',
 ]
 
