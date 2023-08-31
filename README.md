@@ -1,108 +1,136 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Season to Taste**
+WHY I BUILT/ MADE THIS WEBSITE
 
-Welcome Pur3-MAlice,
+As a notice here - this is the second version of this app I made. The first version had many errors and it was early on in the development project that creating a new repo at that point was the best option. Here is the link to the old repo, [Season-To-Taste](https://github.com/Pur3-MAlice/season-to-taste/tree/main) it has the same Kanban Board and also lots of commits that should be noted.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive screenshot showing site on different screen sizes]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[Deployed site]()
 
-## Gitpod Reminders
+# **Table Of Contents**
+* [**Season-to-Taste**](#season-to-taste)
+* [**Planning Phase**](#planning-phase)
+  * [**Site Aims**](#site-aims)
+  * [**Research**](#research)
+  * [**Structure**](#structure)
+  * [**Skeleton**](#skeleton)
+  * [**Surface**](#surface)
+* [**Agile Development Process**](#agile-development-process)
+* [**Future development**](#future-development)
+* [**Features**](#features)
+  * [**Site Navigation**](#site-navigation)
+  * [**AllAuth Pages**](#allauth-pages)
+  * [**Site Instructions**](#site-instructions)
+  * [**Main Page Content**](#main-page-content)
+  * [**Error pages**](#error-pages)
+  * [**Warning Modals**](#warning-modals)
+* [**Testing Phase**](#testing-phase)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [**Deployment**](#deployment)
+* [**Technologies used**](#technologies-used)
+* [Credits](#credits)
 
-`python3 -m http.server`
+# **Planning Phase**
+## **Strategy** 
+### **Site Aims:**
+### **Research:**
+One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance?  
+Here are some of the sites I used for inspiration for the design of Season To Taste:
+* [thehappyfoodie](https://thehappyfoodie.co.uk/)
+* [cookbookmanager](https://cookbookmanager.com/pricing)
+* [Resturant Website Templates from Wix](https://www.wix.com/website/templates/html/restaurants-food)
+  
+  
+  
+## **Structure**   
+To help me visualize a typical user journey around the site, I used [draw.io](https://app.diagrams.net/) to help me plan out the various routes a user could take through the site. This flow changed slightly throughout development. However, in general, it guided the process.
+  
+![User Journeys flow chart]()
+  
+### **User Stories:**  
+  
+* As an **Admin** I can...
+ 
+* As a **Site User** I can...
+  
 
-A blue button should appear to click: _Make Public_,
+## **Skeleton**
+### **Wireframes:**
+* [Homepage wireframes]()  
+* [OTHER PAGE WIREFRAME ETC]()
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### **Database Schema**
+Below is my initial database schema to map out the relations between users, recipes, comments and categories (also known as tags). This is a rough idea of what the database will look like in general, but at this point in the planning phase, I understand that this is subject to change. So I will also be showing a representation of the Database here once the project is ready for deployment.
+![Color grid]()
+ 
+## **Surface**
+### **Color scheme:**
+The final list of colors used has been placed in the below [color grid]() to check contrast scores.
 
-A blue button should appear to click: _Make Public_,
+![Color gird]()
 
-Another blue button should appear to click: _Open Browser_.
+### **Typography**:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# **Building Process Process**
+  Using a Kanban Board system. And Something similar to sprints. 
 
-To log into the Heroku toolbelt CLI:
+  When it came to actually putting my Database Schema into reality a few things changed. Such as Saved and Categories. Plus I figured out I would need to make a model purely for the rating system I wanted to put in place. MVP this could just be likes, but to differentiate from the base of this project (which was taken from Code Insitutes 'Django Blog App') I wanted to add in this rating system that would calculate a recipes' popularity. This would also be the building block of the carousels on the recipe search page. I plan to have 'Diet' and even 'In Season' Caraousels on the recipe search page so that site users can easily see recipes, the rating system will determine which recipes show up on these carousels. Or So I Plan... (Famous last words of a coder).
+# **Features**
+## **Site Navigation**
+### **Navbar**
+#### ***Logo:***
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![Site Logo]()
+  
+#### ***Signed Out:***
+#### ***Signed In:***
+#### ***Hamburger menu on smaller screen sizes:***
+To display the menu properly on smaller screen sizes, a burger menu was implemented using bootstrap.  
+### **Hero Images:**
+I picked the hero images to portray the page's theme to the user. 
+## **AllAuth Pages**
+### ***Sign In:***
+![sign-in form]()
+#### ***Form Errors:***
+![Invalid log in credentials]()
+### ***Sign Up:***
+![sign-up form]()
+#### ***Form Errors:***
+![Form errors for sign up form]()
+### ***Sign Out:***
+![Sign out page]()
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# **Future development**
 
-------
+# **Testing Phase**
+### ***Manual Testing:***
+During the development process, I was manually testing in the following ways:-
+*
+### ***Bugs and Fixes:***
+Below is a list of bugs I found during the development process. A lot of the bugs and fixes where minor enough that they were caught and easily amended by just seeing the redlines in gitpod. But here are a few that stumped me enough to write them down.
+1. **Intended Outcome** - Had to restart the project
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        * 
+1. **Intended Outcome** - Category Model for Diet and Season Broke my brain
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *    
+1. **Intended Outcome** - Duplicate in database
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *                 
 
-## Release History
+# **Deployment**
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+# **Technologies used**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+# Credits
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+* General references:
+* For Django Models resources I used [Geeks For Geeks: Django Model](https://www.geeksforgeeks.org/django-models/?ref=lbp)
+   
