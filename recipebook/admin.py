@@ -3,6 +3,7 @@ from .models import Recipe
 from django_summernote.admin import SummernoteModelAdmin
 
 
+
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
     repopulated_fields = {'slug': ('title',)}

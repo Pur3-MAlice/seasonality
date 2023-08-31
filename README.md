@@ -132,5 +132,5 @@ Below is a list of bugs I found during the development process. A lot of the bug
 # Credits
 
 * General references:
-* For Django Models resources I used [Geeks For Geeks: Django Model](https://www.geeksforgeeks.org/django-models/?ref=lbp)
+* For Django Models resources I used [Geeks For Geeks: Django Model](https://www.geeksforgeeks.org/django-models/?ref=lbp) https://docs.djangoproject.com/en/4.2/topics/db/models/
    
