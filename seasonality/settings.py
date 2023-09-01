@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get("DEV")
 
 ALLOWED_HOSTS = [
-    '8000-pur3malice-seasonality-6l45kk72ujl.ws-eu104.gitpod.io',
+    '8000-pur3malice-seasonality-i7lux48gqc1.ws-eu104.gitpod.io',
     'seasonality-c30a72c679d8.herokuapp.com'
     ]
 
