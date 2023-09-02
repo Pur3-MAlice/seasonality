@@ -123,7 +123,12 @@ Below is a list of bugs I found during the development process. A lot of the bug
     * ***Issue Found:*** 
         * 
     * ***Solution Used:*** 
-        *                 
+        *   
+1. **Intended Outcome** - Splicing List in Django Templates
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *                                 
 
 # **Deployment**
 
