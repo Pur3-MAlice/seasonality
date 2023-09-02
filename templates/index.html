@@ -40,40 +40,49 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item py-5 active">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card 1</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                            {% for recipe in recipe_list %}
+                            <div class="col-md-3">
+                                <div class="card md-3">
+                                    <div class="card-body">
+                                        {% if "placeholder" in recipe.featured_image.url %}
+                                        <img class="card-img-top"
+                                            src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
+                                            alt="bowl of berries next to rubarb and flowers">
+                                        {% else %}
+                                        <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                                        {% endif %}
+                                        <div class="image-flash">
+                                            <p class="author">Author: {{ recipe.author }}</p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="recipe-link">
+                                        <h3 class="card-title">{{ recipe.title }}</h3>
+                                    </a>
+                                    <hr />
+                                    <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="carousel-item py-5">
+                        <div class="row">
+                            <div class="col-sm-6">
                                 <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card 2</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Card</h4>
+                                        <p class="card-text">Some make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-6">
                                 <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card 3</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card 4</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Card</h4>
+                                        <p class="card-text">Some make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -82,42 +91,20 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Card</h4>
+                                        <p class="card-text">Some make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item py-5">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Card</h4>
+                                        <p class="card-text">Some make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,20 +113,20 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Card</h4>
+                                        <p class="card-text">Some make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card">
-                                  <div class="card-body">
-                                    <h4 class="card-title">Card</h4>
-                                    <p class="card-text">Some make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Card</h4>
+                                        <p class="card-text">Some make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -160,18 +147,18 @@
             </div>
         </div>
     </div>
-    
+
     {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 
     {% endif %}
 
