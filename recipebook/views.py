@@ -34,7 +34,8 @@ class RecipeDetail(View):
 
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
-        comments = recipe.comments.filter(approved=True).order_by("-created_on")
+        comments = recipe.comments.filter(
+            approved=True).order_by("-created_on")
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():

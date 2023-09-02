@@ -26,8 +26,10 @@ class Recipe(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipes"
     )
-    diet = models.ForeignKey(Diet, on_delete=models.CASCADE, default=True, null=False)
-    season = models.ForeignKey(Season, on_delete=models.CASCADE, default=True, null=False)
+    diet = models.ForeignKey(
+        Diet, on_delete=models.CASCADE, default=True, null=False)
+    season = models.ForeignKey(
+        Season, on_delete=models.CASCADE, default=True, null=False)
     featured_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
