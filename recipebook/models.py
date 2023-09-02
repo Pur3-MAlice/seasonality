@@ -6,6 +6,13 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Season(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Diet(models.Model):
     name = models.CharField(max_length=100)
 
@@ -20,6 +27,7 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipes"
     )
     diet = models.ForeignKey(Diet, on_delete=models.CASCADE, default=True, null=False)
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, default=True, null=False)
     featured_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()

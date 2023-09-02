@@ -1,15 +1,17 @@
 from django.contrib import admin
-from .models import Recipe, Diet, Comment
+from .models import Recipe, Diet, Comment, Season
 from django_summernote.admin import SummernoteModelAdmin
 
 
 admin.site.register(Diet)
 
+admin.site.register(Season)
+
 
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    list_filter = ('status', 'created_on', 'diet')
+    list_filter = ('status', 'created_on', 'diet', 'season')
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     summernote_fields = ('content', 'ingredients')
