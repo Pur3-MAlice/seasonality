@@ -34,10 +34,9 @@
                 </strong>
                 {% endwith %}
             </div>
-            <div class="ml-auto pt-1">{% with comments.count as total_comments %}
-                <a href="#" class="btn"><i class="far fa-bookmark"></i></a>
+            <div class="ml-auto pt-1">
+                <a href="{{% url 'favourite_add' post.id %}}" class="btn"><i class="far fa-bookmark"></i></a>
                 <strong class="text-secondary">
-                    {{ total_comments }}
                 </strong>
                 {% endwith %}
             </div>

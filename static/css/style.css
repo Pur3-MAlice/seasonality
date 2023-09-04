@@ -122,3 +122,7 @@ body {
     background: transparent;
     border: none;
 }
+
+.profile-extras {
+    margin-top: 50px;
+}

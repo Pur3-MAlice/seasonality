@@ -8,6 +8,12 @@ from recipebook.models import Recipe
 
 
 @login_required
+def favourites(request):
+    new = Recipe.filter(favourites=request.user)
+    return render(request, 'profiles/favourites.html', {'new': new})
+
+
+@login_required
 def favourite_add(request, id):
     recipe = get_object_or_404(Recipe, id=id)
     if recipe.favourites.filet(id=request.user.id).exists():
