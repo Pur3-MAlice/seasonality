@@ -41,6 +41,8 @@ class Recipe(models.Model):
     protein = models.IntegerField(default=0)
     carbs = models.IntegerField(default=0)
     servs = models.IntegerField(default=0)
+    favourites = models.ManyToManyField(
+        User, related_name='favourite', default=None, blank=True)
 
     class Meta:
         ordering = ["-created_on"]
