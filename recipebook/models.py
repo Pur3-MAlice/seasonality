@@ -21,6 +21,11 @@ class Diet(models.Model):
 
 
 class Recipe(models.Model):
+
+    class NewManager(models.Manager):
+        def get_queryset(self):
+            return super().get_queryset() .filter(status='published')
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -43,7 +48,9 @@ class Recipe(models.Model):
     servs = models.IntegerField(default=0)
     favourites = models.ManyToManyField(
         User, related_name='favourite', default=None, blank=True)
-
+    objects = models.Manager()  # default manager
+    newmanager = NewManager()  # custom manager
+    
     class Meta:
         ordering = ["-created_on"]
 

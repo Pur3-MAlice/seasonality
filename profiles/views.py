@@ -9,18 +9,18 @@ from recipebook.models import Recipe
 
 @login_required
 def favourites(request):
-    new = Recipe.filter(favourites=request.user)
+    new = Recipe.newmanager.filter(favourites=request.user)
     return render(request, 'profiles/favourites.html', {'new': new})
 
 
 @login_required
 def favourite_add(request, id):
     recipe = get_object_or_404(Recipe, id=id)
-    if recipe.favourites.filet(id=request.user.id).exists():
+    if recipe.favourites.filter(id=request.user.id).exists():
         recipe.favourites.remove(request.user)
     else:
         recipe.favourites.add(request.user)
-    return HttpResonseRedirect(request.META['HTTP_REFERER'])
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 @login_required

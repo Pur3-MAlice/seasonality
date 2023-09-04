@@ -35,10 +35,9 @@
                 {% endwith %}
             </div>
             <div class="ml-auto pt-1">
-                <a href="{{% url 'favourite_add' post.id %}}" class="btn"><i class="far fa-bookmark"></i></a>
+                <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="far fa-bookmark"></i></a>
                 <strong class="text-secondary">
                 </strong>
-                {% endwith %}
             </div>
         </div>
     </div>
