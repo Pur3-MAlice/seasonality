@@ -1,8 +1,21 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 from .forms import UpdateUserForm, UpdateProfileForm
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from .models import Profile
+from recipebook.models import Recipe
+
+
+@login_required
+def favourite_add(request, id):
+    recipe = get_object_or_404(Recipe, id=id)
+    if recipe.favourites.filet(id=request.user.id).exists():
+        recipe.favourites.remove(request.user)
+    else:
+        recipe.favourites.add(request.user)
+    return HttpResonseRedirect(request.META['HTTP_REFERER'])
+
 
 @login_required
 def profile(request):
