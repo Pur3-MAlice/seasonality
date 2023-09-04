@@ -18,6 +18,9 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(
             approved=True).order_by("-created_on")
+        fav = bool
+        if recipe.favourites.filter(id=request.user.id).exists():
+            fav = True
 
         return render(
             request,
@@ -26,7 +29,8 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "commented": False,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                'fav': fav
             },
         )
 
