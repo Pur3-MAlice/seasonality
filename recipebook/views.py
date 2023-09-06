@@ -2,6 +2,15 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Recipe
 from .forms import CommentForm
+from django.contrib.auth.models import User
+
+
+def search_results(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        return render(request, 'search_results.html', {'searched':searched})
+    else:
+        return render(request, 'search_results.html', {})
 
 
 class RecipeList(generic.ListView):
@@ -61,7 +70,3 @@ class RecipeDetail(View):
                 "comment_form": comment_form,
             },
         )
-
-
-def SearchResults(request):
-    return render(request, 'search_results.html', {})
