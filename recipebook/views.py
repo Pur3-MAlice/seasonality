@@ -8,7 +8,9 @@ from django.contrib.auth.models import User
 def search_results(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        return render(request, 'search_results.html', {'searched':searched})
+        recipes = Recipe.objects.filter(title__contains=searched)
+        return render(request, 'search_results.html', {'searched': searched, 'recipes': recipes})
+
     else:
         return render(request, 'search_results.html', {})
 

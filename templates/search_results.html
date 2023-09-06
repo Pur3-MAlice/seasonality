@@ -5,6 +5,9 @@
     {% if searched %}
         <h3>Your Search Results:</h3>
         <p>{{ searched }}</p>
+        {% for recipe in recipes %}
+            {{recipe}}
+        {% endfor %}
     {% else %}
         <h3>You didn't search anything! Whoops</h3>
     {% endif %}    
