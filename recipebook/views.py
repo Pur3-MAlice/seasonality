@@ -61,3 +61,7 @@ class RecipeDetail(View):
                 "comment_form": comment_form,
             },
         )
+
+
+def SearchResults(request):
+    return render(request, 'search_results.html', {})
