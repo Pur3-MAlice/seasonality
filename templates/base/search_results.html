@@ -10,6 +10,7 @@
                     <div class="carousel-item py-5 active">
                         <div class="row">
                             {% for recipe in recipe_list %}
+                            <!-- {% if forloop.counter < 5 %} -->
                                 <div class="col-md-3">
                                     <div class="card md-3">
                                         <div class="card-body">
@@ -25,6 +26,34 @@
                                             </div>
                                         </div>
                                         <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
+                                            <h3 class="card-title">{{ recipe.title }}</h3>
+                                        </a>
+                                        <hr />
+                                        <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
+                                    </div>
+                                </div>
+                            <!-- {% endif %} -->
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="carousel-item py-5">
+                        <div class="row">
+                            {% for recipe in recipe_list|slice:":8" %}
+                                <div class="col-md-3">
+                                    <div class="card md-3">
+                                        <div class="card-body">
+                                            {% if "placeholder" in recipe.featured_image.url %}
+                                            <img class="card-img-top"
+                                                src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
+                                                alt="bowl of berries next to rubarb and flowers">
+                                            {% else %}
+                                            <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                                            {% endif %}
+                                            <div class="image-flash">
+                                                <p class="author">Author: {{ recipe.author }}</p>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="recipe-link">
                                             <h3 class="card-title">{{ recipe.title }}</h3>
                                         </a>
                                         <hr />
