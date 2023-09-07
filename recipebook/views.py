@@ -1,16 +1,22 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Recipe
+from .models import Recipe, Diet, Season
 from .forms import CommentForm
 from django.contrib.auth.models import User
+from django.db.models import Q
 
 
 def search_results(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        recipes = Recipe.objects.filter(title__contains=searched)
-        return render(request, 'search_results.html', {'searched': searched, 'recipes': recipes})
-
+        recipes = Recipe.objects.filter(
+            Q(title__contains=searched) |
+            Q(content__contains=searched) |
+            Q(ingredients__contains=searched))
+        return render(
+            request, 'search_results.html', {
+                'searched': searched, 'recipes': recipes
+                })
     else:
         return render(request, 'search_results.html', {})
 

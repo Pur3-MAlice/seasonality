@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get("DEV")
 
 ALLOWED_HOSTS = [
-    '8000-pur3malice-seasonality-i87ubdhptc8.ws-eu104.gitpod.io',
+    '8000-pur3malice-seasonality-fvmtj90fenm.ws-eu104.gitpod.io',
     'seasonality-c30a72c679d8.herokuapp.com'
     ]
 
@@ -69,6 +69,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -48,8 +48,8 @@ class Recipe(models.Model):
     servs = models.IntegerField(default=0)
     favourites = models.ManyToManyField(
         User, related_name='favourite', default=None, blank=True)
-    objects = models.Manager()  # default manager
-    newmanager = NewManager()  # custom manager
+    objects = models.Manager()
+    newmanager = NewManager()
 
     class Meta:
         ordering = ["-created_on"]
