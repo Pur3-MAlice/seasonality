@@ -52,6 +52,11 @@
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                            Community Guidelines
+                        </a>
+                    </li>
                 </ul>
                 <form method="GET" action="{% url 'search_results' %}">
                     <div class="input-field">
@@ -72,6 +77,38 @@
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Seasonality's Community Guidelines</h5>
+        </div>
+        <div class="modal-body">
+          <ul>
+              <li><em>We don't allow defamatory, indecent, offensive, profane, discriminatory, misleading, unlawful or
+                      threatening comments.&nbsp;</em></li>
+              <li><em>Personal attacks, name-calling, trolling and abuse will not be tolerated.</em></li>
+              <li><em>Spamming, posting promotional material or posting links to third party websites is not
+                      permitted.</em></li>
+              <li><em>We reserve the right to delete comments and recipes at our discretion and block any repeat offenders. We will
+                      remove content that is fraudulent, deceptive or misleading.</em></li>
+              <li><em>Coordinated group attacks will not be tolerated.&nbsp;</em></li>
+              <li><em>Respect that other people in the community have had different life experiences and may have a
+                      different perspective to yours. We welcome different viewpoints.</em></li>
+              <li><em>Our community is a public place. Don't post personal information that you would not be comfortable
+                      sharing with a stranger. We recommend that you don't post any information that may identify you or
+                      anyone else, such as your address, email address or phone number.</em></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
@@ -95,6 +132,11 @@
     </script>
 
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
 
 </body>
 
