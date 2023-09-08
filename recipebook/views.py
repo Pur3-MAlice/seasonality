@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpRequest
 from django.views import generic, View
 from django.views.generic import TemplateView
 from .models import Recipe, Diet
@@ -123,3 +124,21 @@ class RecipeDetail(View):
                 "comment_form": comment_form,
             },
         )
+
+
+# Code adapted from https://medium.com/geekculture/django-implementing-star-rating-e1deff03bb1c
+
+
+def index(request: HttpRequest) -> HttpResponse:
+    recipe = Recipe.objects.all()
+    for recipe in recipes:
+        rating = Rating.objects.filter(recipe=recipe, user=request.user).first()
+        recipe.user_rating = rating.rating if rating else 0
+    return render(request, "recipe_detail.html", {"recipes": recipes})
+
+
+def rate(request: HttpRequest, recipe: int, rating: int) -> HttpResponse:
+    recipe = Recipe.objects.get(id=recipe_id)
+    Rating.objects.filter(recipe=recipe, user=request.user).delete()
+    recipe.rating_set.create(user=request.user, rating=rating)
+    return index(request)
