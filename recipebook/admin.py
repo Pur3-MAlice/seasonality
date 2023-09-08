@@ -1,11 +1,13 @@
 from django.contrib import admin
-from .models import Recipe, Diet, Comment, Season
+from .models import Recipe, Diet, Comment, Season, Rating
 from django_summernote.admin import SummernoteModelAdmin
 
 
 admin.site.register(Diet)
 
 admin.site.register(Season)
+
+admin.site.register(Rating)
 
 
 @admin.register(Recipe)

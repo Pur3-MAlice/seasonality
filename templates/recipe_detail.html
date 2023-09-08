@@ -3,25 +3,41 @@
 {% load crispy_forms_tags %}
 
 <style>
-    .rating-list li {
-      float: right;
-      color: #ddd;
-      padding: 10px 5px;
+    .rating-list i,
+    .rating-list i:hover~i {
+        color: #222;
+        text-shadow: none;
+        transition: color 200ms,
+            text-shadow 200ms;
+        transition-delay: 0;
     }
 
-    .rating-list li:hover,
-    .rating-list li:hover ~ li {
-      color: orange;
+    .rating-list:hover i {
+        color: #fc0;
+        text-shadow: #fc0 0 0 20px;
     }
 
-    .rating-list {
-      display: inline-block;
-      list-style: none;
+    .rating-list:hover i:nth-child(2) {
+        transition-delay: 30ms;
     }
+
+    .rating-list:hover i:nth-child(3) {
+        transition-delay: 60ms;
+    }
+
+    .rating-list:hover i:nth-child(4) {
+        transition-delay: 90ms;
+    }
+
+    .rating-list:hover i:nth-child(5) {
+        transition-delay: 120ms;
+    }
+
     .checked {
         color: orange;
     }
 </style>
+
 
 <div class="masthead">
     <div class="container">
@@ -57,46 +73,40 @@
             </div>
             <div class="ml-auto pt-1">
                 {% if user.is_authenticated %}
-                    {% if fav %}
-                        <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="fa-solid fa-bookmark"></i></a>
-                        <strong class="text-secondary">
-                        </strong>
-                    {% else %}
-                        <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="far fa-bookmark"></i></a>
-                        <strong class="text-secondary">
-                        </strong>
-                    {% endif %}
+                {% if fav %}
+                <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="fa-solid fa-bookmark"></i></a>
+                <strong class="text-secondary">
+                </strong>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="btn"><i class="far fa-bookmark"></i></a>
+                <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="far fa-bookmark"></i></a>
+                <strong class="text-secondary">
+                </strong>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="btn"><i class="far fa-bookmark"></i></a>
                 {% endif %}
             </div>
-            <body>
-                <div class="container" style="padding: 2em">
-                    <div class="card" style="width: 30rem;">
-                      <div class="card-body">
+            <div class="container" style="padding: 2em">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
                         <h5 class="card-title">{{ recipe.title }}</h5>
-                        <h5 class="card-title">Avg rating:
+                        <h5 class="card-title">
                             <span class="fa fa-star {% if recipe.average_rating > 0 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if recipe.average_rating > 1 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if recipe.average_rating > 2 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if recipe.average_rating > 3 %} checked {% endif %}" ></span>
+                            <span class="fa fa-star {% if recipe.average_rating > 3 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if recipe.average_rating > 4 %} checked {% endif %}"></span>
                         </h5>
-                        <ul class="btn btn-light list-inline rating-list">
-                          <li onclick="rate(5, {{ recipe.id }})">
-                              <i class="fa fa-star {% if recipe.user_rating > 4 %} checked {% endif %}" title="Rate 5"></i></li>
-                          <li onclick="rate(4, {{ recipe.id }})">
-                              <i class="fa fa-star {% if recipe.user_rating > 3 %} checked {% endif %}" title="Rate 4"></i></li>
-                          <li onclick="rate(3, {{ recipe.id }})">
-                              <i class="fa fa-star {% if recipe.user_rating > 2 %} checked {% endif %}" title="Rate 3"></i></li>
-                          <li onclick="rate(2, {{ recipe.id }})">
-                              <i class="fa fa-star {% if recipe.user_rating > 1 %} checked {% endif %}" title="Rate 2"></i></li>
-                          <li onclick="rate(1, {{ recipe.id }})">
-                              <i class="fa fa-star {% if recipe.user_rating > 0 %} checked {% endif %}" title="Rate 1"></i></li>
-                        </ul>
-                      </div>
                     </div>
+                    <span class="rating-list">
+                        <i onclick="rate(1, {{ recipe.id }})" class="fa fa-star {% if userRating >= 1 %}checked{% endif %}"></i>
+                        <i onclick="rate(2, {{ recipe.id }})" class="fa fa-star {% if userRating >= 2 %}checked{% endif %}"></i>
+                        <i onclick="rate(3, {{ recipe.id }})" class="fa fa-star {% if userRating >= 3 %}checked{% endif %}"></i>
+                        <i onclick="rate(4, {{ recipe.id }})" class="fa fa-star {% if userRating >= 4 %}checked{% endif %}"></i>
+                        <i onclick="rate(5, {{ recipe.id }})" class="fa fa-star {% if userRating >= 5 %}checked{% endif %}"></i>
+                    </span>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -166,17 +176,35 @@
 </div>
 </div>
 <script>
+    let userRating = 0;
+
     const rate = (rating, recipe_id) => {
+        console.log(`Rating: ${rating}, Recipe ID: ${recipe_id}`);
+        userRating = rating;
+        
+        const stars = document.querySelectorAll('.rating-list i');
+
+        stars.forEach((star, index) => {
+            if (index < userRating) {
+                star.classList.add('checked');
+            } else {
+                star.classList.remove('checked');
+            }
+        });
+
         fetch(`/rate/${recipe_id}/${rating}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(rest => {
-            window.location.reload();
-            // you may want to update the rating here
-            // to simplify stuff, I just reload the page
-        })
-    }
+        }).then(response => {
+            if (response.status === 200) {
+                
+            } else {
+                //handle this else -'there was an error?'
+            }
+        });
+    };
+    setRating(userRating);
 </script>
 {% endblock content %}
