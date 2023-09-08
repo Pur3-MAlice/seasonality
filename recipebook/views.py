@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Recipe
+from django.views.generic import TemplateView
+from .models import Recipe, Diet
 from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.db.models import Q
@@ -32,22 +33,21 @@ def search_results(request):
     return render(request, 'search_results.html', context)
 
 
-# def search_results(request, page=1):
-#     if request.method == "POST":
-#         searched = request.POST['searched']
-#         recipes = Recipe.objects.filter(
-#             Q(title__contains=searched) |
-#             Q(content__contains=searched) |
-#             Q(ingredients__contains=searched))   
-#         paginator = Paginator(recipes, 2)
-#         try:
-#             recipes = paginator.page(page)
-#         except EmptyPage:
-#             recipes = paginator.page(paginator.num_pages)
-#         return render(
-#             request, 'search_results.html', {
-#                 'searched': searched, 'recipes': recipes
-#                 })
+class IndexView(TemplateView):
+    template_name = 'index.html'
+    paginate_by = 4
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        recipes = Recipe.objects.all()
+        diets = Diet.objects.all()
+        paginator = Paginator(recipes, self.paginate_by)
+        page = self.request.GET.get('page')
+        recipes_page = paginator.get_page(page)
+
+        context['recipes'] = recipes_page
+        context['diets'] = diets
+        return context
 
 
 class RecipeList(generic.ListView):
@@ -55,6 +55,22 @@ class RecipeList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 4
+
+
+class DietList(TemplateView):
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        diets = Diet.objects.all()
+        diet_recipes = {}
+
+        for diet in diets:
+            recipes = Recipe.objects.filter(diet=diet)
+            diet_recipes[diet] = recipes
+
+        context['diet_recipes'] = diet_recipes
+        return context
 
 
 class RecipeDetail(View):
