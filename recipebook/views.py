@@ -1,56 +1,53 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Recipe, Diet, Season
+from .models import Recipe
 from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.db.models import Q
-from django.core.paginator import Paginator, EmptyPage
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
-# def list_users(request, page=1):
-#     users = User.objects.all()
-#     paginator = Paginator(users, 5) # 5 users per page
-    
-#     # We don't need to handle the case where the `page` parameter
-#     # is not an integer because our URL only accepts integers
-#     try:
-#         users = paginator.page(page)
-#     except EmptyPage:
-#         # if we exceed the page limit we return the last page 
-#         users = paginator.page(paginator.num_pages)
-            
-#     return render(request, 'home.html', {'users': users})
-
-
-def search_results(request, page=1):
-    if request.method == "POST":
-        searched = request.POST['searched']
-        recipes = Recipe.objects.filter(
+def search_results(request):
+    recipes_list = Recipe.objects.all()
+    searched = request.GET.get('searched')
+    if searched:
+        recipes_list = Recipe.objects.filter(
             Q(title__contains=searched) |
             Q(content__contains=searched) |
-            Q(ingredients__contains=searched))   
-        paginator = Paginator(recipes, 2)
-        try:
-            users = paginator.page(page)
-        except EmptyPage:
-            users = paginator.page(paginator.num_pages)
-        return render(
-            request, 'search_results.html', {
-                'searched': searched, 'recipes': recipes
-                })
+            Q(ingredients__contains=searched))
+    paginator = Paginator(recipes_list, 2)
+    page = request.GET.get('page')
 
-    # if request.method == "POST":
-    #     searched = request.POST['searched']
-    #     recipes = Recipe.objects.filter(
-    #         Q(title__contains=searched) |
-    #         Q(content__contains=searched) |
-    #         Q(ingredients__contains=searched))
-    #     return render(
-    #         request, 'search_results.html', {
-    #             'searched': searched, 'recipes': recipes
-    #             })
-    # else:
-    #     return render(request, 'search_results.html', {})
+    try:
+        recipes = paginator.page(page)
+    except PageNotAnInteger:
+        recipes = paginator.page(1)
+    except EmptyPage:
+        recipes = paginator.page(paginator.num_pages)
+
+    context = {
+        'searched': searched, 'recipes': recipes
+    }
+
+    return render(request, 'search_results.html', context)
+
+
+# def search_results(request, page=1):
+#     if request.method == "POST":
+#         searched = request.POST['searched']
+#         recipes = Recipe.objects.filter(
+#             Q(title__contains=searched) |
+#             Q(content__contains=searched) |
+#             Q(ingredients__contains=searched))   
+#         paginator = Paginator(recipes, 2)
+#         try:
+#             recipes = paginator.page(page)
+#         except EmptyPage:
+#             recipes = paginator.page(paginator.num_pages)
+#         return render(
+#             request, 'search_results.html', {
+#                 'searched': searched, 'recipes': recipes
+#                 })
 
 
 class RecipeList(generic.ListView):
