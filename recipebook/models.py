@@ -58,7 +58,7 @@ class Recipe(models.Model):
     def average_rating(self) -> float:
         return Rating.objects.filter(
             recipe=self).aggregate(Avg("rating"))["rating__avg"] or 0
-            
+
     def __str__(self):
         return f"{self.title}: {self.average_rating()}"
 

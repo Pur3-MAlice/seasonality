@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+{% block content %}
+<h1 class="text-center">Add My Recipes</h1>
+{% if submitted %}
+    Your Recipe Was Submitted! 
+    Please wait for our team to add this to our Website.
+    Have a puruse of our other recipes here
+{% else %}
+    <div class="text-center m-5">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p | safe }}
+
+            <input type="submit" value="Submit" class="btn btn-success mt-4">
+        </form>
+    </div>
+{% endif %}
+<script>
+    // JavaScript code to generate the slug based on the title
+    document.getElementById('id_title').addEventListener('input', function() {
+        const title = this.value;
+        const slugInput = document.getElementById('id_slug');
+        const slug = title.toLowerCase().replace(/ /g, '-');
+        slugInput.value = slug;
+    });
+    </script>
+    
+{% endblock %} 

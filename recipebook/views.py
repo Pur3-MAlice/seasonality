@@ -1,12 +1,32 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse, HttpRequest
 from django.views import generic, View
 from django.views.generic import TemplateView
-from .models import Recipe, Diet, Rating
-from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponseRedirect
+from .models import Recipe, Diet, Rating
+from .forms import CommentForm, RecipeForm
+
+
+@login_required
+def add_recipe(request):  # Code inspired by Codemy.com
+    submitted = False
+    if request.method == "POST":
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.status = 0
+            recipe.author = request.user.username
+            form.save()
+            return HttpResponseRedirect('/add_recipe?submitted=True')
+    else:
+        form = RecipeForm()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'add_recipe.html', {
+        'form': form, 'submitted': submitted})
 
 
 def search_results(request):
@@ -130,18 +150,9 @@ class RecipeDetail(View):
 
 
 def rate(request, recipe_id, rating):
-    # Get the user and the recipe
     user = request.user
     recipe = get_object_or_404(Recipe, id=recipe_id)
-
-    # Check if the user has already rated the recipe
     rating_instance, created = Rating.objects.get_or_create(user=user, recipe=recipe)
-
-    # Update the user's rating for the recipe
     rating_instance.rating = rating
     rating_instance.save()
-
-    # Handle the rating logic for the recipe (if needed)
-    # ...
-
     return JsonResponse({'message': 'Rating updated successfully'})
