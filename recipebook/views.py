@@ -9,16 +9,16 @@ from django.http import HttpResponseRedirect
 from .models import Recipe, Diet, Rating
 from .forms import CommentForm, RecipeForm
 
-
+# Code inspired by Codemy.com
 @login_required
-def add_recipe(request):  # Code inspired by Codemy.com
+def add_recipe(request):
     submitted = False
     if request.method == "POST":
         form = RecipeForm(request.POST)
         if form.is_valid():
             recipe = form.save(commit=False)
             recipe.status = 0
-            recipe.author = request.user.username
+            recipe.author = request.user
             form.save()
             return HttpResponseRedirect('/add_recipe?submitted=True')
     else:

@@ -13,6 +13,7 @@ class CommentForm(forms.ModelForm):
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
+        exclude = ('author',) 
         fields = (
             'title',
             'slug',
@@ -34,7 +35,6 @@ class RecipeForm(forms.ModelForm):
             'content': SummernoteWidget(),
             'ingredients': SummernoteWidget(),
             'slug': forms.TextInput(attrs={'type': 'hidden'}),
-            # 'author': forms.TextInput(attrs={'type': 'hidden'}),
             'status': forms.TextInput(attrs={'type': 'hidden'}),
             'favourites': forms.TextInput(attrs={'type': 'hidden'}),
         }
