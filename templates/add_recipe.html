@@ -1,20 +1,29 @@
 {% extends "base/base.html" %}
 {% block content %}
+<style>
+    .errorlist {
+    list-style: none;
+}
+</style>
 <h1 class="text-center">Add My Recipes</h1>
+
+
 {% if submitted %}
-    Your Recipe Was Submitted! 
-    Please wait for our team to add this to our Website.
-    Have a puruse of our other recipes here
+Your Recipe Was Submitted!
+Please wait for our team to add this to our Website.
+Have a puruse of our other recipes here
 {% else %}
-    <div class="text-center m-5">
-        <form action="" method="POST">
-            {% csrf_token %}
+<div class="text-center m-5">
+    <form action="" method="POST">
+        <h3>Please Make sure you are adding in a title to your recipe, it's ingredients, the content of your recipe and also it's Nutritional Value. 
+            Any Recipe without these elements will not get published to the site.</h3>
+        {% csrf_token %}
 
-            {{ form.as_p | safe }}
+        {{ form.as_p | safe }}
 
-            <input type="submit" value="Submit" class="btn btn-success mt-4">
-        </form>
-    </div>
+        <input type="submit" value="Submit" class="btn btn-success mt-4">
+    </form>
+</div>
 {% endif %}
 <script>
     // JavaScript code to generate the slug based on the title
@@ -24,6 +33,6 @@
         const slug = title.toLowerCase().replace(/ /g, '-');
         slugInput.value = slug;
     });
-    </script>
+</script>
     
 {% endblock %} 

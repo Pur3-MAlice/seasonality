@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.views.generic import TemplateView
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -9,9 +10,31 @@ from django.http import HttpResponseRedirect
 from .models import Recipe, Diet, Rating
 from .forms import CommentForm, RecipeForm
 
-# Code inspired by Codemy.com
+
 @login_required
-def add_recipe(request):
+def update_recipe(request, recipe_id):  # Code inspired by Codemy.com
+    recipe = Recipe.objects.get(pk=recipe_id)
+    form = RecipeForm(request.POST or None, instance=recipe)
+    if form.is_valid():
+        form.save()
+        return redirect('profile')
+    return render(request, 'update_recipe.html', {
+        'recipe': recipe, 'form': form})
+
+
+@login_required
+def update_comment(request, recipe_id):  # Code inspired by Codemy.com
+    recipe = Recipe.objects.get(pk=recipe_id)
+    form = RecipeForm(request.POST or None, instance=recipe)
+    if form.is_valid():
+        form.save()
+        return redirect('profile')
+    return render(request, 'update_recipe.html', {
+        'recipe': recipe, 'form': form})
+
+
+@login_required
+def add_recipe(request):  # Code inspired by Codemy.com
     submitted = False
     if request.method == "POST":
         form = RecipeForm(request.POST)
@@ -21,6 +44,8 @@ def add_recipe(request):
             recipe.author = request.user
             form.save()
             return HttpResponseRedirect('/add_recipe?submitted=True')
+        else:
+            messages.error(request, "Error")
     else:
         form = RecipeForm()
         if 'submitted' in request.GET:
@@ -30,7 +55,7 @@ def add_recipe(request):
 
 
 def search_results(request):
-    recipes_list = Recipe.objects.all()
+    recipes_list = Recipe.objects.filter(status=1)
     searched = request.GET.get('searched')
     if searched:
         recipes_list = Recipe.objects.filter(
@@ -60,7 +85,7 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        recipes = Recipe.objects.all()
+        recipes = Recipe.objects.filter(status=1)
         diets = Diet.objects.all()
         paginator = Paginator(recipes, self.paginate_by)
         page = self.request.GET.get('page')
@@ -146,13 +171,11 @@ class RecipeDetail(View):
         )
 
 
-# Code adapted from https://medium.com/geekculture/django-implementing-star-rating-e1deff03bb1c
-
-
-def rate(request, recipe_id, rating):
+def rate(request, recipe_id, rating):  # Code adapted from https://medium.com/
     user = request.user
     recipe = get_object_or_404(Recipe, id=recipe_id)
-    rating_instance, created = Rating.objects.get_or_create(user=user, recipe=recipe)
+    rating_instance, created = Rating.objects.get_or_create(
+        user=user, recipe=recipe)
     rating_instance.rating = rating
     rating_instance.save()
     return JsonResponse({'message': 'Rating updated successfully'})

@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+        <h3>Update Recipe</h3>
+        <div class="text-center m-5">
+            <form action="" method="POST">
+                {% csrf_token %}
+        
+                {{ form.as_p | safe }}
+        
+                <input type="submit" value="Update" class="btn btn-success mt-4">
+            </form>
+        </div>
+        
+    
+{% endblock %} 

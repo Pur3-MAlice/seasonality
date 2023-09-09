@@ -132,13 +132,14 @@
         </div>
     </div>
 </div>
+<a href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
 <div class="row">
     <div class="col">
         <hr>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
+    <div class="col-md-8 card mb-4 mt-3">
         <h3>Comments:</h3>
         <div class="card-body">
             {% for comment in comments %}
@@ -148,6 +149,10 @@
                     <span class=" text-muted font-weight-normal">
                         {{ comment.created_on }}
                     </span> wrote:
+                    <!--  if user is the commenter  -->
+                    <form>
+                        <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
+                    </form>
                 </p>
                 {{ comment.body | linebreaks }}
             </div>

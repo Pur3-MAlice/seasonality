@@ -54,33 +54,35 @@
     </li>
     {% endif %}
 </div>
-{% for diet in diets %}
+{% for diet in diets|slice:":3" %}
 <h6 class="text-start">{{ diet.name }}</h6>
 <div class="container-fluid">
     <div class="container my-3 ">
         <div class="row py-5">
             {% for recipe in diet.recipe_set.all|slice:":4" %}
-            <div class="col-md-3 d-flex flex-row">
-                <div class="card mx-auto">
-                    <div class="card-body">
-                        {% if "placeholder" in recipe.featured_image.url %}
-                        <img class="card-img-top"
-                            src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
-                            alt="bowl of berries next to rubarb and flowers">
-                        {% else %}
-                        <img class="card-img-top" src="{{ recipe.featured_image.url }}">
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Author: {{ recipe.author }}</p>
+            {% if recipe.status %}
+                <div class="col-md-3 d-flex flex-row">
+                    <div class="card mx-auto">
+                        <div class="card-body">
+                            {% if "placeholder" in recipe.featured_image.url %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
+                                alt="bowl of berries next to rubarb and flowers">
+                            {% else %}
+                            <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Author: {{ recipe.author }}</p>
+                            </div>
                         </div>
+                        <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
+                            <h3 class="card-title">{{ recipe.title }}</h3>
+                        </a>
+                        <hr />
+                        <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </div>
-                    <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
-                        <h3 class="card-title">{{ recipe.title }}</h3>
-                    </a>
-                    <hr />
-                    <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                 </div>
-            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
