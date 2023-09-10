@@ -203,12 +203,13 @@
 </div>
 
 <script>
+    // JavaScript code to set and remember User's rating on recipe_detail.html
     let userRating = 0;
 
     const rate = (rating, recipe_id) => {
         console.log(`Rating: ${rating}, Recipe ID: ${recipe_id}`);
         userRating = rating;
-        
+
         const stars = document.querySelectorAll('.rating-list i');
 
         stars.forEach((star, index) => {
@@ -226,9 +227,9 @@
             }
         }).then(response => {
             if (response.status === 200) {
-                
+                location.reload();
             } else {
-                //handle this else -'there was an error?'
+                location.reload();
             }
         });
     };

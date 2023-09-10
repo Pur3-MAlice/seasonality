@@ -130,6 +130,9 @@ body {
     margin-top: 50px;
 }
 
+.errorlist {
+    list-style: none;
+}
 
 /* Register and Login CSS */
 .bg-image {
