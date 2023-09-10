@@ -39,7 +39,7 @@ def add_recipe(request):  # Code inspired by Codemy.com
             recipe.status = 0
             recipe.author = request.user
             form.save()
-            return HttpResponseRedirect('/add_recipe?submitted=True')
+            return HttpResponseRedirect('/recipebook/add_recipe?submitted=True')
         else:
             messages.error(request, "Error")
     else:
