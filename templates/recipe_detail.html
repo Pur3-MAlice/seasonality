@@ -138,6 +138,10 @@
 {% if user.is_authenticated %}
     {% if recipe.author.id is user.id %}
         <a href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
+
+        <a type="button" class="btn delete-comment-btn" data-toggle="modal" data-target="#deleteCommentModal" data-comment-pk="{{ comment.pk }}">Delete</a>
+
+
         <form>
             <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
         </form>
@@ -162,9 +166,8 @@
                     </span> wrote:
                     {% if user.is_authenticated %}
                         {% if comment.name.id is user.id %}
-                            <form>
-                                <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
-                            </form>
+                            <a type="button" class="btn" data-toggle="modal" data-target="#deleteCommentModal">
+                            Delete</a>
                         {% endif %}
                     {% endif %}
                 </p>
@@ -188,11 +191,52 @@
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>
+            {% else %}
+               <h4><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'account_signup' %}">Create an Account</a> to join the conversation!</h4>
             {% endif %}
             {% endif %}
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteRecipeModalLongTitle">Delete this Recipe?</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this recipe? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <a href="{% url 'delete_recipe' recipe.id %}">Delete</a>
+            </div>    
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteCommentModalLongTitle">Delete this Comment?</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this comment? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                <a  type="button" class="btn btn-danger" href="#">Delete</a>
+            </div>    
+        </div>
+    </div>
+</div>
+
 <script>
     let userRating = 0;
 

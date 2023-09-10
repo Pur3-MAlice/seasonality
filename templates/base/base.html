@@ -5,7 +5,6 @@
 
 <head>
     <title>Seasonality</title>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -16,15 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-
     <!-- Navigation -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Seasonality</a>
@@ -56,7 +51,7 @@
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                        <a type="button" class="btn" data-toggle="modal" data-target="#seasonalityModal">
                             Community Guidelines
                         </a>
                     </li>
@@ -75,43 +70,50 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
+    <!-- Block Content Holder -->
+    <main class="flex-shrink-0 main-bg"> 
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Seasonality's Community Guidelines</h5>
+
+    <!-- Guideline Modal -->
+    <div class="modal fade" id="seasonalityModal" tabindex="-1" role="dialog" aria-labelledby="seasonalityModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Seasonality's Community Guidelines</h5>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><em>We don't allow defamatory, indecent, offensive, profane, discriminatory, misleading,
+                                unlawful or
+                                threatening comments.&nbsp;</em></li>
+                        <li><em>Personal attacks, name-calling, trolling and abuse will not be tolerated.</em></li>
+                        <li><em>Spamming, posting promotional material or posting links to third party websites is not
+                                permitted.</em></li>
+                        <li><em>We reserve the right to delete comments and recipes at our discretion and block any
+                                repeat offenders. We will
+                                remove content that is fraudulent, deceptive or misleading.</em></li>
+                        <li><em>Coordinated group attacks will not be tolerated.&nbsp;</em></li>
+                        <li><em>Respect that other people in the community have had different life experiences and may
+                                have a
+                                different perspective to yours. We welcome different viewpoints.</em></li>
+                        <li><em>Our community is a public place. Don't post personal information that you would not be
+                                comfortable
+                                sharing with a stranger. We recommend that you don't post any information that may
+                                identify you or
+                                anyone else, such as your address, email address or phone number.</em></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <ul>
-              <li><em>We don't allow defamatory, indecent, offensive, profane, discriminatory, misleading, unlawful or
-                      threatening comments.&nbsp;</em></li>
-              <li><em>Personal attacks, name-calling, trolling and abuse will not be tolerated.</em></li>
-              <li><em>Spamming, posting promotional material or posting links to third party websites is not
-                      permitted.</em></li>
-              <li><em>We reserve the right to delete comments and recipes at our discretion and block any repeat offenders. We will
-                      remove content that is fraudulent, deceptive or misleading.</em></li>
-              <li><em>Coordinated group attacks will not be tolerated.&nbsp;</em></li>
-              <li><em>Respect that other people in the community have had different life experiences and may have a
-                      different perspective to yours. We welcome different viewpoints.</em></li>
-              <li><em>Our community is a public place. Don't post personal information that you would not be comfortable
-                      sharing with a stranger. We recommend that you don't post any information that may identify you or
-                      anyone else, such as your address, email address or phone number.</em></li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
@@ -121,7 +123,6 @@
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
-
 
     <!-- JavaScript jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

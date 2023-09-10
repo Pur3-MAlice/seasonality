@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
-from .models import Recipe, Diet, Rating
+from .models import Recipe, Diet, Rating, Comment
 from .forms import CommentForm, RecipeForm
 
 
@@ -23,14 +23,10 @@ def update_recipe(request, recipe_id):  # Code inspired by Codemy.com
 
 
 @login_required
-def update_comment(request, recipe_id):  # Code inspired by Codemy.com
+def delete_recipe(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
-    form = RecipeForm(request.POST or None, instance=recipe)
-    if form.is_valid():
-        form.save()
-        return redirect('profile')
-    return render(request, 'update_recipe.html', {
-        'recipe': recipe, 'form': form})
+    recipe.delete()
+    return redirect('profile')
 
 
 @login_required
@@ -77,6 +73,24 @@ def search_results(request):
     }
 
     return render(request, 'search_results.html', context)
+
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = Comment.objects.get(pk=comment_id)
+    comment.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def rate(request, recipe_id, rating):  # Code adapted from https://medium.com/
+    user = request.user
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+    rating_instance, created = Rating.objects.get_or_create(
+        user=user, recipe=recipe)
+    rating_instance.rating = rating
+    rating_instance.save()
+    return JsonResponse({'message': 'Rating updated successfully'})
 
 
 class IndexView(TemplateView):
@@ -169,13 +183,3 @@ class RecipeDetail(View):
                 "comment_form": comment_form,
             },
         )
-
-
-def rate(request, recipe_id, rating):  # Code adapted from https://medium.com/
-    user = request.user
-    recipe = get_object_or_404(Recipe, id=recipe_id)
-    rating_instance, created = Rating.objects.get_or_create(
-        user=user, recipe=recipe)
-    rating_instance.rating = rating
-    rating_instance.save()
-    return JsonResponse({'message': 'Rating updated successfully'})
