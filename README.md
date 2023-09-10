@@ -73,6 +73,8 @@ The final list of colors used has been placed in the below [color grid]() to che
 ![Color gird]()
 
 ### **Typography**:
+Designers should avoid pure black typography — but which dark gray should we use?
+https://medium.com/@TamerOkail/designers-should-avoid-pure-black-typography-but-which-dark-gray-should-we-use-2d7faa07083a
 
 # **Building Process**
   Using a Kanban Board system. And Something similar to sprints. 
