@@ -66,6 +66,8 @@ Below is my initial database schema to map out the relations between users, reci
  
 ## **Surface**
 ### **Color scheme:**
+
+I knew I wanted my main theme to be pink and mustard as they are very in vouge right now. So i used this article https://www.thespruce.com/complementary-colors-that-go-with-pink-5188287 and then used https://coolors.co/f1cacc-df8a70-e8ac33-5a6950-13322c to create my colour Palatte
 The final list of colors used has been placed in the below [color grid]() to check contrast scores.
 
 ![Color gird]()
