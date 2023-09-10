@@ -1,5 +1,4 @@
 {% extends "base/base.html" %}
-
 {% block content %}
 <div class="text-center">
     {% if searched %}
@@ -35,30 +34,34 @@
 </div>
 
 {% if recipes.has_other_pages %}
-  <ul class="pagination">
-      {% if recipes.has_previous %}
-          <li class="waves-effect"><a href="?page=
+<ul class="pagination">
+    {% if recipes.has_previous %}
+    <li class="waves-effect"><a
+            href="?page=
                   {{ recipes.previous_page_number }}{% if request.GET.searched %}&searched={{ request.GET.searched }}{% endif %}"><i
-                  class="material-icons"><span class="fa fa-chevron-left" aria-hidden="true"></span></i></a></li>
-      {% else %}
-          <li class="disabled"><a href="#!"><i class="material-icons"><span class="fa fa-chevron-left" aria-hidden="true"></span></i></a></li>
-      {% endif %}
-      {% for num in recipes.paginator.page_range %}
-          {% if recipes.number == num %}
-              <li class="active"><a href="#!">{{ num }}</a></li>
-          {% else %}
-              <li class="waves-effect"><a
-                      href="?page={{ num }}{% if request.GET.searched %}&searched={{ request.GET.searched }}{% endif %}">{{ num }}</a></li>
-          {% endif %}
-      {% endfor %}
-      {% if recipes.has_next %}
-          <li class="waves-effect"><a
-                  href="?page={{ recipes.next_page_number }}{% if request.GET.searched %}&searched={{ request.GET.searched }}{% endif %}"><i
-                  class="material-icons"><span class="fa fa-chevron-right" aria-hidden="true"></span></i></a></li>
-      {% else %}
-          <li class="disabled"><a href="#!"><i class="material-icons"><span class="fa fa-chevron-right" aria-hidden="true"></span></i></a></li>
-      {% endif %}
-  </ul>
+                class="material-icons"><span class="fa fa-chevron-left" aria-hidden="true"></span></i></a></li>
+    {% else %}
+    <li class="disabled"><a href="#!"><i class="material-icons"><span class="fa fa-chevron-left"
+                    aria-hidden="true"></span></i></a></li>
+    {% endif %}
+    {% for num in recipes.paginator.page_range %}
+    {% if recipes.number == num %}
+    <li class="active"><a href="#!">{{ num }}</a></li>
+    {% else %}
+    <li class="waves-effect"><a
+            href="?page={{ num }}{% if request.GET.searched %}&searched={{ request.GET.searched }}{% endif %}">{{ num }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% if recipes.has_next %}
+    <li class="waves-effect"><a
+            href="?page={{ recipes.next_page_number }}{% if request.GET.searched %}&searched={{ request.GET.searched }}{% endif %}"><i
+                class="material-icons"><span class="fa fa-chevron-right" aria-hidden="true"></span></i></a></li>
+    {% else %}
+    <li class="disabled"><a href="#!"><i class="material-icons"><span class="fa fa-chevron-right"
+                    aria-hidden="true"></span></i></a></li>
+    {% endif %}
+</ul>
 {% endif %}
 
 {%endblock%}

@@ -10,7 +10,7 @@ from recipebook.models import Recipe
 @login_required
 def favourites(request):
     new = Recipe.newmanager.filter(favourites=request.user)
-    return render(request, 'profiles/favourites.html', {'new': new})
+    return render(request, 'favourites.html', {'new': new})
 
 
 @login_required
@@ -27,16 +27,25 @@ def favourite_add(request, id):
 def profile(request):
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
-        profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        profile_form = UpdateProfileForm(
+            request.POST, request.FILES, instance=request.user.profile)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
             saved = True
-            return render(request, 'profiles/profile.html', {'user_form': user_form, 'profile_form': profile_form, "saved": True})
+            return render(request, 'profile.html', {
+                'user_form': user_form,
+                'profile_form': profile_form,
+                "saved": True
+                })
     else:
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateProfileForm(instance=request.user.profile)
         saved = False
 
-    return render(request, 'profiles/profile.html', {'user_form': user_form, 'profile_form': profile_form, "saved": saved})
+    return render(request, 'profile.html', {
+        'user_form': user_form,
+        'profile_form': profile_form,
+        "saved": saved
+        })
