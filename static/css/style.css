@@ -24,6 +24,14 @@ body {
     overflow-x: hidden;
 }
 
+.main-bg {
+    background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383930/background_seasonality.svg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 a, p, ul, li {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
@@ -61,11 +69,6 @@ h1, h2, h3, h4, h5, h6 {
 .dark-bg {
     background-color: #445261;
 }
-
-.main-bg {
-    background-color: #F9FAFC;
-}
-
 .card {
     border: none;
     background-color: transparent;
@@ -170,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Register and Login CSS */
 .bg-image {
-    background-image: url('https://picsum.photos/id/1079/1080');
+    background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
     background-size: cover;
     background-position: center center;
 }
