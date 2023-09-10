@@ -1,9 +1,9 @@
 {% extends "base/base.html" %}
 {% block content %}
-<h2>Recent Recipes</h2>
 <div class="container-fluid">
     <div class="container text-center my-3">
         <div class="row py-5">
+            <h2>Recent Recipes</h2>
             {% for recipe in recipes %}
             <div class="col-md-3">
                 <div class="card md-3">
@@ -54,10 +54,12 @@
     </div>
 </div>
 {% for diet in diets|slice:":3" %}
-<h6 class="text-start">{{ diet.name }}</h6>
+
 <div class="container-fluid">
     <div class="container my-3 ">
+        <h2>{{ diet.name }}</h2>
         <div class="row py-5">
+            
             {% for recipe in diet.recipe_set.all|slice:":4" %}
             {% if recipe.status %}
                 <div class="col-md-3 d-flex flex-row">
