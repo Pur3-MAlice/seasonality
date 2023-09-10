@@ -56,10 +56,9 @@
 {% for diet in diets|slice:":3" %}
 
 <div class="container-fluid">
-    <div class="container my-3 ">
+    <div class="container my-3">
         <h2>{{ diet.name }}</h2>
         <div class="row py-5">
-            
             {% for recipe in diet.recipe_set.all|slice:":4" %}
             {% if recipe.status %}
                 <div class="col-md-3 d-flex flex-row">
