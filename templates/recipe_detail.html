@@ -43,13 +43,10 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
-                <!-- recipe author goes before the | the recipe's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img class="card-img-top"
                     src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
@@ -99,11 +96,16 @@
                         </h5>
                     </div>
                     <span class="rating-list">
-                        <i onclick="rate(1, {{ recipe.id }})" class="fa fa-star {% if userRating >= 1 %}checked{% endif %}"></i>
-                        <i onclick="rate(2, {{ recipe.id }})" class="fa fa-star {% if userRating >= 2 %}checked{% endif %}"></i>
-                        <i onclick="rate(3, {{ recipe.id }})" class="fa fa-star {% if userRating >= 3 %}checked{% endif %}"></i>
-                        <i onclick="rate(4, {{ recipe.id }})" class="fa fa-star {% if userRating >= 4 %}checked{% endif %}"></i>
-                        <i onclick="rate(5, {{ recipe.id }})" class="fa fa-star {% if userRating >= 5 %}checked{% endif %}"></i>
+                        <i onclick="rate(1, {{ recipe.id }})"
+                            class="fa fa-star {% if userRating >= 1 %}checked{% endif %}"></i>
+                        <i onclick="rate(2, {{ recipe.id }})"
+                            class="fa fa-star {% if userRating >= 2 %}checked{% endif %}"></i>
+                        <i onclick="rate(3, {{ recipe.id }})"
+                            class="fa fa-star {% if userRating >= 3 %}checked{% endif %}"></i>
+                        <i onclick="rate(4, {{ recipe.id }})"
+                            class="fa fa-star {% if userRating >= 4 %}checked{% endif %}"></i>
+                        <i onclick="rate(5, {{ recipe.id }})"
+                            class="fa fa-star {% if userRating >= 5 %}checked{% endif %}"></i>
                     </span>
                 </div>
             </div>
@@ -132,12 +134,21 @@
         </div>
     </div>
 </div>
-<a href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
-<div class="row">
-    <div class="col">
-        <hr>
-    </div>
-</div>
+
+{% if user.is_authenticated %}
+    {% if recipe.author.id is user.id %}
+        <a href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
+        <form>
+            <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
+        </form>
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+
 <div class="row">
     <div class="col-md-8 card mb-4 mt-3">
         <h3>Comments:</h3>
@@ -149,10 +160,13 @@
                     <span class=" text-muted font-weight-normal">
                         {{ comment.created_on }}
                     </span> wrote:
-                    <!--  if user is the commenter  -->
-                    <form>
-                        <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
-                    </form>
+                    {% if user.is_authenticated %}
+                        {% if comment.name.id is user.id %}
+                            <form>
+                                <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
+                            </form>
+                        {% endif %}
+                    {% endif %}
                 </p>
                 {{ comment.body | linebreaks }}
             </div>
@@ -178,7 +192,6 @@
             {% endif %}
         </div>
     </div>
-</div>
 </div>
 <script>
     let userRating = 0;
