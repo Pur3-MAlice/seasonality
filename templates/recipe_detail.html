@@ -2,43 +2,6 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<style>
-    .rating-list i,
-    .rating-list i:hover~i {
-        color: #222;
-        text-shadow: none;
-        transition: color 200ms,
-            text-shadow 200ms;
-        transition-delay: 0;
-    }
-
-    .rating-list:hover i {
-        color: #fc0;
-        text-shadow: #fc0 0 0 20px;
-    }
-
-    .rating-list:hover i:nth-child(2) {
-        transition-delay: 30ms;
-    }
-
-    .rating-list:hover i:nth-child(3) {
-        transition-delay: 60ms;
-    }
-
-    .rating-list:hover i:nth-child(4) {
-        transition-delay: 90ms;
-    }
-
-    .rating-list:hover i:nth-child(5) {
-        transition-delay: 120ms;
-    }
-
-    .checked {
-        color: orange;
-    }
-</style>
-
-
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -95,18 +58,20 @@
                             <span class="fa fa-star {% if recipe.average_rating > 4 %} checked {% endif %}"></span>
                         </h5>
                     </div>
-                    <span class="rating-list">
-                        <i onclick="rate(1, {{ recipe.id }})"
-                            class="fa fa-star {% if userRating >= 1 %}checked{% endif %}"></i>
-                        <i onclick="rate(2, {{ recipe.id }})"
-                            class="fa fa-star {% if userRating >= 2 %}checked{% endif %}"></i>
-                        <i onclick="rate(3, {{ recipe.id }})"
-                            class="fa fa-star {% if userRating >= 3 %}checked{% endif %}"></i>
-                        <i onclick="rate(4, {{ recipe.id }})"
-                            class="fa fa-star {% if userRating >= 4 %}checked{% endif %}"></i>
-                        <i onclick="rate(5, {{ recipe.id }})"
-                            class="fa fa-star {% if userRating >= 5 %}checked{% endif %}"></i>
-                    </span>
+                    {% if user.is_authenticated %}
+                        <span class="rating-list">
+                            <i onclick="rate(1, {{ recipe.id }})"
+                                class="fa fa-star {% if userRating >= 1 %}checked{% endif %}"></i>
+                            <i onclick="rate(2, {{ recipe.id }})"
+                                class="fa fa-star {% if userRating >= 2 %}checked{% endif %}"></i>
+                            <i onclick="rate(3, {{ recipe.id }})"
+                                class="fa fa-star {% if userRating >= 3 %}checked{% endif %}"></i>
+                            <i onclick="rate(4, {{ recipe.id }})"
+                                class="fa fa-star {% if userRating >= 4 %}checked{% endif %}"></i>
+                            <i onclick="rate(5, {{ recipe.id }})"
+                                class="fa fa-star {% if userRating >= 5 %}checked{% endif %}"></i>
+                        </span>
+                    {% endif %}
                 </div>
             </div>
         </div>
