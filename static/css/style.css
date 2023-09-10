@@ -1,12 +1,46 @@
 /*Home*/
 
+/* 
+COLORS:
+#fffff -- White 
+#DEE2E6 --Platinum
+#343A40 --  Onyx
+#212529 -- Eerie black
+#F1CACC -- Tea rose
+#F1AAAD -- Cherry blossom
+#DF8A70 -- Burnt sienna
+#E8AC33 --Hunyadi Yellow
+#5A6950 -- Ebony
+#25392D -- Dark green
+
+
+FONTS:
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif; 
+*/
+
 body {
     background-color: #F9FAFC;
     overflow-x: hidden;
 }
 
+a, p, ul, li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; 
+    color: #4A4A4F;
+}
+
+.page-item li {
+    list-style: none;
+}
+
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: 'Playfair Display', serif; 
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
