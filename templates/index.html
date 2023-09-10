@@ -3,17 +3,19 @@
 <div class="container-fluid">
     <div class="container text-center my-3">
         <div class="row py-5">
-            <h2>Recent Recipes</h2>
+            <div class="text-center recent-background mb-3">
+                <h1>Recent Recipes</h1>
+            </div>
             {% for recipe in recipes %}
             <div class="col-md-3">
                 <div class="card md-3">
                     <div class="card-body">
                         {% if "placeholder" in recipe.featured_image.url %}
-                        <img class="card-img-top"
+                        <img class="img-card"
                             src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
                             alt="bowl of berries next to rubarb and flowers">
                         {% else %}
-                        <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                        <img class="img-card" src="{{ recipe.featured_image.url }}">
                         {% endif %}
                         <div class="image-flash">
                             <p class="author">Author: {{ recipe.author }}</p>
@@ -22,7 +24,7 @@
                     <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
                         <h3 class="card-title">{{ recipe.title }}</h3>
                     </a>
-                    <hr />
+                    <hr class="card-hr"/>
                     <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                 </div>
             </div>
@@ -53,23 +55,25 @@
 
     </div>
 </div>
-{% for diet in diets|slice:":3" %}
 
+{% for diet in diets|slice:":3" %}
 <div class="container-fluid">
     <div class="container my-3">
-        <h2>{{ diet.name }}</h2>
-        <div class="row py-5">
+        <div class="text-center diet-background ps-5">
+            <h2>{{ diet.name }}</h2>
+        </div>
+        <div class="row pb-5 mt-2">
             {% for recipe in diet.recipe_set.all|slice:":4" %}
             {% if recipe.status %}
-                <div class="col-md-3 d-flex flex-row">
+                <div class="col-md-3 d-flex flex-row text-center">
                     <div class="card mx-auto">
                         <div class="card-body">
                             {% if "placeholder" in recipe.featured_image.url %}
-                            <img class="card-img-top"
+                            <img class="img-card"
                                 src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
                                 alt="bowl of berries next to rubarb and flowers">
                             {% else %}
-                            <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                            <img class="card-img" src="{{ recipe.featured_image.url }}">
                             {% endif %}
                             <div class="image-flash">
                                 <p class="author">Author: {{ recipe.author }}</p>
@@ -78,7 +82,7 @@
                         <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
                             <h3 class="card-title">{{ recipe.title }}</h3>
                         </a>
-                        <hr />
+                        <hr class="card-hr"/>
                         <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </div>
                 </div>

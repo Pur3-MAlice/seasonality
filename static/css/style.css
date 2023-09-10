@@ -171,6 +171,49 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
 }
 
+/* Card Styling inspired by https://codepen.io/wisnust10/pen/BKjNNR*/
+
+.diet-background {
+    background-color: #fff8f9;
+    border-radius: 12px;
+}
+
+.recent-background {
+    background-color: #E8AC33;
+    border-radius: 12px;
+}
+
+.recent-background h1{
+    color: #fff8f9;
+}
+ 
+.card {
+    display: block;
+    padding-bottom: 12px;
+    background-color: #fff8f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: box-shadow .25s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-card {
+    width: 100%;
+}
+
+.card-hr {
+    border: 2px solid;
+}
+
+.card-title {
+    margin-top: 0px;
+    font-weight: 600;
+    font-size: 1.65em;
+}
+
 /* Register and Login CSS */
 .bg-image {
     background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
