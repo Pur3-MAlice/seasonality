@@ -64,11 +64,13 @@
                     </li>
                     {% endif %}
                 </ul>
-                <form method="GET" action="{% url 'search_results' %}">
-                        <input type="text" name="searched" value="{{ request.GET.searched }}"
-                            placeholder="Search Here...">
-                        <button class="btn" type="submit" name="action">Search</button>
-                </form>
+                <div class="box">
+                    <form method="GET" action="{% url 'search_results' %}">
+                        <input type="text" class="input-search" name="searched" value="{{ request.GET.searched }}"
+                            placeholder="Type to Search..." onmouseout="this.value = ''; this.blur();">
+                        <button class="btn" type="submit" name="action"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>  
             </div>
         </div>
     </nav>

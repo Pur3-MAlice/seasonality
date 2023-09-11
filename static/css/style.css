@@ -213,25 +213,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-control-next, .carousel-control-prev {
     opacity: 1;
-    top: 65px;
+    top: 10em;
     bottom: 165px;
     text-decoration: none;
     font-size: 40px;
-
-}
-
-.carousel-control-prev {
+    height: 20px;
     padding-left: 30px;
-    color: #E8AC33;
+    color: #5A6950;
 }
 
-.carousel-control-next:hover {
-    color: #E8AC33;
-}
-
-.carousel-control-next {
-    padding-right: 30px;
-    color: white;
+.carousel-control-next:hover, .carousel-control-prev:hover {
+    color: #dba230;
 }
 
 .author {
@@ -253,6 +245,57 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: 1.65em;
 }
+/*Search Styling inspired by https://freefrontend.com/css-search-boxes/#gsc.tab=0*/
+
+.box{
+    position: relative;
+}
+
+.input-search {
+    padding: 10px;
+    width: 55px;
+    height: 55px;
+    background: none;
+    border: 3px solid #E8AC33;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    color: #E8AC33;
+    outline: none;
+    transition: .5s;
+}
+
+.box:hover input{
+    width: 350px;
+    background: none;
+    border-radius: 12px;
+    color: black;
+}
+
+.input-search:hover::placeholder{
+    color: black;
+}
+
+.input-search::placeholder{
+    color: white;
+}
+
+.box i{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: #E8AC33;
+    transition: .2s;
+}
+
+.box:hover i{
+    opacity: 0;
+    z-index: -1;
+}
+
 
 /* Register and Login CSS */
 .bg-image {
