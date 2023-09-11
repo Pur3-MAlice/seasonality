@@ -56,6 +56,14 @@
                     <i onclick="rate(4, {{ recipe.id }})" class="fa fa-star {% if userRating > 3 %}checked{% endif %}"></i>
                     <i onclick="rate(5, {{ recipe.id }})" class="fa fa-star {% if userRating > 4 %}checked{% endif %}"></i>
                 </span>
+
+                {% if recipe.author.id is user.id %}
+                <div class="ml-auto pt-1">
+                <a class="btn btn-outline-success ms-3" href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
+                <a class="btn btn-outline-danger ms-2" data-toggle="modal" data-target="#deleteRecipeModal">DELETE</a>
+                {% endif %}
+            </div>
+
             {% endif %}
         </div>
     </div>
@@ -85,17 +93,6 @@
     </div>
 </div>
 
-{% if user.is_authenticated %}
-    {% if recipe.author.id is user.id %}
-        <a href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
-        <a type="button" class="btn delete-comment-btn" data-toggle="modal" data-target="#deleteCommentModal" data-comment-pk="{{ comment.pk }}">DELETE</a>
-        <div class="row">
-            <div class="col">
-                <hr>
-            </div>
-        </div>
-    {% endif %}
-{% endif %}
 
 <div class="row">
     <div class="col-md-8 mb-4 mt-3">
@@ -152,27 +149,8 @@
                 Are you sure you want to delete this recipe? This action cannot be undone.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <a href="{% url 'delete_recipe' recipe.id %}">Delete</a>
-            </div>    
-        </div>
-    </div>
-</div>
-
-<!-- Comment Modal -->
-<div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteCommentModalLongTitle">Delete this Comment?</h5>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete this comment? This action cannot be undone.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-                <a  type="button" class="btn btn-danger" href="#">Delete</a>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                <a class="btn btn-danger" href="{% url 'delete_recipe' recipe.id %}">Delete</a>
             </div>    
         </div>
     </div>
