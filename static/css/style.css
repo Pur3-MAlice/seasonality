@@ -43,6 +43,10 @@ a {
     color: #212529;
 }
 
+a:hover {
+    color: #E8AC33;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif; 
     color: #4A4A4F;
@@ -261,12 +265,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 55px;
     height: 55px;
     background: none;
-    border: 3px solid #E8AC33;
+    border: 3px solid #DF8A70;
     border-radius: 50px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-size: 26px;
-    color: #E8AC33;
+    color: #DF8A70;
     outline: none;
     transition: .5s;
 }
@@ -292,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 30px;
     transform: translate(-50%,-50%);
     font-size: 26px;
-    color: #E8AC33;
+    color: #DF8A70;
     transition: .2s;
 }
 
@@ -345,6 +349,15 @@ h1, h2, h3, h4, h5, h6 {
 .btn-signin:focus, .btn-signout:active {
     outline: none !important;
     box-shadow: none;
+}
+
+.signup-form label {
+    font-size: .9em;
+}
+
+.signup-form input {
+    font-size: .9em;
+    line-height: 30px;
 }
 
 /* Sign Out CSS */
