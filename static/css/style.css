@@ -245,8 +245,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: 1.65em;
 }
-/*Search Styling inspired by https://freefrontend.com/css-search-boxes/#gsc.tab=0*/
 
+/*Search Styling inspired by https://freefrontend.com/css-search-boxes/#gsc.tab=0*/
 .box{
     position: relative;
 }
@@ -296,7 +296,6 @@ h1, h2, h3, h4, h5, h6 {
     z-index: -1;
 }
 
-
 /* Register and Login CSS */
 .bg-image {
     background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
@@ -322,6 +321,31 @@ body {
     margin-bottom: 0px;
 }
 
+/* Sign Out CSS */
+
+.sign-out {
+    margin-top: 10%;
+    background-color: #fff8f9;
+    height: 70%;
+    width: 35%;
+    border-radius: 12px;
+}
+
+.btn-signout {
+    border-color: #DF8A70;
+    color: #DF8A70;
+}
+
+.btn-signout:hover {
+    border-color: #DF8A70;
+    background-color: #DF8A70;
+    color: #fff8f9;
+}
+
+.btn-signout:focus, .btn-signout:active {
+    outline: none !important;
+    box-shadow: none;
+}
 /*Recipe Detail*/
 
 .rating-list i,

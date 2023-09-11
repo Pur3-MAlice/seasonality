@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
@@ -76,7 +76,7 @@
     </nav>
 
     <!-- Block Content Holder -->
-    <main class="flex-shrink-0 main-bg"> 
+    <main class="flex-shrink-0"> 
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
