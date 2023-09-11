@@ -41,23 +41,21 @@
                                                 {% endif %}  
                                         </div>
                                         <div class="text-center">
-                                            <button class="btn btn-dark btn-block font-weight-bold" type="submit">{% trans "Sign In" %}</button>
+                                            <button class="btn btn-signin btn-lg" type="submit">{% trans "Sign In" %}</button>
                                             <p class="small font-weight-bold pt-3">
                                                 <a href="{% url 'account_signup' %}">New to Seasonality? Create an account</a>
                                             </p>
                                             <hr class="mb-3">
                                             <p class="small text-center">
                                                 By clicking on register, I agree to Seasonality's 
-                                                <a type="button" class="text-center" data-toggle="modal" data-target="#exampleModalCenter">
-                                                    Community Guidelines
-                                                </a> and understand that my account can be terminated at any time.
+                                                <a class="guidelines" type="button" data-toggle="modal" data-target="#seasonalityModal">Community Guidelines</a> and understand that my account can be terminated at any time.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                             <p class="small text-center">
-                                <a href="{% url 'account_signup' %}">Help Center?</a>
+                                <a href="{% url 'account_signup' %}" >Help Center?</a>
                             </p>
                         </div>
                     </div>
