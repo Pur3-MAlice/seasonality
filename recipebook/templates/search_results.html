@@ -1,5 +1,35 @@
 {% extends "base/base.html" %}
 {% block content %}
+
+
+    <div>
+        <div class="row">
+            {% for recipe in new %}
+            <div class="col-md-4 text-center">
+                <a class="text-dark fav-card" href="{% url 'recipe_detail' recipe.slug  %}">
+                    <div class="card mb-4 box-shadow">
+                        {% if "placeholder" in recipe.featured_image.url %}
+                        <img class="img-card"
+                            src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
+                            alt="bowl of berries next to rubarb and flowers">
+                        {% else %}
+                        <img class="img-card" src="{{ recipe.featured_image.url }}">
+                        {% endif %}
+                            <p class="author mt-3">Author: {{ recipe.author }}</p>
+                        
+                        <h4 class="card-title mt-3">{{ recipe.title }}</h4>
+
+                        <hr class="card-hr" />
+                            <a href="{% url 'favourite_add' recipe.id %}" class="btn btn-remove">Remove</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 <div class="text-center">
     {% if searched %}
     <h3>Your Search Results:</h3>

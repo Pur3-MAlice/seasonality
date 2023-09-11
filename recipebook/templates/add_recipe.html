@@ -1,23 +1,33 @@
 {% extends "base/base.html" %}
 {% block content %}
-<h1 class="text-center">Add My Recipes</h1>
+<div class="container">
+    {% if submitted %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Your Recipe was Submitted!</h1>
+            <p class="lead text-muted">While you wait for our team to publish your recipe, why not go ahead and search
+                our database!</p>
+        </div>
+    </section>
+    {% else %}
 
-
-{% if submitted %}
-Your Recipe Was Submitted!
-Please wait for our team to add this to our Website.
-Have a puruse of our other recipes here
-{% else %}
-
-<div class="text-center m-5">
-    <form action="" method="POST">
-        <h3>Please Make sure you are adding in a title to your recipe, it's ingredients, the content of your recipe and also it's Nutritional Value. 
-            Any Recipe without these elements will not get published to the site.</h3>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Add My Recipes</h1>
+            <p class="lead">Please make sure you are adding in a title to your recipe, it's ingredients, the
+                content of your recipe and also it's Nutritional Values.
+                Any recipe without these elements will not get published to the site.</p>
+        </div>
+    </section>
+</div>
+<div class="form-container text-center">
+    <form action="" method="POST" class="recipe-form form-group">
         {% csrf_token %}
 
-        {{ form.as_p | safe }}
-
-        <input type="submit" value="Submit" class="btn btn-success mt-4">
+        {{ form.as_table | safe }}
+        <div>
+            <button type="submit" value="Update" class="btn btn-signin m-4">Submit</button>
+        </div>
     </form>
 </div>
 {% endif %}

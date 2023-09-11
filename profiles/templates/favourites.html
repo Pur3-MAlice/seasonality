@@ -2,7 +2,7 @@
 {% block title %}Users Favourties{% endblock %}
 {% block content %}
 <div class="container">
-    <section class="jumbotron text-center bg-white">
+    <section class="jumbotron text-center">
         <div class="container">
             <h1>Users saved favourite recipe</h1>
             <p class="lead text-muted">Here you can remove or view the favourites recipe you have added</p>
@@ -11,24 +11,22 @@
     <div>
         <div class="row">
             {% for recipe in new %}
-            <div class="col-md-4">
-                <a class="text-dark" href="{% url 'recipe_detail' recipe.slug  %}">
+            <div class="col-md-4 text-center">
+                <a class="text-dark fav-card" href="{% url 'recipe_detail' recipe.slug  %}">
                     <div class="card mb-4 box-shadow">
                         {% if "placeholder" in recipe.featured_image.url %}
-                        <img class="card-img-top"
+                        <img class="img-card"
                             src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
                             alt="bowl of berries next to rubarb and flowers">
                         {% else %}
-                        <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                        <img class="img-card" src="{{ recipe.featured_image.url }}">
                         {% endif %}
-                        <div class="card-body">
-                            <h2 style="font-size:18px;font-weight:bold">{{recipe.title}}</h2>
-                            <p class="card-text">{{recipe.author}}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div id="favourite-section"><a href="{% url 'favourite_add' recipe.id %}"
-                                        class="btn btn-outline-primary">Remove</a></div>
-                            </div>
+                            <p class="author mt-3">Author: {{ recipe.author }}</p>
+                        
+                        <h4 class="card-title mt-3">{{ recipe.title }}</h4>
 
+                        <hr class="card-hr" />
+                            <a href="{% url 'favourite_add' recipe.id %}" class="btn btn-remove">Remove</a>
                         </div>
                     </div>
                 </a>

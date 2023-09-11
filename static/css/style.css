@@ -382,8 +382,28 @@ h1, h2, h3, h4, h5, h6 {
     width: 50%;
 }
 
-/*Recipe Detail*/
+.jumbotron {
+    background: #fff8f9;
+    border-radius: 12px;
+    margin-top: 28px;
+}
 
+.btn-remove {
+    border-color: #25392D;
+    color: #25392D;
+}
+
+.btn-remove:hover {
+    border-color: #25392D;
+    background-color: #25392D;
+    color: #fff8f9;
+}
+
+.fav-card{
+    text-decoration: none;
+}
+
+/*Recipe Detail*/
 .recipe-ratings i {
     font-size: 22px;
 }
@@ -464,4 +484,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .nutrition-list ul li:last-child {
     border: none;
+}
+
+
+.recipe-form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.recipe-form input {
+    display: inline-block;
+    font-size: 18px;
+}
+
+#id_featured_image {
+    margin: 15px 0 0 50px;
+}
+
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+  
+form {
+    width: 50%;
+    margin: 0 auto;
+    background: #fff8f9;
+    border-radius: 12px;
 }

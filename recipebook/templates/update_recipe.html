@@ -1,16 +1,23 @@
 {% extends "base/base.html" %}
 {% block content %}
 
-        <h3>Update Recipe</h3>
-        <div class="text-center m-5">
-            <form action="" method="POST">
-                {% csrf_token %}
-        
-                {{ form.as_p | safe }}
-        
-                <input type="submit" value="Update" class="btn btn-success mt-4">
-            </form>
+<div class="container">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Update My Recipe</h1>
+            <p class="lead">Please make sure you are adding in a title to your recipe, it's ingredients, the
+                content of your recipe and also it's Nutritional Values.</p>
         </div>
-        
-    
+    </section>
+</div>
+<div class="form-container text-center">
+    <form action="" method="POST" class="recipe-form form-group">
+        {% csrf_token %}
+
+        {{ form.as_table | safe }}
+        <div>
+            <button type="submit" value="Update" class="btn btn-signin m-4">Submit</button>
+        </div>
+    </form>
+</div>
 {% endblock %} 

@@ -52,5 +52,5 @@ def profile(request):
         'profile_form': profile_form,
         "saved": saved,
         "recipes": recipes,
-        "new": new
+        "new": new,
         })
