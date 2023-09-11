@@ -56,10 +56,12 @@ def search_results(request):
     searched = request.GET.get('searched')
     if searched:
         recipes_list = Recipe.objects.filter(
-            Q(title__contains=searched) |
-            Q(content__contains=searched) |
-            Q(author__contains=searched) |
-            Q(ingredients__contains=searched))
+            Q(title__icontains=searched) |
+            Q(content__icontains=searched) |
+            Q(author__username__icontains=searched) |
+            Q(ingredients__contains=searched) |
+            Q(diet__name__icontains=searched) |
+            Q(season__name__icontains=searched))
     paginator = Paginator(recipes_list, 2)
     page = request.GET.get('page')
 
