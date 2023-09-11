@@ -134,7 +134,27 @@ Below is a list of bugs I found during the development process. A lot of the bug
     * ***Issue Found:*** 
         * 
     * ***Solution Used:*** 
-        *                                 
+        *   
+1. **Intended Outcome** - FK Q Search
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *   
+1. **Intended Outcome** - Main BG not filling page
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *  
+1. **Intended Outcome** - Stars not working 
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *  
+1. **Intended Outcome** - Comment Delete ?
+    * ***Issue Found:*** 
+        * 
+    * ***Solution Used:*** 
+        *                                                                
 
 # **Deployment**
 
@@ -144,4 +164,5 @@ Below is a list of bugs I found during the development process. A lot of the bug
 
 * General references:
 * For Django Models resources I used [Geeks For Geeks: Django Model](https://www.geeksforgeeks.org/django-models/?ref=lbp) https://docs.djangoproject.com/en/4.2/topics/db/models/
+* For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life : https://www.youtube.com/@Codemycom, https://www.youtube.com/@DigitalFox-tutorials, https://www.youtube.com/@Pyplane, https://www.youtube.com/@veryacademy
    
