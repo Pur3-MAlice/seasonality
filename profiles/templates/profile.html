@@ -108,6 +108,9 @@
                             <td>
                                 <p class="author">Author: {{ recipe.author }}</p>
                             </td>
+                            <td>
+                                <a href="{% url 'favourite_add' recipe.id %}" class="btn btn-remove">Remove</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </table>

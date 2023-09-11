@@ -7,7 +7,6 @@ COLORS:
 #343A40 --  Onyx
 #212529 -- Eerie black
 #F1CACC -- Tea rose
-#fff8f9 -- Cherry blossom
 #DF8A70 -- Burnt sienna
 #E8AC33 --Hunyadi Yellow
 #5A6950 -- Ebony
@@ -415,8 +414,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px;
 }
 
-.profile-table {
+.profile-table tr:nth-child(even){
+    background-color: #fff8f9;
+}
 
+.profile-table tr:nth-child(odd){
+    background-color: #fff8fc;
+}
+
+.profile-table tr a{
+    text-decoration: none;
 }
 
 .btn-profile:hover {

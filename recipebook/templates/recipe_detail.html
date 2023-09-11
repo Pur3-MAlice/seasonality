@@ -105,10 +105,6 @@
                             {{ comment.created_on }}
                         </span> wrote:
                     {% if user.is_authenticated %}
-                    {% if comment.name.id is user.id %}
-                        <a type="button" class="btn" data-toggle="modal" data-target="#deleteCommentModal">
-                            Delete</a>
-                    {% endif %}
                     {% endif %}
                 </p>
                 {{ comment.body | linebreaks }}
@@ -155,6 +151,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     // JavaScript code to set and remember User's rating on recipe_detail.html

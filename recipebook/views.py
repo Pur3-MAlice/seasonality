@@ -80,13 +80,6 @@ def search_results(request):
 
 
 @login_required
-def delete_comment(request, comment_id):
-    comment = Comment.objects.get(pk=comment_id)
-    comment.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-@login_required
 def rate(request, recipe_id, rating):  # Code adapted from https://medium.com/
     user = request.user
     recipe = get_object_or_404(Recipe, id=recipe_id)
@@ -147,7 +140,7 @@ class RecipeDetail(View):
         fav = bool
         if recipe.favourites.filter(id=request.user.id).exists():
             fav = True
-
+        
         return render(
             request,
             "recipe_detail.html",
