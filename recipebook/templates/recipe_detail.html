@@ -8,6 +8,13 @@
             <div class="col-md-6 masthead-text">
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+                <h5 class="recipe-subtitle">
+                    <span class="fa fa-star {% if recipe.average_rating > 0 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if recipe.average_rating > 1 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if recipe.average_rating > 2 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if recipe.average_rating > 3 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if recipe.average_rating > 4 %} checked {% endif %}"></span>
+                </h5>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
@@ -23,79 +30,57 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="d-flex">
-            <div class="pt-2">
+        <div class="d-flex recipe-ratings">
+            <div class="pt-2 ms-3">
                 {% with comments.count as total_comments %}
-                <strong class="text-secondary"><i class="far fa-comments"></i>
+                    <i class="far fa-comments"></i>
                     {{ total_comments }}
-                </strong>
                 {% endwith %}
             </div>
             <div class="ml-auto pt-1">
                 {% if user.is_authenticated %}
-                {% if fav %}
-                <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="fa-solid fa-bookmark"></i></a>
-                <strong class="text-secondary">
-                </strong>
-                {% else %}
-                <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="far fa-bookmark"></i></a>
-                <strong class="text-secondary">
-                </strong>
-                {% endif %}
-                {% else %}
-                <a href="{% url 'account_signup' %}" class="btn"><i class="far fa-bookmark"></i></a>
-                {% endif %}
-            </div>
-            <div class="container" style="padding: 2em">
-                <div class="card" style="width: 30rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ recipe.title }}</h5>
-                        <h5 class="card-title">
-                            <span class="fa fa-star {% if recipe.average_rating > 0 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if recipe.average_rating > 1 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if recipe.average_rating > 2 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if recipe.average_rating > 3 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if recipe.average_rating > 4 %} checked {% endif %}"></span>
-                        </h5>
-                    </div>
-                    {% if user.is_authenticated %}
-                        <span class="rating-list">
-                            <i onclick="rate(1, {{ recipe.id }})"
-                                class="fa fa-star {% if userRating >= 1 %}checked{% endif %}"></i>
-                            <i onclick="rate(2, {{ recipe.id }})"
-                                class="fa fa-star {% if userRating >= 2 %}checked{% endif %}"></i>
-                            <i onclick="rate(3, {{ recipe.id }})"
-                                class="fa fa-star {% if userRating >= 3 %}checked{% endif %}"></i>
-                            <i onclick="rate(4, {{ recipe.id }})"
-                                class="fa fa-star {% if userRating >= 4 %}checked{% endif %}"></i>
-                            <i onclick="rate(5, {{ recipe.id }})"
-                                class="fa fa-star {% if userRating >= 5 %}checked{% endif %}"></i>
-                        </span>
+                    {% if fav %}
+                    <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="fa-solid fa-bookmark"></i></a>
+                    {% else %}
+                        <a href="{% url 'favourite_add' recipe.id %}" class="btn"><i class="far fa-bookmark"></i></a>
                     {% endif %}
-                </div>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="btn"><i class="far fa-bookmark"></i></a>
+                {% endif %}
             </div>
+            {% if user.is_authenticated %}
+                <span class="rating-list mt-2">
+                    <i onclick="rate(1, {{ recipe.id }})" class="fa fa-star {% if userRating > 0 %}checked{% endif %}"></i>
+                    <i onclick="rate(2, {{ recipe.id }})" class="fa fa-star {% if userRating > 1 %}checked{% endif %}"></i>
+                    <i onclick="rate(3, {{ recipe.id }})" class="fa fa-star {% if userRating > 2 %}checked{% endif %}"></i>
+                    <i onclick="rate(4, {{ recipe.id }})" class="fa fa-star {% if userRating > 3 %}checked{% endif %}"></i>
+                    <i onclick="rate(5, {{ recipe.id }})" class="fa fa-star {% if userRating > 4 %}checked{% endif %}"></i>
+                </span>
+            {% endif %}
         </div>
     </div>
 </div>
+
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left top">
+        <div class="col card mb-4 mt-3">
             <h3>{{ recipe.title }}</h3>
-            <div class="card-body">
+            <p class="card-text ">
+                {{ recipe.ingredients | safe }}
+            </p>
+            <p class="card-text ">
+                {{ recipe.content | safe }}
+            </p>
+            <div class="card-body nutrition-list">
                 <ul>
-                    <li>Calories: {{ recipe.calories }}cal</li>
-                    <li>Protein: {{ recipe.protein }}g</li>
-                    <li>Fats: {{ recipe.fat }}g</li>
-                    <li>Carbs: {{ recipe.carbs }}g</li>
-                    <li>Servings: {{ recipe.servs }}</li>
+                    <li class="text-center">Calories: {{ recipe.calories }}cal</li>
+                    <li class="text-center">Protein: {{ recipe.protein }}g</li>
+                    <li class="text-center">Fats: {{ recipe.fat }}g</li>
+                    <li class="text-center">Carbs: {{ recipe.carbs }}g</li>
+                    <li class="text-center">Servings: {{ recipe.servs }}</li>
                 </ul>
-                <p class="card-text ">
-                    {{ recipe.ingredients | safe }}
-                </p>
-                <p class="card-text ">
-                    {{ recipe.content | safe }}
-                </p>
             </div>
+            
         </div>
     </div>
 </div>
@@ -103,13 +88,7 @@
 {% if user.is_authenticated %}
     {% if recipe.author.id is user.id %}
         <a href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
-
-        <a type="button" class="btn delete-comment-btn" data-toggle="modal" data-target="#deleteCommentModal" data-comment-pk="{{ comment.pk }}">Delete</a>
-
-
-        <form>
-            <a href="#" class="btn" role="button"><i class="fa-solid fa-trash-can"></i></a>
-        </form>
+        <a type="button" class="btn delete-comment-btn" data-toggle="modal" data-target="#deleteCommentModal" data-comment-pk="{{ comment.pk }}">DELETE</a>
         <div class="row">
             <div class="col">
                 <hr>
@@ -119,52 +98,49 @@
 {% endif %}
 
 <div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
-        <h3>Comments:</h3>
-        <div class="card-body">
-            {% for comment in comments %}
-            <div class="comments" style="padding: 10px;">
+    <div class="col-md-8 mb-4 mt-3">
+        <h3 class="comments-title comments">Comments:</h3>
+        {% for comment in comments %}
+            <div class="comments">
                 <p class="font-weight-bold">
                     {{ comment.name }}
-                    <span class=" text-muted font-weight-normal">
-                        {{ comment.created_on }}
-                    </span> wrote:
+                        <span class=" text-muted font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
                     {% if user.is_authenticated %}
-                        {% if comment.name.id is user.id %}
-                            <a type="button" class="btn" data-toggle="modal" data-target="#deleteCommentModal">
+                    {% if comment.name.id is user.id %}
+                        <a type="button" class="btn" data-toggle="modal" data-target="#deleteCommentModal">
                             Delete</a>
-                        {% endif %}
+                    {% endif %}
                     {% endif %}
                 </p>
                 {{ comment.body | linebreaks }}
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
-    <div class="col-md-4 card mb-4  mt-3 ">
-        <div class="card-body">
-            {% if commented %}
-            <div class="alert alert-success" role="alert">
-                Your comment has been posted
-            </div>
-            {% else %}
-            {% if user.is_authenticated %}
+    <div class="col-md-4 mt-3 commenting">
+        {% if commented %}
+        <div class="alert alert-success" role="alert">
+            Your comment has been posted
+        </div>
+        {% else %}
+        {% if user.is_authenticated %}
             <h3>Leave a comment:</h3>
             <p>Posting as: {{ user.username }}</p>
             <form method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-            </form>
-            {% else %}
-               <h4><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'account_signup' %}">Create an Account</a> to join the conversation!</h4>
-            {% endif %}
-            {% endif %}
-        </div>
+            <button type="submit" class="btn btn-signin btn-lg mt-3">Submit</button>
+        </form>
+        {% else %}
+        <h4><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'account_signup' %}">Create an
+                Account</a> to join the conversation!</h4>
+        {% endif %}
+        {% endif %}
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Recipe Modal -->
 <div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -183,7 +159,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -204,14 +180,19 @@
 
 <script>
     // JavaScript code to set and remember User's rating on recipe_detail.html
-    let userRating = 0;
+    let userRating;
 
     const rate = (rating, recipe_id) => {
         console.log(`Rating: ${rating}, Recipe ID: ${recipe_id}`);
         userRating = rating;
 
         const stars = document.querySelectorAll('.rating-list i');
+        console.log(stars);
 
+        localStorage.setItem(`stars`, rating);
+
+        fetch(`/rate/${recipe_id}/${rating}/`)
+        
         stars.forEach((star, index) => {
             if (index < userRating) {
                 star.classList.add('checked');
@@ -219,20 +200,12 @@
                 star.classList.remove('checked');
             }
         });
-
-        fetch(`/rate/${recipe_id}/${rating}/`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                location.reload();
-            } else {
-                location.reload();
-            }
-        });
     };
-    setRating(userRating);
+    
+    window.onload = (rating, recipe_id) => {
+        let storedRating = localStorage.getItem(`stars`);
+        rate(storedRating, recipe_id);
+    };
+
 </script>
 {% endblock content %}

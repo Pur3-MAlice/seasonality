@@ -7,7 +7,7 @@ COLORS:
 #343A40 --  Onyx
 #212529 -- Eerie black
 #F1CACC -- Tea rose
-#F1AAAD -- Cherry blossom
+#fff8f9 -- Cherry blossom
 #DF8A70 -- Burnt sienna
 #E8AC33 --Hunyadi Yellow
 #5A6950 -- Ebony
@@ -22,6 +22,7 @@ font-family: 'Playfair Display', serif;
 body {
     background-color: #F9FAFC;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .main-bg {
@@ -78,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 .dark-bg {
     background-color: #445261;
 }
+
 .card {
     border: none;
     background-color: transparent;
@@ -135,17 +137,6 @@ h1, h2, h3, h4, h5, h6 {
 .recipe-subtitle {
     margin-left: 5%;
     color: lightgray;
-}
-
-.btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
 }
 
 .link {
@@ -387,18 +378,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Recipe Detail*/
 
+.recipe-ratings i {
+    font-size: 22px;
+}
+
 .rating-list i,
 .rating-list i:hover~i {
-    color: #222;
+    color: #212529;
     text-shadow: none;
-    transition: color 200ms,
-        text-shadow 200ms;
+    transition: color 200ms, text-shadow 200ms;
     transition-delay: 0;
 }
 
 .rating-list:hover i {
-    color: #fc0;
-    text-shadow: #fc0 0 0 20px;
+    color: #E8AC33;
+    text-shadow: #E8AC33 0 0 20px;
 }
 
 .rating-list:hover i:nth-child(2) {
@@ -418,5 +412,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .checked {
-    color: orange;
+    color: #E8AC33 !important;
+}
+
+.recipe-title, .recipe-subtitle {
+    color: #fff8f9;
+}
+
+.comments {
+    padding: 10px;
+    background: #fff8f9;
+    border-radius: 10px;
+}
+
+.comments-title {
+    padding: 10px;
+}
+
+.commenting {
+    background: #fff8f9;
+    border-radius: 10px;
+    margin-bottom: 235px;
+}
+
+.nutrition-list ul{
+    list-style-type: none;
+    margin: 0 0 0 113px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nutrition-list li{
+    float: left;
+    display: inline;
+    padding: 16px; 
+    text-transform: uppercase;
+}
+  
+.nutrition-list ul li {
+    text-decoration: none;
+    padding: 0.2em 1.1em;
+    border-right: 1px solid #212529;
+    margin: 0 0 0 -6px;
+}
+
+.nutrition-list ul li:last-child {
+    border: none;
 }
