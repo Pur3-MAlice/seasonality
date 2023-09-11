@@ -390,13 +390,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-remove {
     border-color: #25392D;
-    color: #25392D;
+    background-color: #25392D;
+    color: #fff8f9;
 }
 
 .btn-remove:hover {
     border-color: #25392D;
-    background-color: #25392D;
-    color: #fff8f9;
+    background-color: #fff8f9;
+    color: #25392D;
+}
+
+.btn-remove:focus, .btn-remove:active {
+    outline: none !important;
+    box-shadow: none;
 }
 
 .fav-card{
@@ -407,6 +413,27 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff8f9;
     border-radius: 12px;
     padding: 15px;
+}
+
+.profile-table {
+
+}
+
+.btn-profile:hover {
+    border-color: #5A6950;
+    color: #5A6950;
+    background-color: #fff8f9;
+}
+
+.btn-profile {
+    border-color: #5A6950;
+    background-color: #5A6950;
+    color: #fff8f9;
+}
+
+.btn-profile:focus, .btn-profile:active {
+    outline: none !important;
+    box-shadow: none;
 }
 
 /*Recipe Detail and Forms*/
