@@ -403,7 +403,13 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
-/*Recipe Detail*/
+.profile-form {
+    background: #fff8f9;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/*Recipe Detail and Forms*/
 .recipe-ratings i {
     font-size: 22px;
 }
@@ -486,7 +492,6 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-
 .recipe-form label {
     display: block;
     margin-top: 15px;
@@ -508,7 +513,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
   
-form {
+.recipe-form{
     width: 50%;
     margin: 0 auto;
     background: #fff8f9;
