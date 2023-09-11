@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="row no-gutter">
-        <div class="col-md-6 bg-light">
+        <div class="col-md-6">
             <div class="login d-flex align-items-center py-5">
                 <div class="container">
                     <div class="row">
@@ -32,6 +32,7 @@
                                                 <label class="small mb-1">Email:</label>
                                                 {{ user_form.email }}
                                             </div>
+                                            <p class="small">Please note that to change your bio or username you must submit an email address</p>
                                             <div class="form-group">
                                                 <a href="#">Change Password</a>
                                                 <hr>
@@ -57,20 +58,20 @@
         <div class="col-md-6 d-none d-md-flex">
             <div class="row">
                 <div class="text-center">
-                    <h3 class="profile-extras">My Comments:</h3>
-                    <div class="ml-auto pt-1">{% with comments.count as total_comments %}
-                        <strong class="text-secondary">
-                            {{ total_comments }}
-                        </strong>
-                        {% endwith %}
+                    <h3 class="profile-extras">My Recipes</h3>
+                    <div class="ml-auto pt-1">
                     </div>
                     <hr class="mb-3">
+                    {% for recipe in recipes %}
+                    <h6>{{ recipe.title }}</h6>
+                    <p>{{ recipe.author }}</p>
+                    {% endfor %}
                 </div>
                 <div class="text-center">
                     <h3 class="profile-extras">My Favourites:</h3>
                     <hr class="mb-3">
                     <a aria-current="page" href="{% url 'favourites' %}">Favourites</a>
-                    {% for recipe in recipe_list %}
+                    {% for recipe in new %}
                     <div class="col-md-3">
                         <div class="card md-3">
                             <div class="card-body">
@@ -90,6 +91,7 @@
                             </a>
                         </div>
                     </div>
+                    
                     {% endfor %}
                 </div>
             </div>

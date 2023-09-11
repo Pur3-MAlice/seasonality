@@ -44,8 +44,13 @@ def profile(request):
         profile_form = UpdateProfileForm(instance=request.user.profile)
         saved = False
 
+    recipes = Recipe.objects.all()
+    new = Recipe.newmanager.filter(favourites=request.user)
+
     return render(request, 'profile.html', {
         'user_form': user_form,
         'profile_form': profile_form,
-        "saved": saved
+        "saved": saved,
+        "recipes": recipes,
+        "new": new
         })
