@@ -58,6 +58,7 @@ def search_results(request):
         recipes_list = Recipe.objects.filter(
             Q(title__contains=searched) |
             Q(content__contains=searched) |
+            Q(author__contains=searched) |
             Q(ingredients__contains=searched))
     paginator = Paginator(recipes_list, 2)
     page = request.GET.get('page')

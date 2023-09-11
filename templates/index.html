@@ -24,37 +24,34 @@
                     <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
                         <h3 class="card-title">{{ recipe.title }}</h3>
                     </a>
-                    <hr class="card-hr"/>
+                    <hr class="card-hr" />
                     <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <nav aria-label="Page navigation text-center">
-            <ul class="pagination d-flex justify-content-center">
-                {% if recipes.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ recipes.previous_page_number }}"
-                        aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                {% endif %}
-                {% if recipes.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ recipes.next_page_number }}"
-                        aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
-
     </div>
 </div>
+
+{% if recipes.has_previous %}
+<nav aria-label="Page navigation">
+    <div class="col-12">
+        <a class="carousel-control-prev" href="?page={{ recipes.previous_page_number }}" role="button" data-slide="prev">
+            <span class="fa fa-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+    </div>
+    {% endif %}
+    {% if recipes.has_next %}
+    <div class="col-12">
+        <a class="carousel-control-next" href="?page={{ recipes.next_page_number }}" role="button" data-slide="next">
+            <span class="fa fa-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    {% endif %}
+</nav>
+
 
 {% for diet in diets|slice:":3" %}
 <div class="container-fluid">
@@ -65,27 +62,27 @@
         <div class="row pb-5 mt-2">
             {% for recipe in diet.recipe_set.all|slice:":4" %}
             {% if recipe.status %}
-                <div class="col-md-3 d-flex flex-row text-center">
-                    <div class="card mx-auto">
-                        <div class="card-body">
-                            {% if "placeholder" in recipe.featured_image.url %}
-                            <img class="img-card"
-                                src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
-                                alt="bowl of berries next to rubarb and flowers">
-                            {% else %}
-                            <img class="card-img" src="{{ recipe.featured_image.url }}">
-                            {% endif %}
-                            <div class="image-flash">
-                                <p class="author">Author: {{ recipe.author }}</p>
-                            </div>
+            <div class="col-md-3 d-flex flex-row text-center">
+                <div class="card mx-auto">
+                    <div class="card-body">
+                        {% if "placeholder" in recipe.featured_image.url %}
+                        <img class="img-card"
+                            src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
+                            alt="bowl of berries next to rubarb and flowers">
+                        {% else %}
+                        <img class="card-img" src="{{ recipe.featured_image.url }}">
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Author: {{ recipe.author }}</p>
                         </div>
-                        <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
-                            <h3 class="card-title">{{ recipe.title }}</h3>
-                        </a>
-                        <hr class="card-hr"/>
-                        <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </div>
+                    <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
+                        <h3 class="card-title">{{ recipe.title }}</h3>
+                    </a>
+                    <hr class="card-hr" />
+                    <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                 </div>
+            </div>
             {% endif %}
             {% endfor %}
         </div>

@@ -29,7 +29,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
@@ -37,11 +37,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add_recipe' %}">Add My Recipes</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile 
+                            <i class="fa-solid fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile Page</a>
+                            <a class="dropdown-item" href="{% url 'favourites' %}">Favourites</a>
+                            <a  class="dropdown-item" type="button"data-toggle="modal" data-target="#seasonalityModal">Community Guidelines</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'add_recipe' %}">Add A Recipe</a>
+                          </div>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -50,23 +57,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    {% endif %}
                     <li class="nav-item">
-                        <a type="button" class="btn" data-toggle="modal" data-target="#seasonalityModal">
+                        <a type="button" class="nav-link" data-toggle="modal" data-target="#seasonalityModal">
                             Community Guidelines
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
                 <form method="GET" action="{% url 'search_results' %}">
-                    <div class="input-field">
                         <input type="text" name="searched" value="{{ request.GET.searched }}"
                             placeholder="Search Here...">
                         <button class="btn" type="submit" name="action">Search</button>
-                    </div>
                 </form>
-                <span class="navbar-text text-muted">
-                    Season to Taste
-                </span>
             </div>
         </div>
     </nav>

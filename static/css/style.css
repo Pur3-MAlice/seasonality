@@ -172,9 +172,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Card Styling inspired by https://codepen.io/wisnust10/pen/BKjNNR*/
+.fa-caret-down:hover {
+    color: #E8AC33;
+}
+
+#navbarDropdown:hover {
+    color: #E8AC33;
+}
 
 .diet-background {
-    background-color: #fff8f9;
+    background-color: #90b77d;
     border-radius: 12px;
 }
 
@@ -183,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
 }
 
-.recent-background h1{
+.recent-background h1, h2{
     color: #fff8f9;
 }
  
@@ -204,8 +211,41 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.carousel-control-next, .carousel-control-prev {
+    opacity: 1;
+    top: 65px;
+    bottom: 165px;
+    text-decoration: none;
+    font-size: 40px;
+
+}
+
+.carousel-control-prev {
+    padding-left: 30px;
+    color: #E8AC33;
+}
+
+.carousel-control-next:hover {
+    color: #E8AC33;
+}
+
+.carousel-control-next {
+    padding-right: 30px;
+    color: white;
+}
+
+.author {
+    margin: 5px 0 -6px 0;
+    font-size: 1.2rem
+}
+
+.card-text {
+    font-size: 1.2rem
+}
+
 .card-hr {
-    border: 2px solid;
+    border: 1.5px solid #5a6950;
+    opacity: .8;
 }
 
 .card-title {
