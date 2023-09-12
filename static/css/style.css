@@ -443,6 +443,22 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
+/*Search*/
+.search-pagination li {
+    font-size: 2rem;
+}
+
+.search-pagination .disabled {
+    color: grey;
+}
+
+.search-pagination .active {
+    color: #E8AC33;
+}
+
+/*Favourites*/
+
+
 /*Recipe Detail and Forms*/
 .recipe-ratings i {
     font-size: 22px;
