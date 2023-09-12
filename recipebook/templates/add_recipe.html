@@ -26,7 +26,7 @@
 </div>
 <!-- Recipe Form -->
 <div class="form-container text-center">
-    <form action="" method="POST" class="recipe-form form-group">
+    <form method="POST" class="recipe-form form-group">
         {% csrf_token %}
 
         {{ form.as_table | safe }}
