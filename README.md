@@ -64,8 +64,6 @@ As a **Site User** I can...(Not logged in:)
 1. As a site user I can Rate each recipe so that show which recipe I liked and disliked, involving self in website's community.
 1. As a Site User I can Search recipes on the site by tags, author, and ingredients so that I can find appropriate results for my needs.
 
-* Epics to User Stories to Tasks
-
 ## **Research:**
 One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
 
@@ -111,27 +109,20 @@ The final list of colors used has been placed in the below to check contrast sco
 ![Color Grid](/documents/wireframes/contrast-grid.png)
 
 ### **Typography**:
-
+To find my fonts i used thsi website: https://www.elegantthemes.com/blog/design/best-google-fonts. I went with Playfair Display and Monserrat, for a modern playful feel that would give the website levity.
 
 # **Building Process**
   Using a Kanban Board system. And Something similar to sprints. 
 
   When it came to actually putting my Database Schema into reality a few things changed. Such as Saved and Categories. Plus I figured out I would need to make a model purely for the rating system I wanted to put in place. MVP this could just be likes, but to differentiate from the base of this project (which was taken from Code Insitutes 'Django Blog App') I wanted to add in this rating system that would calculate a recipes' popularity. This would also be the building block of the carousels on the recipe search page. I plan to have 'Diet' and even 'Season' Caraousels on the recipe search page so that site users can easily see recipes, the rating system will determine which recipes show up on these carousels. Or So I Plan... (Famous last words of a coder).
 
-  
 # **Features**
 ## **Site Navigation**
 ### **Navbar**
-#### ***Logo:***
-
-![Site Logo]()
-  
 #### ***Signed Out:***
 #### ***Signed In:***
 #### ***Hamburger menu on smaller screen sizes:***
 To display the menu properly on smaller screen sizes, a burger menu was implemented using bootstrap.  
-### **Hero Images:**
-I picked the hero images to portray the page's theme to the user. 
 ## **AllAuth Pages**
 ### ***Sign In:***
 ![sign-in form]()
