@@ -26,7 +26,6 @@ As a notice here - this is the second version of this app I made. The first vers
   * [**Warning Modals**](#warning-modals)
 * [**Testing Phase**](#testing-phase)
 * [**Deployment**](#deployment)
-* [**Technologies used**](#technologies-used)
 * [Credits](#credits)
 
 # **Planning Phase**
@@ -118,51 +117,100 @@ To find my fonts i used thsi website: https://www.elegantthemes.com/blog/design/
 
 # **Features**
 ## **Site Navigation**
-### **Navbar**
+### **Add/Update Recipe Forms**
+
+![add recipe](/documents/features/add-recipe.png)
+
+![update recipe](/documents/features/update-recipe.png)
+
+As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
+
+### **Navbar and Signin/Out Logout Pages**
 #### ***Signed Out:***
+![sign-out nav](/documents/features/signout-nav.png)
 #### ***Signed In:***
-#### ***Hamburger menu on smaller screen sizes:***
-To display the menu properly on smaller screen sizes, a burger menu was implemented using bootstrap.  
-## **AllAuth Pages**
+![sign-in nav](/documents/features/signin-nav.png) 
 ### ***Sign In:***
-![sign-in form]()
+![sign-in form](/documents/features/signout-nav.png)
 #### ***Form Errors:***
-![Invalid log in credentials]()
+![sign-in error](/documents/features/sign-inerror.png)
 ### ***Sign Up:***
-![sign-up form]()
+![sign-up form](/documents/features/register.png) 
+
+As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
 #### ***Form Errors:***
-![Form errors for sign up form]()
+![sign-up error](/documents/features/sign-uperror.png)
+
+As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
 ### ***Sign Out:***
-![Sign out page]()
+![Sign out page](/documents/features/signout.png)
 
 # **Future development**
-
+1. I think that the ability to like and reply to other comments in the future would be a good addition to the site based on its aims.
+1. For the user to be able to develop more than one list of favourites, like playlists of recipes.
+1. I would also like for the users to be able to report recipes and comments to admin, or have a way of getting in touch with admin for site regulation.
+1. Chnage password and Delete Profile
 # **Testing Phase**
 ### ***Manual Testing:***
 During the development process, I was manually testing in the following ways:-
-*
+* Manually testing each element for appearance and responsiveness via a simulated live server using an extension in VSCode.
+* Used the terminal to find errors when saving and psuhing to dev server.
+* Asked a Data Scientist friend to review the pages and the websites responsiveness by following the above procedure often throughout the development of the site. They did not offer any help on the coding nor did they provide feedback other than "this link/button/card" is broken. They did however make a good soundboard for me to talk at while talking through difficult code issues. Below is the spreadsheet I used for user testing.
+
+Logged in 
+
+![Logged in Nav](/documents/testing/Logged%20in%20NavBar.png)
+
+![Logged in Add Recipe](/documents/testing/Logged%20in%20Add%20Recipe.png)
+
+![Logged in Add Fav](/documents/testing/Logged%20in%20Favourites%20Page.png)
+
+![Logged in Home Page](/documents/testing/Logged%20in%20Homepage.png)
+
+![Logged in Profile](/documents/testing/Logged%20in%20Profile%20page.png)
+
+![Logged in Recipe Page](/documents/testing/Logged%20in%20Recipe%20Page.png)
+
+![Logged in Searched](/documents/testing/Logged%20in%20Searched%20Page.png)
+
+![Logged in Signout](/documents/testing/Logged%20in%20Signout%20Page.png)
+
+![Logged in Update Page](/documents/testing/Logged%20in%20Update%20Recipe.png)
+
+Logged out
+
+![Logged out Nav](/documents/testing/Not%20Logged%20in%20NavBar.png)
+
+![Logged out Home Page](/documents/testing/Not%20Logged%20in%20Home%20Page.png)
+
+![Logged out Login](/documents/testing/Not%20Logged%20in%20Login%20Page.png)
+
+![Logged out Register](/documents/testing/Not%20Logged%20in%20Register%20Page.png)
+
+![Logged out Recipe Page](/documents/testing/Not%20Logged%20in%20Recipe%20Page.png)
+
+![Logged out Searched](/documents/testing/Not%20Logged%20in%20Search%20Page.png)
+
+![Logged out Signout](/documents/testing/Logged%20in%20Signout%20Page.png)
+
+
 ### ***Bugs and Fixes:***
 Below is a list of bugs I found during the development process. A lot of the bugs and fixes where minor enough that they were caught and easily amended by just seeing the redlines in gitpod. But here are a few that stumped me enough to write them down.
 1. **Intended Outcome** - Had to restart the project
     * ***Issue Found:*** 
-        * 
+        * Due to some database issues i could not migrate any chnages after I had done my first migration.
     * ***Solution Used:*** 
-        * 
-1. **Intended Outcome** - Category Model for Diet and Season Broke my brain
+        * Restarted the project and used db.sqlite3 instead of my main postgres db
+1. **Intended Outcome** - Category Model for Diet and Season Br
     * ***Issue Found:*** 
         * 
     * ***Solution Used:*** 
         *    
-1. **Intended Outcome** - Duplicate in database
-    * ***Issue Found:*** 
-        * 
-    * ***Solution Used:*** 
-        *   
 1. **Intended Outcome** - Splicing List in Django Templates
     * ***Issue Found:*** 
-        * 
+        * I wanted to only have three of my categories on the main page, but nothing I did worked.
     * ***Solution Used:*** 
-        *   
+        * Discovered I could splice in the django html templates.
 1. **Intended Outcome** - FK Q Search
     * ***Issue Found:*** 
         * 
@@ -182,15 +230,47 @@ Below is a list of bugs I found during the development process. A lot of the bug
     * ***Issue Found:*** 
         * 
     * ***Solution Used:*** 
-        *                                                                
+        *    
+
+* During testing, I used three browsers to ensure cross-compatibility. The browsers used were:
+  1. Chrome
+  2. Firefox  
+  4. Edge
+* I also consistently used the devtools to simulate different screen sizes/devices from 320px up to 2200px in width. 
+* In addition to this, I used the dev tools to simulate different products such as the iPhone XR, iPhone 12 Pro, Samsung Galaxy S8+, iPad Air, iPad Mini, Surface Pro 7 and Nest Hub.
+* I also got friends and my partner to test the site on their own devices - Samsung, Dell Laptops, Self-built desktops and Apple products. 
+
+![HTML validator](/docs/screenshots/html-validator.jpg)
+#### ***CSS*** - https://jigsaw.w3.org/css-validator/
+* Code passes through with no issues.
+
+![CSS badge](/docs/screenshots/css-validator.jpg)
+
 
 # **Deployment**
-
-# **Technologies used**
+## ***Final Deployment to Heroku:***  
+The project was deployed to [Heroku](https://www.heroku.com) using the below procedure:-    
+  
+1. Log in to Heroku
+1. Click the button labelled "New”.
+1. From the drop-down menu select "Create new app".
+1. Enter a unique app name.
+1. Once the web portal shows the green tick to confirm the name is original.
+1. Select the relevant region, I chose Europe as I am in the UK.
+1. Click on the "Create app" button.
+1. From the project "Deploy" tab, nav to the settings tab and scroll to the "Config Vars" section. 
+1. Click the button labelled "Reveal Config Vars" and enter port / 8000. Click the "add" button.
+1. Scroll to the top of the settings page, and nav to the "Deploy" tab.
+1. From the deploy tab select Github as the deployment method.
+1. Confirm you want to connect to GitHub.
+1. Search for the repo and click the connect button.
+1. From the bottom of the deploy page select your preferred deployment type by follow one of the below steps:  
+   * Clicking “Enable Automatic Deploys" for automatic deployment when you push updates to Github.
+   * Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
 
 # Credits
-
 * General references:
 * For Django Models resources I used [Geeks For Geeks: Django Model](https://www.geeksforgeeks.org/django-models/?ref=lbp) https://docs.djangoproject.com/en/4.2/topics/db/models/
+* Whilst I did try to deviate as much as possible, this project was influenced by the CI code project which I built before starting this project.
 * For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life : https://www.youtube.com/@Codemycom, https://www.youtube.com/@DigitalFox-tutorials, https://www.youtube.com/@Pyplane, https://www.youtube.com/@veryacademy
    
