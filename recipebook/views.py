@@ -23,7 +23,7 @@ def update_recipe(request, recipe_id):  # Code inspired by Codemy.com
 
 
 @login_required
-def delete_recipe(request, recipe_id):
+def delete_recipe(request, recipe_id):  # Destroy's recipe through id
     recipe = Recipe.objects.get(pk=recipe_id)
     recipe.delete()
     return redirect('profile')
@@ -51,7 +51,7 @@ def add_recipe(request):  # Code inspired by Codemy.com
         'form': form, 'submitted': submitted})
 
 
-def search_results(request):
+def search_results(request):  # Searches recipes
     recipes_list = Recipe.objects.filter(status=1)
     searched = request.GET.get('searched')
     if searched:
@@ -80,17 +80,16 @@ def search_results(request):
 
 
 @login_required
-def rate(request, recipe_id, rating):  # Code adapted from https://medium.com/
+def rate(request, recipe_id, rating):  # User rating Code adapted medium.com
     user = request.user
     recipe = get_object_or_404(Recipe, id=recipe_id)
     rating_instance, created = Rating.objects.get_or_create(
         user=user, recipe=recipe)
     rating_instance.rating = rating
     rating_instance.save()
-    return JsonResponse({'message': 'Rating updated successfully'})
 
 
-class IndexView(TemplateView):
+class IndexView(TemplateView):  # Home page view code inspired by CI
     template_name = 'index.html'
     paginate_by = 4
 
@@ -107,14 +106,14 @@ class IndexView(TemplateView):
         return context
 
 
-class RecipeList(generic.ListView):
+class RecipeList(generic.ListView):  # Recipe list view code inspired by CI
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 4
 
 
-class DietList(TemplateView):
+class DietList(TemplateView):  # Diet list view
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
@@ -130,7 +129,7 @@ class DietList(TemplateView):
         return context
 
 
-class RecipeDetail(View):
+class RecipeDetail(View):  # Recipe details view code inspired by CI
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)

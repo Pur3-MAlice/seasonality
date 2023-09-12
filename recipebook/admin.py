@@ -3,13 +3,19 @@ from .models import Recipe, Diet, Comment, Season, Rating
 from django_summernote.admin import SummernoteModelAdmin
 
 
+# Admin reg the Diet Model
 admin.site.register(Diet)
 
+
+# Admin reg the Season Model
 admin.site.register(Season)
 
+
+# Admin reg the Rating Model
 admin.site.register(Rating)
 
 
+# Admin reg the Recipe Model with summernote and admin filters/view
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
@@ -23,6 +29,7 @@ class RecipeAdmin(SummernoteModelAdmin):
         queryset.update(status=1)
 
 
+# Admin reg the Comment Model with admin filters/view
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'created_on')

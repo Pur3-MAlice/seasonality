@@ -4,9 +4,11 @@ from cloudinary.models import CloudinaryField
 from django.db.models import Avg
 
 
+# Status for wether recipe is published
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+# Season Model - category
 class Season(models.Model):
     name = models.CharField(max_length=100)
 
@@ -14,6 +16,7 @@ class Season(models.Model):
         return self.name
 
 
+# Diet Model - category
 class Diet(models.Model):
     name = models.CharField(max_length=100)
 
@@ -21,6 +24,7 @@ class Diet(models.Model):
         return self.name
 
 
+# Recipe Model - deals with all of the recipe metadata
 class Recipe(models.Model):
 
     class NewManager(models.Manager):
@@ -63,6 +67,7 @@ class Recipe(models.Model):
         return f"{self.title}: {self.average_rating()}"
 
 
+# Rating Model - the user input and passes into recipe to create the avg
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
@@ -72,6 +77,7 @@ class Rating(models.Model):
         return f"{self.recipe.title}: {self.rating}"
 
 
+# Comment Model - Inspired by CodeInstitue
 class Comment(models.Model):
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name="comments"

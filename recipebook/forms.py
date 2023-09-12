@@ -4,13 +4,13 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 
 
-class CommentForm(forms.ModelForm):
+class CommentForm(forms.ModelForm):  # Form for user's comments
     class Meta:
         model = Comment
         fields = ('body',)
 
 
-class RecipeForm(forms.ModelForm):
+class RecipeForm(forms.ModelForm):   # Form for adding and editing recipes
     class Meta:
         model = Recipe
         exclude = ('author', 'favourites', 'featured_image',)
