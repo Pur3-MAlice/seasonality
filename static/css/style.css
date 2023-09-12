@@ -236,17 +236,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #DF8A70;
 }
 
-
 .search-btn:focus, .search-btn:active {
     outline: none !important;
     box-shadow: none;
 }
-
-/* FOR MEDIA Qs
-.box i{
-    opacity: 0;
-    z-index: -1;
-} */
 
 /* Register and Login CSS inspired by Codemy*/
 
@@ -410,9 +403,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #E8AC33;
 }
 
-/*Favourites*/
-
-
 /*Recipe Detail and Forms*/
 .recipe-ratings i {
     font-size: 22px;
@@ -522,4 +512,54 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     background: #fff8f9;
     border-radius: 12px;
+}
+
+/* FOR MEDIA Qs */
+
+@media (max-width: 800px) {
+    .box i {
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .input-search {
+        width: 100%;
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .recipe-form {
+        width: 100%
+    }
+
+    .nutrition-list li {
+        font-size: 12px;
+    }
+
+    .nutrition-list ul {
+        font-size: 12px;
+        margin: 0px;
+        padding: 2rem;
+    }
+
+    .recipe-subtitle {
+        font-size: 0.83em;
+    }
+
+    .recipe-ratings i {
+        font-size: 16px;
+    }
+
+    .sm-button {
+        font-size: 14px;
+        padding: 5px;
+        margin-left: 0rem!important;
+    }
+
+    .card {
+        margin-top: 10px;
+    }
 }

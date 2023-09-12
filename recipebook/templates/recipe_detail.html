@@ -59,8 +59,8 @@
 
                 {% if recipe.author.id is user.id %}
                 <div class="ml-auto pt-1">
-                <a class="btn btn-outline-success ms-3" href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
-                <a class="btn btn-outline-danger ms-2" data-toggle="modal" data-target="#deleteRecipeModal">DELETE</a>
+                <a class="btn btn-outline-success ms-3 sm-button" href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
+                <a class="btn btn-outline-danger ms-2 sm-button" data-toggle="modal" data-target="#deleteRecipeModal">DELETE</a>
                 {% endif %}
             </div>
 

@@ -36,6 +36,7 @@ As a notice here - this is the second version of this app I made. The first vers
 ### **Research:**
 One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance?  
 Here are some of the sites I used for inspiration for the design of Season To Taste:
+* Epics to User Stories to Tasks
 * [thehappyfoodie](https://thehappyfoodie.co.uk/)
 * [cookbookmanager](https://cookbookmanager.com/pricing)
 * [Resturant Website Templates from Wix](https://www.wix.com/website/templates/html/restaurants-food)
