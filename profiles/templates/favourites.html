@@ -8,12 +8,15 @@
             <p class="lead text-muted">Here you can remove or view the favourites recipe you have added</p>
         </div>
     </section>
-    <div>
-        <div class="row">
+</div>
+<div class="container-fluid">
+    <div class="container text-center my-3">
+        <div class="row py-5">
             {% for recipe in new %}
-            <div class="col-md-4 text-center">
-                <a class="text-dark fav-card" href="{% url 'recipe_detail' recipe.slug  %}">
-                    <div class="card mb-4 box-shadow">
+            <div class="col-md-3 mt-3">
+                <div class="card md-3">
+                    <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link"></a>
+                    <div class="card-body">
                         {% if "placeholder" in recipe.featured_image.url %}
                         <img class="img-card"
                             src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1693603229/static/media/brooke-lark-08bOYnH_r_E-unsplash_huryvz.jpg"
@@ -21,19 +24,20 @@
                         {% else %}
                         <img class="img-card" src="{{ recipe.featured_image.url }}">
                         {% endif %}
-                            <p class="author mt-3">Author: {{ recipe.author }}</p>
-                        
-                        <h4 class="card-title mt-3">{{ recipe.title }}</h4>
-
-                        <hr class="card-hr" />
-                            <a href="{% url 'favourite_add' recipe.id %}" class="btn btn-remove">Remove</a>
+                        <div class="image-flash">
+                            <p class="author">Author: {{ recipe.author }}</p>
                         </div>
                     </div>
-                </a>
+                    <h3 class="card-title">{{ recipe.title }}</h3>
+                    <hr class="card-hr" />
+                    <a href="{% url 'favourite_add' recipe.id %}" class="btn btn-remove">Remove</a>
+                </div>
+            </a>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
+
 
 {% endblock %}

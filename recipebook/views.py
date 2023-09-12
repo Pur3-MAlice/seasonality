@@ -140,7 +140,7 @@ class RecipeDetail(View):
         fav = bool
         if recipe.favourites.filter(id=request.user.id).exists():
             fav = True
-        
+
         return render(
             request,
             "recipe_detail.html",
