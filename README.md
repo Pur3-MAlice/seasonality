@@ -230,12 +230,14 @@ Below is a list of bugs I found during the development process. A lot of the bug
 * In addition to this, I used the dev tools to simulate different products such as the iPhone XR, iPhone 12 Pro, Samsung Galaxy S8+, iPad Air, iPad Mini, Surface Pro 7 and Nest Hub.
 * I also got friends and my partner to test the site on their own devices - Samsung, Dell Laptops, Self-built desktops and Apple products. 
 
-![HTML validator](/docs/screenshots/html-validator.jpg)
+![HTML validator](/documents/html%20validator.png)
+
 #### ***CSS*** - https://jigsaw.w3.org/css-validator/
 * Code passes through with no issues.
 
-![CSS badge](/docs/screenshots/css-validator.jpg)
+![CSS badge](/documents/css%20validator.png)
 
+* I also passed the code through a jshint and PEP8 with no issues. 
 
 # **Deployment**
 ## ***Final Deployment to Heroku:***  
