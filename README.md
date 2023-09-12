@@ -13,7 +13,6 @@ As a notice here - this is the second version of this app I made. The first vers
     * [**Site Aims**](#site-aims)
     * [**User Stories**](#user-stories)
     * [**Research**](#research)
-    * [**Structure**](#structure)
     * [**Skeleton**](#skeleton)
     * [**Surface**](#surface)
 * [**Agile Development Process**](#agile-development-process)
@@ -31,8 +30,7 @@ As a notice here - this is the second version of this app I made. The first vers
 * [Credits](#credits)
 
 # **Planning Phase**
-## **Strategy** 
-### **Site Aims:**
+## **Site Aims:**
 The site aims to:
 1. Create community minded website that can share, favourite, rate and create recipes to create their own digital cookbook.
 1. Tell the user if they have made any errors whilst using the website and prompt them as such.
@@ -45,7 +43,7 @@ To achieve the above, the site will:
 1. Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mis-type.
 1. User validation via error messages.
 
-## ***User Stories:***
+## **User Stories:**
 As an **Admin** I can...
 1. As a Site Admin I can Draft Recipes so that control websites content and when content will be added to the site.
 1. As a Site Admin I can CRUD recipes and comments so that to control the site's content to be in line with community guidelines.
@@ -66,46 +64,54 @@ As a **Site User** I can...(Not logged in:)
 1. As a site user I can Rate each recipe so that show which recipe I liked and disliked, involving self in website's community.
 1. As a Site User I can Search recipes on the site by tags, author, and ingredients so that I can find appropriate results for my needs.
 
-
-
-### **Research:**
-One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance?  
-Here are some of the sites I used for inspiration for the design of Season To Taste:
 * Epics to User Stories to Tasks
+
+## **Research:**
+One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
+
+Here are some of the sites I used for inspiration for the design of Season To Taste:
 * [thehappyfoodie](https://thehappyfoodie.co.uk/)
 * [cookbookmanager](https://cookbookmanager.com/pricing)
 * [Resturant Website Templates from Wix](https://www.wix.com/website/templates/html/restaurants-food)
   
-  
-  
-## **Structure**   
-To help me visualize a typical user journey around the site, I used [draw.io](https://app.diagrams.net/) to help me plan out the various routes a user could take through the site. This flow changed slightly throughout development. However, in general, it guided the process.
-  
-![User Journeys flow chart]()
-
-# **Planning Phase:**
-
 ## **Skeleton**
 ### **Wireframes:**
-* [Homepage wireframes]()  
-* [OTHER PAGE WIREFRAME ETC]()
+![Home Page Desktop](/documents/wireframes/desktop-home.png)
+
+![Profile Page Desktop](/documents/wireframes/desktop-profile.png)
+
+![Recipe Page Desktop](/documents/wireframes/desktop-recipe.png)
+
+![Home Page Tablet](/documents/wireframes/tablet-home.png)
+
+![Profile Page Tablet](/documents/wireframes/tablet-profile.png)
+
+![Recipe Page Tablet](/documents/wireframes/tablet-recipe.png)
+
+![Home Page Mobile](/documents/wireframes/mobile-home.png)
+
+![Profile Page Mobile](/documents/wireframes/mobile-profile.png)
+
+![Recipe Page Mobile](/documents/wireframes/mobile-recipe.png)
 
 
 ### **Database Schema**
-Below is my initial database schema to map out the relations between users, recipes, comments and categories (also known as tags). This is a rough idea of what the database will look like in general, but at this point in the planning phase, I understand that this is subject to change. So I will also be showing a representation of the Database here once the project is ready for deployment.
-![Color grid]()
+Below is my initial database schema to map out the relations between users, recipes, comments and categories (also known as tags). This is a rough idea of what the database will look like in general, but at this point in the planning phase, I understand that this is subject to change. 
+![Database Scheme](/documents/wireframes/db-schema.png)
+On the completion of this project, thsi database, while it does differ in some areas, is pretty much how my datbase structure has gone. Which I am happy with. 
  
 ## **Surface**
 ### **Color scheme:**
-
 I knew I wanted my main theme to be pink and mustard as they are very in vouge right now. So i used this article https://www.thespruce.com/complementary-colors-that-go-with-pink-5188287 and then used https://coolors.co/f1cacc-df8a70-e8ac33-5a6950-13322c to create my colour Palatte
-The final list of colors used has been placed in the below [color grid]() to check contrast scores.
 
-![Color gird]()
+The final list of colors used has been placed in the below to check contrast scores.
+
+![Color Scheme](/documents/wireframes/color-scheme.png)
+
+![Color Grid](/documents/wireframes/contrast-grid.png)
 
 ### **Typography**:
-Designers should avoid pure black typography — but which dark gray should we use?
-https://medium.com/@TamerOkail/designers-should-avoid-pure-black-typography-but-which-dark-gray-should-we-use-2d7faa07083a
+
 
 # **Building Process**
   Using a Kanban Board system. And Something similar to sprints. 
