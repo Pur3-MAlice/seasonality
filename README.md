@@ -1,5 +1,5 @@
 # **Season to Taste**
-WHY I BUILT/ MADE THIS WEBSITE
+This website has been built as a digital cookbook. Where people can upload their own recipes, comment, favourite and rate other people's submissions (including the admin's). This website aims to target the lack of community and collaboration within recipe websites. User submission give user a level of control, whilst the admin is also in charge of making sure the community is staying safe. It also aims to tackle the preamble that comes before recipes on websites that people find annoying, even if it is good SEO.
 
 As a notice here - this is the second version of this app I made. The first version had many errors and it was early on in the development project that creating a new repo at that point was the best option. Here is the link to the old repo, [Season-To-Taste](https://github.com/Pur3-MAlice/season-to-taste/tree/main) it has the same Kanban Board and also lots of commits that should be noted.
 
@@ -10,11 +10,12 @@ As a notice here - this is the second version of this app I made. The first vers
 # **Table Of Contents**
 * [**Season-to-Taste**](#season-to-taste)
 * [**Planning Phase**](#planning-phase)
-  * [**Site Aims**](#site-aims)
-  * [**Research**](#research)
-  * [**Structure**](#structure)
-  * [**Skeleton**](#skeleton)
-  * [**Surface**](#surface)
+    * [**Site Aims**](#site-aims)
+    * [**User Stories**](#user-stories)
+    * [**Research**](#research)
+    * [**Structure**](#structure)
+    * [**Skeleton**](#skeleton)
+    * [**Surface**](#surface)
 * [**Agile Development Process**](#agile-development-process)
 * [**Future development**](#future-development)
 * [**Features**](#features)
@@ -25,7 +26,6 @@ As a notice here - this is the second version of this app I made. The first vers
   * [**Error pages**](#error-pages)
   * [**Warning Modals**](#warning-modals)
 * [**Testing Phase**](#testing-phase)
-
 * [**Deployment**](#deployment)
 * [**Technologies used**](#technologies-used)
 * [Credits](#credits)
@@ -33,6 +33,41 @@ As a notice here - this is the second version of this app I made. The first vers
 # **Planning Phase**
 ## **Strategy** 
 ### **Site Aims:**
+The site aims to:
+1. Create community minded website that can share, favourite, rate and create recipes to create their own digital cookbook.
+1. Tell the user if they have made any errors whilst using the website and prompt them as such.
+1. Give user a lot of control with creation of content. Whilst Admin approves and can remove content that goes against guidelines to promote the community spirit.
+
+How Will This Be Achieved:
+To achieve the above, the site will:
+1. Create environment that focuses on sharing own ideas, thoughts whilst also ensuring community guidelines are stuck to.
+1. User submission and editing of their own recipe submissions, their own favourite lists and own ratings.
+1. Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mis-type.
+1. User validation via error messages.
+
+## ***User Stories:***
+As an **Admin** I can...
+1. As a Site Admin I can Draft Recipes so that control websites content and when content will be added to the site.
+1. As a Site Admin I can CRUD recipes and comments so that to control the site's content to be in line with community guidelines.
+1. As a Site Admin I can Approve or Disapprove recipe submissions and recipe edits so that I can control the website content.
+ 
+As a **Site User** I can...(Logged in:)
+1. As a Site user I can change my ratings and unsaved recipes so that reflect how my preferences may change.
+1. As a Site user I can get access to the community guidelines so that I can understand how to appropriately join in with the community and understand when my submission may be removed or disapproved from site addition.
+1. As a site user I can Rate each recipe so that show which recipe I liked and disliked, involving self in website's community.
+1. As a site user I can comment on recipes so that to join in with the community and make suggestions.
+1. As a Site userI can save recipes to my own 'digital cook book' so that easily access all my favourite recipes.
+1. As a Site User I can Search recipes on the site by tags, author, and ingredients so that I can find appropriate results for my needs.
+1. As a Site User I can submit my own recipes to the admin so that approved recipes can be added to the site.
+
+As a **Site User** I can...(Not logged in:)
+1. As a Site User I can sign in/up so that I can access features non signed-in members can't.
+1. As a Site user I can get access to the community guidelines so that I can understand how to appropriately join in with the community.
+1. As a site user I can Rate each recipe so that show which recipe I liked and disliked, involving self in website's community.
+1. As a Site User I can Search recipes on the site by tags, author, and ingredients so that I can find appropriate results for my needs.
+
+
+
 ### **Research:**
 One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance?  
 Here are some of the sites I used for inspiration for the design of Season To Taste:
@@ -47,13 +82,8 @@ Here are some of the sites I used for inspiration for the design of Season To Ta
 To help me visualize a typical user journey around the site, I used [draw.io](https://app.diagrams.net/) to help me plan out the various routes a user could take through the site. This flow changed slightly throughout development. However, in general, it guided the process.
   
 ![User Journeys flow chart]()
-  
-### **User Stories:**  
-  
-* As an **Admin** I can...
- 
-* As a **Site User** I can...
-  
+
+# **Planning Phase:**
 
 ## **Skeleton**
 ### **Wireframes:**
