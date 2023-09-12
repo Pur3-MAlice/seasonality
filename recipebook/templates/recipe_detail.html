@@ -1,7 +1,10 @@
 {% extends "base/base.html" %}
+{% block head_title %}Recipe Detail{% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
 
+
+<!-- Top bar with image and contains recipe meta data-->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -28,6 +31,7 @@
         </div>
     </div>
 </div>
+<!-- User authenticated interactive buttons and counters-->
 <div class="container">
     <div class="row">
         <div class="d-flex recipe-ratings">
@@ -49,26 +53,24 @@
                 {% endif %}
             </div>
             {% if user.is_authenticated %}
-                <span class="rating-list mt-2">
+                <span class="rating-list mt-2"> <!-- Star rating-->
                     <i onclick="rate(1, {{ recipe.id }})" class="fa fa-star {% if userRating > 0 %}checked{% endif %}"></i>
                     <i onclick="rate(2, {{ recipe.id }})" class="fa fa-star {% if userRating > 1 %}checked{% endif %}"></i>
                     <i onclick="rate(3, {{ recipe.id }})" class="fa fa-star {% if userRating > 2 %}checked{% endif %}"></i>
                     <i onclick="rate(4, {{ recipe.id }})" class="fa fa-star {% if userRating > 3 %}checked{% endif %}"></i>
                     <i onclick="rate(5, {{ recipe.id }})" class="fa fa-star {% if userRating > 4 %}checked{% endif %}"></i>
                 </span>
-
                 {% if recipe.author.id is user.id %}
                 <div class="ml-auto pt-1">
                 <a class="btn btn-outline-success ms-3 sm-button" href="{% url 'update_recipe' recipe.id %}">UPDATE</a>
                 <a class="btn btn-outline-danger ms-2 sm-button" data-toggle="modal" data-target="#deleteRecipeModal">DELETE</a>
                 {% endif %}
             </div>
-
             {% endif %}
         </div>
     </div>
 </div>
-
+<!-- Recipe Main Info-->
 <div class="container">
     <div class="row">
         <div class="col card mb-4 mt-3">
@@ -88,12 +90,10 @@
                     <li class="text-center">Servings: {{ recipe.servs }}</li>
                 </ul>
             </div>
-            
         </div>
     </div>
 </div>
-
-
+<!-- Comment List -->
 <div class="row">
     <div class="col-md-8 mb-4 mt-3">
         <h3 class="comments-title comments">Comments:</h3>
@@ -112,6 +112,7 @@
         {% endfor %}
     </div>
     <div class="col-md-4 mt-3 commenting">
+        <!-- Comment Form with authentication -->
         {% if commented %}
         <div class="alert alert-success" role="alert">
             Your comment has been posted
@@ -151,7 +152,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
     // JavaScript code to set and remember User's rating on recipe_detail.html

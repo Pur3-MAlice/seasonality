@@ -2,6 +2,7 @@
 {% block title %}Profile{% endblock %}
 {% block content %}
 
+
 <div class="container-fluid">
     <div class="row no-gutter">
         <div class="col-md-6">
@@ -9,6 +10,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-12 mx-auto">
+                            <!-- Error Handler -->
                             {% if user_form.errors %}
                             <div class="alert alert-danger alert-dismissible" role="alert">
                                 <div id="form_errors">
@@ -21,6 +23,7 @@
                                 </button>
                             </div>
                             {% endif %}
+                            <!-- Bio Editor -->
                             <form class="account-form p-4 rounded" method="post" enctype="multipart/form-data">
                                 <div class="container">
                                     <div class="row">
@@ -62,6 +65,7 @@
                 </div>
             </div>
         </div>
+        <!-- Recipe tables and Favourtie Tables, Django loops through User's submissions and Favs-->
         <div class="col-md-6 d-none d-md-flex">
             <div class="row">
                 <div class="text-center">

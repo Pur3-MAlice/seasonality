@@ -1,5 +1,9 @@
 {% extends "base/base.html" %}
+{% block head_title %}Add Recipe{% endblock %}
+
 {% block content %}
+
+<!-- Jumbotron for top of page: IF submitted -->
 <div class="container">
     {% if submitted %}
     <section class="jumbotron text-center">
@@ -10,7 +14,7 @@
         </div>
     </section>
     {% else %}
-
+<!-- Jumbotron for top of page: if not yet submitted -->
     <section class="jumbotron text-center">
         <div class="container">
             <h1>Add My Recipes</h1>
@@ -20,6 +24,7 @@
         </div>
     </section>
 </div>
+<!-- Recipe Form -->
 <div class="form-container text-center">
     <form action="" method="POST" class="recipe-form form-group">
         {% csrf_token %}

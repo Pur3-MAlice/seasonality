@@ -1,19 +1,14 @@
 {% extends "base/base.html" %}
-
 {% load i18n %}
 {% load account socialaccount %}
-
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block content %}
-
 
 {% if request.user.is_authenticated %}
 <script>
     window.location.href = '{% url "accounts:profile" %}';
 </script>
 {% endif %}
-
 
 <div class="container-fluid">
     <div class="row no-gutter">
@@ -25,6 +20,7 @@
                             <form class="account-form p-4 rounded" action="{% url 'account_login' %}" method="post">
                                 <div class="container">
                                     <div class="row">
+                                        <!-- Login Form  -->
                                         <div class="col-md-8 mt-3 offset-md-2 text-center">
                                             <h3>{% trans "Sign In" %}</h3>
                                             <p>
@@ -54,6 +50,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <!-- Reg Account Prompt -->
                             <p class="small text-center">
                                 <a href="{% url 'account_signup' %}">Register Account</a>
                             </p>
@@ -62,6 +59,7 @@
                 </div>
             </div>
         </div>
+        <!-- Right Hand Img - Large Screens -->
         <div class="col-md-6 d-none d-md-flex bg-image"></div>
     </div>
 </div>
