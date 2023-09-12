@@ -4,7 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Profile)
-class ProfileAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):  # Admin page, adds profile elements
     list_display = ('user', 'bio')
     list_filter = ('user', )
     search_fields = ['user', 'bio']

@@ -8,13 +8,13 @@ from recipebook.models import Recipe
 
 
 @login_required
-def favourites(request):
+def favourites(request):  # creates fav list
     new = Recipe.newmanager.filter(favourites=request.user)
     return render(request, 'favourites.html', {'new': new})
 
 
 @login_required
-def favourite_add(request, id):
+def favourite_add(request, id):  # creates fav add function
     recipe = get_object_or_404(Recipe, id=id)
     if recipe.favourites.filter(id=request.user.id).exists():
         recipe.favourites.remove(request.user)
@@ -24,7 +24,7 @@ def favourite_add(request, id):
 
 
 @login_required
-def profile(request):
+def profile(request):  # creates profile from user
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         profile_form = UpdateProfileForm(
