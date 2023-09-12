@@ -201,36 +201,26 @@ Below is a list of bugs I found during the development process. A lot of the bug
         * Due to some database issues i could not migrate any chnages after I had done my first migration.
     * ***Solution Used:*** 
         * Restarted the project and used db.sqlite3 instead of my main postgres db
-1. **Intended Outcome** - Category Model for Diet and Season Br
-    * ***Issue Found:*** 
-        * 
-    * ***Solution Used:*** 
-        *    
 1. **Intended Outcome** - Splicing List in Django Templates
     * ***Issue Found:*** 
         * I wanted to only have three of my categories on the main page, but nothing I did worked.
     * ***Solution Used:*** 
         * Discovered I could splice in the django html templates.
-1. **Intended Outcome** - FK Q Search
+1. **Intended Outcome** - Be able to search entire db for recipes and their FKs
     * ***Issue Found:*** 
-        * 
+        * I wanted to be able too not only search the content of the recipes in the search bar but also search if they were connected to the FK. Nothing I tried worked until FK Q seac.
     * ***Solution Used:*** 
-        *   
-1. **Intended Outcome** - Main BG not filling page
+        *   FK Q Search
+1. **Intended Outcome** - Star rating system not working. 
     * ***Issue Found:*** 
-        * 
+        * The avg of the recipe page would be affected. But the user input of the stars themselves would not hold the data.
     * ***Solution Used:*** 
-        *  
-1. **Intended Outcome** - Stars not working 
+        *  Used Javascript local storage to hold the browsers star rating instead.
+1. **Intended Outcome** - Users be able to delete comments when user
     * ***Issue Found:*** 
-        * 
+        * Kept getting comment.id errors when refreshing page or clicking on new recipe page.
     * ***Solution Used:*** 
-        *  
-1. **Intended Outcome** - Comment Delete ?
-    * ***Issue Found:*** 
-        * 
-    * ***Solution Used:*** 
-        *    
+        * Removed this feature as it wasn't a requirement to have user delete comments.
 
 * During testing, I used three browsers to ensure cross-compatibility. The browsers used were:
   1. Chrome
