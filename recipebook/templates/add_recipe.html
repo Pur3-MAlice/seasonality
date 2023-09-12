@@ -38,10 +38,10 @@
 {% endif %}
 <script>
     // JavaScript code to generate the slug based on the title
-    document.getElementById('id_title').addEventListener('input', function() {
+    document.getElementById("id_title").addEventListener("input", function () {
         const title = this.value;
-        const slugInput = document.getElementById('id_slug');
-        const slug = title.toLowerCase().replace(/ /g, '-');
+        const slugInput = document.getElementById("id_slug");
+        const slug = title.toLowerCase().replace(/ /g, "-");
         slugInput.value = slug;
     });
 </script>

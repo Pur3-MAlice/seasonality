@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <h3 class="card-title">{{ recipe.title }}</h3>
-                        <hr class="card-hr" />
+                        <hr class="card-hr">
                         <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </a>
                 </div>
@@ -37,8 +37,8 @@
 </div>
 
 <!-- Pagination Controls -->
-{% if recipes.has_previous %}
 <nav aria-label="Page navigation">
+{% if recipes.has_previous %}
     <div class="col-12">
             <a class="carousel-control-prev" href="?page={{ recipes.previous_page_number }}" role="button" data-slide="prev">
                 <span class="fa-solid fa-circle-chevron-left fa-xl" aria-hidden="true"></span>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <h3 class="card-title">{{ recipe.title }}</h3>
-                        <hr class="card-hr" />
+                        <hr class="card-hr">
                         <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </a>
                 </div>
