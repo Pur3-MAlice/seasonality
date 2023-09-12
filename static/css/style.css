@@ -104,8 +104,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     width: 150%;
     background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
 }
@@ -273,13 +271,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-signin:hover {
     border-color: #DF8A70;
-    color: #DF8A70;
+    color: #cf8169;
     background-color: #fff8f9;
 }
 
 .btn-signin {
     border-color: #DF8A70;
-    background-color: #DF8A70;
+    background-color: #cf8169;
     color: #fff8f9;
 }
 
@@ -308,12 +306,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-signout {
     border-color: #DF8A70;
-    color: #DF8A70;
+    color: #cf8169;
 }
 
 .btn-signout:hover {
     border-color: #DF8A70;
-    background-color: #DF8A70;
+    background-color: #cf8169;
     color: #fff8f9;
 }
 
@@ -343,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-remove:hover {
     border-color: #25392D;
     background-color: #fff8f9;
-    color: #25392D;
+    color: #1f3025;
 }
 
 .btn-remove:focus, .btn-remove:active {
@@ -375,13 +373,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-profile:hover {
     border-color: #5A6950;
-    color: #5A6950;
+    color: #5a6d4d;
     background-color: #fff8f9;
 }
 
 .btn-profile {
     border-color: #5A6950;
-    background-color: #5A6950;
+    background-color: #5a6d4d;
     color: #fff8f9;
 }
 
@@ -413,7 +411,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #212529;
     text-shadow: none;
     transition: color 200ms, text-shadow 200ms;
-    transition-delay: 0;
 }
 
 .rating-list:hover i {
