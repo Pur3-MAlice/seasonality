@@ -9,23 +9,23 @@
             {% for recipe in recipes %}
             <div class="col-md-3">
                 <div class="card md-3">
-                    <div class="card-body">
-                        {% if "placeholder" in recipe.featured_image.url %}
-                        <img class="img-card"
-                            src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383398/seasonality_background.png"
-                            alt="bowl of berries next to rubarb and flowers">
-                        {% else %}
-                        <img class="img-card" src="{{ recipe.featured_image.url }}">
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Author: {{ recipe.author }}</p>
-                        </div>
-                    </div>
                     <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
+                        <div class="card-body">
+                            {% if "placeholder" in recipe.featured_image.url %}
+                            <img class="img-card"
+                                src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383398/seasonality_background.png"
+                                alt="bowl of berries next to rubarb and flowers">
+                            {% else %}
+                            <img class="img-card" src="{{ recipe.featured_image.url }}">
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Author: {{ recipe.author }}</p>
+                            </div>
+                        </div>
                         <h3 class="card-title">{{ recipe.title }}</h3>
+                        <hr class="card-hr" />
+                        <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </a>
-                    <hr class="card-hr" />
-                    <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -64,23 +64,23 @@
             {% if recipe.status %}
             <div class="col-md-3 d-flex flex-row text-center">
                 <div class="card mx-auto">
-                    <div class="card-body">
-                        {% if "placeholder" in recipe.featured_image.url %}
-                        <img class="img-card"
-                            src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383398/seasonality_background.png"
-                            alt="bowl of berries next to rubarb and flowers">
-                        {% else %}
-                        <img class="card-img" src="{{ recipe.featured_image.url }}">
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Author: {{ recipe.author }}</p>
-                        </div>
-                    </div>
                     <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
+                        <div class="card-body">
+                            {% if "placeholder" in recipe.featured_image.url %}
+                            <img class="img-card"
+                                src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383398/seasonality_background.png"
+                                alt="bowl of berries next to rubarb and flowers">
+                            {% else %}
+                            <img class="card-img" src="{{ recipe.featured_image.url }}">
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Author: {{ recipe.author }}</p>
+                            </div>
+                        </div>
                         <h3 class="card-title">{{ recipe.title }}</h3>
+                        <hr class="card-hr" />
+                        <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                     </a>
-                    <hr class="card-hr" />
-                    <p class="card-text text-muted-6">{{ recipe.created_on }}</p>
                 </div>
             </div>
             {% endif %}

@@ -63,6 +63,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #4A4A4F;
 }
 
+.brand:hover {
+    color: #E8AC33;
+}
+
 .thin {
     font-weight: 300;
 }
@@ -238,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: -1;
 } */
 
-/* Register and Login CSS */
+/* Register and Login CSS inspired by Codemy*/
 
 .bg-image {
     background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
