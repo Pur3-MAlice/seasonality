@@ -21,7 +21,7 @@
 
 <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand home-nav" href="{% url 'home' %}"><span class="brand">Seasonality</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -68,7 +68,7 @@
                     <form method="GET" action="{% url 'search_results' %}">
                         <input type="text" class="input-search" name="searched" value="{{ request.GET.searched }}"
                             placeholder="Type to Search...">
-                        <button class="btn" type="submit" name="action"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button class="btn search-btn" type="submit" name="action"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>  
             </div>
