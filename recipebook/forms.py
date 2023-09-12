@@ -13,7 +13,7 @@ class CommentForm(forms.ModelForm):
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        exclude = ('author', 'favourites',)
+        exclude = ('author', 'favourites', 'featured_image',)
         fields = (
             'title',
             'slug',
@@ -28,7 +28,6 @@ class RecipeForm(forms.ModelForm):
             'status',
             'ingredients',
             'content',
-            'featured_image',
             'favourites',
         )
         widgets = {

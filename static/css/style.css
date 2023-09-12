@@ -63,20 +63,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
-}
-
 .thin {
     font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
 }
 
 .card {
@@ -120,12 +108,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .recipe-link {
     text-decoration: none;
-    color: #445261;
-}
-
-.recipe-link:hover,
-.page-link {
-    color: #E84610;
 }
 
 .recipe-title {
@@ -138,29 +120,6 @@ h1, h2, h3, h4, h5, h6 {
     color: lightgray;
 }
 
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
 
 .profile-extras {
     margin-top: 50px;
@@ -245,57 +204,42 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.65em;
 }
 
-/*Search Styling inspired by https://freefrontend.com/css-search-boxes/#gsc.tab=0*/
-.box{
-    position: relative;
-}
+/*Search Styling */
 
 .input-search {
     padding: 10px;
-    width: 55px;
-    height: 55px;
-    background: none;
-    border: 3px solid #DF8A70;
-    border-radius: 50px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    color: #DF8A70;
-    outline: none;
-    transition: .5s;
-}
-
-.box:hover input{
     width: 350px;
     background: none;
     border-radius: 12px;
+    border: 3px solid #DF8A70;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
     color: black;
+    outline: none;
 }
 
 .input-search:hover::placeholder{
     color: black;
 }
 
-.input-search::placeholder{
-    color: white;
-}
-
 .box i{
     position: absolute;
     top: 50%;
-    right: 30px;
+    right: 50px;
     transform: translate(-50%,-50%);
     font-size: 26px;
     color: #DF8A70;
-    transition: .2s;
 }
 
-.box:hover i{
+/* FOR MEDIA Qs
+.box i{
     opacity: 0;
     z-index: -1;
-}
+} */
 
 /* Register and Login CSS */
+
 .bg-image {
     background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
     background-size: cover;
