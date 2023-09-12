@@ -62,7 +62,7 @@ def search_results(request):
             Q(ingredients__contains=searched) |
             Q(diet__name__icontains=searched) |
             Q(season__name__icontains=searched))
-    paginator = Paginator(recipes_list, 4)
+    paginator = Paginator(recipes_list, 8)
     page = request.GET.get('page')
 
     try:
