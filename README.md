@@ -25,11 +25,9 @@ As a notice here - this is the second version of this app I made. The first vers
 * [**Future development**](#future-development)
 * [**Features**](#features)
   * [**Site Navigation**](#site-navigation)
-  * [**Signin/up Register Pages**](#signin/up-register-pages)
+  * [**Signin/up Logout Pages**](#signin/up-logout-pages)
   * [**Community Guidelines**](#community-guidelines)
   * [**Main Page Content**](#main-page-content)
-  
-
   * [**Error pages**](#error-pages)
 * [**Testing Phase**](#testing-phase)
 * [**Deployment**](#deployment)
@@ -131,29 +129,28 @@ Using a Kanban Board system
 The future development of this project would also to improve the user's inputs and needs. By changing the ingridient list to a checkbox list. Editing the serv's per recipe and then editing the ingridient amounts. Adding in cook time and cook complexity too. Overall just improving the user's ability to adapt a recipe on the site to their own needs. 
 # **Features**
 ### **Site Navigation**
+#### ***Signed Out:***
+![sign-out nav](/documents/features/signout-nav.png)
+#### ***Signed In:***
+![sign-in nav](/documents/features/signin-nav.png) 
 
-### **Signin/up Register Pages**
+#### **Signin/up Logout Pages**
 
-### **Community Guidelines**
+#### **Community Guidelines**
 
-### **Main Page Content**
+#### **Main Page Content**
 
-### **Add/Update Recipe Forms**
+#### **Add/Update Recipe Forms**
 
 ![add recipe](/documents/features/add-recipe.png)
 
 ![update recipe](/documents/features/update-recipe.png)
 
+#### **Recipe Detail**
 
-Form Errors
+#### **Search**
 
-As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
-
-### **Navbar and Signin/Out Logout Pages**
-#### ***Signed Out:***
-![sign-out nav](/documents/features/signout-nav.png)
-#### ***Signed In:***
-![sign-in nav](/documents/features/signin-nav.png) 
+#### **Error pages**
 ### ***Sign In:***
 ![sign-in form](/documents/features/signout-nav.png)
 #### ***Form Errors:***
@@ -293,7 +290,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * Fonts were taken from [Google Fonts](https://fonts.google.com/)
 * Images:
   * Recipe images taken from [upsplash.com](https://unsplash.com) 
-  * Background image designed by me in Canva taken from [upsplash.com](https://unsplash.com)
+  * Background image designed by me in Canva.
 * For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life.
     * [@Codemycom](https://www.youtube.com/@Codemycom)
     * [@DigitalFox-tutorials](https://www.youtube.com/@DigitalFox-tutorials)
