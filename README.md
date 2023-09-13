@@ -25,11 +25,12 @@ As a notice here - this is the second version of this app I made. The first vers
 * [**Future development**](#future-development)
 * [**Features**](#features)
   * [**Site Navigation**](#site-navigation)
-  * [**AllAuth Pages**](#allauth-pages)
-  * [**Site Instructions**](#site-instructions)
+  * [**Signin/up Register Pages**](#signin/up-register-pages)
+  * [**Community Guidelines**](#community-guidelines)
   * [**Main Page Content**](#main-page-content)
+  
+
   * [**Error pages**](#error-pages)
-  * [**Warning Modals**](#warning-modals)
 * [**Testing Phase**](#testing-phase)
 * [**Deployment**](#deployment)
 * [Credits](#credits)
@@ -97,13 +98,14 @@ Here are some of the sites I used for inspiration for the design of Season To Ta
 
 ![Recipe Page Mobile](/documents/wireframes/mobile-recipe.png)
 
-
 ### **Database Schema**
 Below is my initial database schema to map out the relations between users, recipes, comments and categories (also known as tags). This is a rough idea of what the database will look like in general, but at this point in the planning phase, I understand that this is subject to change. 
 ![Database Scheme](/documents/wireframes/db-schema.png)
 On the completion of this project, this database, while it does differ in some areas, is pretty much how my datbase structure has gone. Which I am happy with. 
 
-My database is structured at deployment with two main apps which are connected to each other. The recipebook app and the profile app. The recipebook model holds the recipe database which controls the functionality of each individual recipe, each category (diet and season), and the ratings. This is then connected to the profile through the user interface as the user will input on the page. This is part of the website's MVT, say the model of recipe is being passed into the RecipeDetail view and then the user will see the recipe_detail template. This is displayed. The database was extended from the original schema to also include profile elements which would allow the user to properly store their own favourties and access/edit/delete their recipe inputs.   
+My database is structured at deployment with two main apps which are connected to each other. The recipebook app and the profile app. The recipebook model holds the recipe database which controls the functionality of each individual recipe, each category (diet and season), and the ratings. This is then connected to the profile through the user interface as the user will input on the page. This is part of the website's MVT, say the model of recipe is being passed into the RecipeDetail view and then the user will see the recipe_detail template. This is displayed. The database was extended from the original schema to also include profile elements which would allow the user to properly store their own favourties and access/edit/delete their recipe inputs. 
+
+When it came to actually putting my Database Schema into reality a few things changed. Such as Saved and Categories. Plus I figured out I would need to make a model purely for the rating system I wanted to put in place. MVP this could just be likes, but to differentiate from the base of this project (which was taken from Code Insitutes 'Django Blog App') I wanted to add in this rating system that would calculate a recipes' popularity. This would also be the building block of the carousels on the recipe search page. I plan to have 'Diet' and even 'Season' Caraousels on the recipe search page so that site users can easily see recipes, the rating system will determine which recipes show up on these carousels. Or So I Plan... (Famous last words of a coder).
  
 ## **Surface**
 ### **Color scheme:**
@@ -118,18 +120,32 @@ The final list of colors used has been placed in the below to check contrast sco
 ### **Typography**:
 To find my fonts i used thsi website: https://www.elegantthemes.com/blog/design/best-google-fonts. I went with Playfair Display and Monserrat, for a modern playful feel that would give the website levity.
 
-# **Building Process**
-  Using a Kanban Board system. And Something similar to sprints. 
+# **Agile Development Process**
+Using a Kanban Board system
 
-  When it came to actually putting my Database Schema into reality a few things changed. Such as Saved and Categories. Plus I figured out I would need to make a model purely for the rating system I wanted to put in place. MVP this could just be likes, but to differentiate from the base of this project (which was taken from Code Insitutes 'Django Blog App') I wanted to add in this rating system that would calculate a recipes' popularity. This would also be the building block of the carousels on the recipe search page. I plan to have 'Diet' and even 'Season' Caraousels on the recipe search page so that site users can easily see recipes, the rating system will determine which recipes show up on these carousels. Or So I Plan... (Famous last words of a coder).
+# **Future development**
+1. I think that the ability to like and reply to other comments in the future would be a good addition to the site based on its aims.
+1. For the user to be able to develop more than one list of favourites, like playlists of recipes.
+1. I would also like for the users to be able to report recipes and comments to admin, or have a way of getting in touch with admin for site regulation.
 
+The future development of this project would also to improve the user's inputs and needs. By changing the ingridient list to a checkbox list. Editing the serv's per recipe and then editing the ingridient amounts. Adding in cook time and cook complexity too. Overall just improving the user's ability to adapt a recipe on the site to their own needs. 
 # **Features**
-## **Site Navigation**
+### **Site Navigation**
+
+### **Signin/up Register Pages**
+
+### **Community Guidelines**
+
+### **Main Page Content**
+
 ### **Add/Update Recipe Forms**
 
 ![add recipe](/documents/features/add-recipe.png)
 
 ![update recipe](/documents/features/update-recipe.png)
+
+
+Form Errors
 
 As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
 
@@ -153,11 +169,8 @@ As described in the testing below - more errors are tried and tested with these 
 ### ***Sign Out:***
 ![Sign out page](/documents/features/signout.png)
 
-# **Future development**
-1. I think that the ability to like and reply to other comments in the future would be a good addition to the site based on its aims.
-1. For the user to be able to develop more than one list of favourites, like playlists of recipes.
-1. I would also like for the users to be able to report recipes and comments to admin, or have a way of getting in touch with admin for site regulation.
-1. Chnage password and Delete Profile
+
+1. Change password and Delete Profile
 # **Testing Phase**
 ### ***Manual Testing:***
 During the development process, I was manually testing in the following ways:-
@@ -204,31 +217,31 @@ Logged out
 
 ### ***Bugs and Fixes:***
 Below is a list of bugs I found during the development process. A lot of the bugs and fixes where minor enough that they were caught and easily amended by just seeing the redlines in gitpod. But here are a few that stumped me enough to write them down.
-1. **Intended Outcome** - Had to restart the project
+1. **Intended Outcome** - I could start my project and continue to use the same repository.
     * ***Issue Found:*** 
-        * Due to some database issues i could not migrate any chnages after I had done my first migration.
+        * Due to some database issues I could not migrate any changes after I had done my first migration.
     * ***Solution Used:*** 
-        * Restarted the project and used db.sqlite3 instead of my main postgres db
-1. **Intended Outcome** - Splicing List in Django Templates
+        * Restarted the project and used db.sqlite3 instead of my main postgres db, and implemented a DEV environment.
+1. **Intended Outcome** - Only have certain number of diet categories on the home page.
     * ***Issue Found:*** 
-        * I wanted to only have three of my categories on the main page, but nothing I did worked.
+        * I wanted to only have three of my categories on the main page, I ended up aving all the categories being listed out on the front page which isn't good UI/UX.
     * ***Solution Used:*** 
         * Discovered I could splice in the django html templates.
 1. **Intended Outcome** - Be able to search entire db for recipes and their FKs
     * ***Issue Found:*** 
-        * I wanted to be able too not only search the content of the recipes in the search bar but also search if they were connected to the FK. Nothing I tried worked until FK Q seac.
+        * I wanted to be able too not only search the content of the recipes in the search bar but also search if they were connected to the FK.
     * ***Solution Used:*** 
-        *   FK Q Search
-1. **Intended Outcome** - Star rating system not working. 
+        *   i discovered I could use the Q search to see if what FKs were connected to which recipe. Meaning that the user can search categories and get all recipes related to that category shown back to them.
+1. **Intended Outcome** - Be able to rate a recipe and have my rating remembered on the UI whilst also updating the rating average.
     * ***Issue Found:*** 
         * The avg of the recipe page would be affected. But the user input of the stars themselves would not hold the data.
     * ***Solution Used:*** 
-        *  Used Javascript local storage to hold the browsers star rating instead.
-1. **Intended Outcome** - Users be able to delete comments when user
+        *  Used Javascript local storage to hold the browsers star rating instead. However this does leave an error in the console, the benefit of the user's rating being remebered is not outweighed by this as it does not affect the page's functionality or the user's experience. 
+1. **Intended Outcome** - When deploy to heroku the CSS stay's connected
     * ***Issue Found:*** 
-        * Kept getting comment.id errors when refreshing page or clicking on new recipe page.
+        * CSS Styling not coming and getting console error of MIME.
     * ***Solution Used:*** 
-        * Removed this feature as it wasn't a requirement to have user delete comments.
+        * Removed DISABLE_COLLECTSTATIC and PORT 8000 and then the CSS styling worked.
 
 * During testing, I used three browsers to ensure cross-compatibility. The browsers used were:
   1. Chrome
@@ -259,7 +272,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 1. Select the relevant region, I chose Europe as I am in the UK.
 1. Click on the "Create app" button.
 1. From the project "Deploy" tab, nav to the settings tab and scroll to the "Config Vars" section. 
-1. Click the button labelled "Reveal Config Vars" and enter port / 8000. Click the "add" button.
+1. Click the button labelled "Reveal Config Vars" and enter port / 8000. Click the "add" button. (This was later removed for the static file issue, but should usually be done for deployment.)
 1. Scroll to the top of the settings page, and nav to the "Deploy" tab.
 1. From the deploy tab select Github as the deployment method.
 1. Confirm you want to connect to GitHub.
@@ -270,7 +283,24 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 
 # Credits
 * General references:
-* For Django Models resources I used [Geeks For Geeks: Django Model](https://www.geeksforgeeks.org/django-models/?ref=lbp) https://docs.djangoproject.com/en/4.2/topics/db/models/
 * Whilst I did try to deviate as much as possible, this project was influenced by the CI code project which I built before starting this project.
-* For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life : https://www.youtube.com/@Codemycom, https://www.youtube.com/@DigitalFox-tutorials, https://www.youtube.com/@Pyplane, https://www.youtube.com/@veryacademy
-   
+* Figma was used to create the wireframes.
+* The site was developed using Gitpod.
+* GitHub was used to store my repository.
+* Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
+* [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
+* [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme.
+* Fonts were taken from [Google Fonts](https://fonts.google.com/)
+* Images:
+  * Recipe images taken from [upsplash.com](https://unsplash.com) 
+  * Background image designed by me in Canva taken from [upsplash.com](https://unsplash.com)
+* For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life.
+    * [@Codemycom](https://www.youtube.com/@Codemycom)
+    * [@DigitalFox-tutorials](https://www.youtube.com/@DigitalFox-tutorials)
+    * [@Pyplane](https://www.youtube.com/@Pyplane)
+    * [@veryacademy)](https://www.youtube.com/@veryacademy)
+* General references:
+    * [Stack Overflow](https://stackoverflow.com/)
+    * [Code Institute Learning Platform](https://codeinstitute.net/)
+    * [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+    * [Bootstrap Documentation](https://getbootstrap.com/)

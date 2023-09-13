@@ -165,7 +165,7 @@
 
         localStorage.setItem(`stars`, rating);
 
-        fetch(`/rate/${recipe_id}/${rating}/`)
+        fetch(`/rate/${recipe_id}/${rating}/`);
         
         stars.forEach((star, index) => {
             if (index < userRating) {
