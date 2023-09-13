@@ -11,7 +11,7 @@ As a notice here - this is the second version of this app I made. The first vers
 
 ![Responsive screenshot at Mobile]()
 
-[Deployed site]()
+[Seasonality](https://seasonality-c30a72c679d8.herokuapp.com/)
 
 # **Table Of Contents**
 * [**Season-to-Taste**](#season-to-taste)
