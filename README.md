@@ -51,12 +51,14 @@ To achieve the above, the site will:
 I took the site aims from the above and turned them into Epics, User Stories and then Tasks. Find below a break down of the three Epics and their User Stories/Tasks.
 
 **Epic 1: Recipe Management**
+
 User Stories:
 * As a **Site User**, I can submit my own recipes to the admin so that approved recipes can be added to the site.
 * As a **Site User**, I can change my ratings and saved recipes so that I can reflect how my preferences may change.
 * As a **Site User**, I can save recipes to my own 'digital cookbook' so that I can easily access all my favorite recipes.
 * As a **Site User**, I can comment on recipes so that I can join in with the community and make suggestions.
 * As a **Site User**, I can search recipes on the site by title, diet, season, author, and ingredients so that I can find recipes to my liking.
+
 Tasks:
 1. Implement recipe submission functionality.
 1. Implement recipe rating and updating functionality.
@@ -65,18 +67,22 @@ Tasks:
 1. Implement search functionality with title, diet, season, author, and ingredients.
 
 **Epic 2: Community Guidelines and User Sign-in/Sign-up**
+
 User Stories:
 * As a **Site User**, who hasn't yet logged in/up I can sign in/sign up so that I can access features non-signed-in members can't.
 * As a **Site User**, I can get access to the community guidelines so that I can understand how to appropriately join in with the community.
+
 Tasks:
 1. Implement user authentication and sign-up/sign-in functionality.
 1. Provide access to community guidelines for all users.
 
 **Epic 3: Admin Control**
+
 User Stories:
 * As an **Admin**, I can draft recipes so that I can control the website's content and when content will be added to the site.
 * As an **Admin**, I can CRUD recipes and comments so that I can control the site's content to be in line with community guidelines.
 * As an **Admin**, I can approve or disapprove recipe submissions and recipe edits so that I can control the website content.
+
 Tasks:
 1. Implement the ability for admins to draft recipes.
 1. Implement admin controls for CRUD operations on recipes and comments.
@@ -311,8 +317,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * Figma was used to create the wireframes.
 * The site was developed using Gitpod.
 * GitHub was used to store my repository.
-* Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
-* [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
+* [Article Epics and how to make them](https://www.atlassian.com/agile/project-management/epics#:~:text=Epics%20are%20an%20important%20practice,of%20customers%20or%20end%2Dusers.)
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme.
 * Fonts were taken from [Google Fonts](https://fonts.google.com/)
 * Images:
