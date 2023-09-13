@@ -82,6 +82,21 @@ Tasks:
 1. Implement admin controls for CRUD operations on recipes and comments.
 1. Implement filtering through the admin panel to see all comments and recipes. 
 
+Here is how I broke these down into the Must, Should and Could Haves for this project.
+
+![Must Should Could](/documents/agile/must-should-could.png)
+
+And here is a progression of my Kanban Board
+![Kanban Board 1](/documents/agile/starting%20kanban%20board.png)
+
+![Kanban Board 2](/documents/agile/mid-build%20kanban%20board.png)
+
+![Kanban Board 3](/documents/agile/mid-build-kanban-board.2.png)
+
+![Kanban Board 4](/documents/agile/mid-build-kanban-board.3.png)
+
+![Kanban Board 5](/documents/agile/mid-build-kanban-board.4.png)
+
 ## **Research:**
 One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
 
