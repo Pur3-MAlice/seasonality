@@ -128,42 +128,42 @@ Using a Kanban Board system
 
 The future development of this project would also to improve the user's inputs and needs. By changing the ingridient list to a checkbox list. Editing the serv's per recipe and then editing the ingridient amounts. Adding in cook time and cook complexity too. Overall just improving the user's ability to adapt a recipe on the site to their own needs. 
 # **Features**
-### **Site Navigation**
-#### ***Signed Out:***
+## **Site Navigation**
+### ***Signed Out:***
 ![sign-out nav](/documents/features/signout-nav.png)
 #### ***Signed In:***
 ![sign-in nav](/documents/features/signin-nav.png) 
 
-#### **Signin/up Logout Pages**
+### **Signin/up Logout Pages**
 
-#### **Community Guidelines**
+### **Community Guidelines**
 
-#### **Main Page Content**
+### **Main Page Content**
 
-#### **Add/Update Recipe Forms**
+### **Add/Update Recipe Forms**
 
 ![add recipe](/documents/features/add-recipe.png)
 
 ![update recipe](/documents/features/update-recipe.png)
 
-#### **Recipe Detail**
+### **Recipe Detail**
 
-#### **Search**
+### **Search**
 
-#### **Error pages**
-### ***Sign In:***
+### **Error pages**
+**Sign In:**
 ![sign-in form](/documents/features/signout-nav.png)
-#### ***Form Errors:***
+**Form Errors:**
 ![sign-in error](/documents/features/sign-inerror.png)
-### ***Sign Up:***
+**Sign Up:**
 ![sign-up form](/documents/features/register.png) 
 
 As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
-#### ***Form Errors:***
+**Form Errors:**
 ![sign-up error](/documents/features/sign-uperror.png)
 
 As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
-### ***Sign Out:***
+**Sign Out:**
 ![Sign out page](/documents/features/signout.png)
 
 
