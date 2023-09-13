@@ -1,24 +1,4 @@
-/*Home*/
-
-/* 
-COLORS:
-#fffff -- White 
-#DEE2E6 --Platinum
-#343A40 --  Onyx
-#212529 -- Eerie black
-#F1CACC -- Tea rose
-#DF8A70 -- Burnt sienna
-#E8AC33 --Hunyadi Yellow
-#5A6950 -- Ebony
-#25392D -- Dark green
-
-
-FONTS:
-font-family: 'Montserrat', sans-serif;
-font-family: 'Playfair Display', serif; 
-*/
-
-body {
+body { 
     background-color: #F9FAFC;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
@@ -134,6 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 .errorlist {
     list-style: none;
 }
+/* Above is Home Styling */
 
 /* Card Styling inspired by https://codepen.io/wisnust10/pen/BKjNNR*/
 .fa-caret-down:hover {
