@@ -17,7 +17,7 @@ As a notice here - this is the second version of this app I made. The first vers
 * [**Season-to-Taste**](#season-to-taste)
 * [**Planning Phase**](#planning-phase)
     * [**Site Aims**](#site-aims)
-    * [**User Stories**](#user-stories)
+    * [**Epics User Stories Tasks**](#epics-user-stories-tasks)
     * [**Research**](#research)
     * [**Skeleton**](#skeleton)
     * [**Surface**](#surface)
@@ -36,37 +36,51 @@ As a notice here - this is the second version of this app I made. The first vers
 # **Planning Phase**
 ## **Site Aims:**
 The site aims to:
-1. Create community minded website that can share, favourite, rate and create recipes to create their own digital cookbook.
-1. Tell the user if they have made any errors whilst using the website and prompt them as such.
-1. Give user a lot of control with creation of content. Whilst Admin approves and can remove content that goes against guidelines to promote the community spirit.
+* Create community minded website that can share, favourite, rate and create recipes to create their own digital cookbook.
+* Tell the user if they have made any errors whilst using the website and prompt them as such.
+* Give user a lot of control with creation of content. Whilst Admin approves and can remove content that goes against guidelines to promote the community spirit.
 
 How Will This Be Achieved:
 To achieve the above, the site will:
-1. Create environment that focuses on sharing own ideas, thoughts whilst also ensuring community guidelines are stuck to.
-1. User submission and editing of their own recipe submissions, their own favourite lists and own ratings.
-1. Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mis-type.
-1. User validation via error messages.
+* Create environment that focuses on sharing own ideas, thoughts whilst also ensuring community guidelines are stuck to.
+* User submission and editing of their own recipe submissions, their own favourite lists and own ratings.
+* Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mis-type.
+* User validation via error messages.
 
-## **User Stories:**
-As an **Admin** I can...
-1. As a Site Admin I can Draft Recipes so that control websites content and when content will be added to the site.
-1. As a Site Admin I can CRUD recipes and comments so that to control the site's content to be in line with community guidelines.
-1. As a Site Admin I can Approve or Disapprove recipe submissions and recipe edits so that I can control the website content.
- 
-As a **Site User** I can...(Logged in:)
-1. As a Site user I can change my ratings and unsaved recipes so that reflect how my preferences may change.
-1. As a Site user I can get access to the community guidelines so that I can understand how to appropriately join in with the community and understand when my submission may be removed or disapproved from site addition.
-1. As a site user I can Rate each recipe so that show which recipe I liked and disliked, involving self in website's community.
-1. As a site user I can comment on recipes so that to join in with the community and make suggestions.
-1. As a Site userI can save recipes to my own 'digital cook book' so that easily access all my favourite recipes.
-1. As a Site User I can Search recipes on the site by tags, author, and ingredients so that I can find appropriate results for my needs.
-1. As a Site User I can submit my own recipes to the admin so that approved recipes can be added to the site.
+## **Epics User Stories Tasks**
+I took the site aims from the above and turned them into Epics, User Stories and then Tasks. Find below a break down of the three Epics and their User Stories/Tasks.
 
-As a **Site User** I can...(Not logged in:)
-1. As a Site User I can sign in/up so that I can access features non signed-in members can't.
-1. As a Site user I can get access to the community guidelines so that I can understand how to appropriately join in with the community.
-1. As a site user I can Rate each recipe so that show which recipe I liked and disliked, involving self in website's community.
-1. As a Site User I can Search recipes on the site by tags, author, and ingredients so that I can find appropriate results for my needs.
+**Epic 1: Recipe Management**
+User Stories:
+* As a **Site User**, I can submit my own recipes to the admin so that approved recipes can be added to the site.
+* As a **Site User**, I can change my ratings and saved recipes so that I can reflect how my preferences may change.
+* As a **Site User**, I can save recipes to my own 'digital cookbook' so that I can easily access all my favorite recipes.
+* As a **Site User**, I can comment on recipes so that I can join in with the community and make suggestions.
+* As a **Site User**, I can search recipes on the site by title, diet, season, author, and ingredients so that I can find recipes to my liking.
+Tasks:
+1. Implement recipe submission functionality.
+1. Implement recipe rating and updating functionality.
+1. Implement the ability to save recipes to a user's profile.
+1. Implement commenting on recipes.
+1. Implement search functionality with title, diet, season, author, and ingredients.
+
+**Epic 2: Community Guidelines and User Sign-in/Sign-up**
+User Stories:
+* As a **Site User**, who hasn't yet logged in/up I can sign in/sign up so that I can access features non-signed-in members can't.
+* As a **Site User**, I can get access to the community guidelines so that I can understand how to appropriately join in with the community.
+Tasks:
+1. Implement user authentication and sign-up/sign-in functionality.
+1. Provide access to community guidelines for all users.
+
+**Epic 3: Admin Control**
+User Stories:
+* As an **Admin**, I can draft recipes so that I can control the website's content and when content will be added to the site.
+* As an **Admin**, I can CRUD recipes and comments so that I can control the site's content to be in line with community guidelines.
+* As an **Admin**, I can approve or disapprove recipe submissions and recipe edits so that I can control the website content.
+Tasks:
+1. Implement the ability for admins to draft recipes.
+1. Implement admin controls for CRUD operations on recipes and comments.
+1. Implement filtering through the admin panel to see all comments and recipes. 
 
 ## **Research:**
 One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
@@ -75,7 +89,7 @@ Here are some of the sites I used for inspiration for the design of Season To Ta
 * [thehappyfoodie](https://thehappyfoodie.co.uk/)
 * [cookbookmanager](https://cookbookmanager.com/pricing)
 * [Resturant Website Templates from Wix](https://www.wix.com/website/templates/html/restaurants-food)
-  
+
 ## **Skeleton**
 ### **Wireframes:**
 ![Home Page Desktop](/documents/wireframes/desktop-home.png)
@@ -166,7 +180,6 @@ As described in the testing below - more errors are tried and tested with these 
 **Sign Out:**
 ![Sign out page](/documents/features/signout.png)
 
-
 1. Change password and Delete Profile
 # **Testing Phase**
 ### ***Manual Testing:***
@@ -210,7 +223,6 @@ Logged out
 ![Logged out Searched](/documents/testing/Not%20Logged%20in%20Search%20Page.png)
 
 ![Logged out Signout](/documents/testing/Logged%20in%20Signout%20Page.png)
-
 
 ### ***Bugs and Fixes:***
 Below is a list of bugs I found during the development process. A lot of the bugs and fixes where minor enough that they were caught and easily amended by just seeing the redlines in gitpod. But here are a few that stumped me enough to write them down.
