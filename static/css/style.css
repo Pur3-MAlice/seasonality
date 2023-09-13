@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 325px;
     width: 100%;
 }
 
@@ -484,6 +484,23 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
 }
 
+@media (max-width: 1400px) {
+    .nutrition-list ul {
+        margin: 0 0 0 0;
+        padding: 0em; 
+    }
+
+    li {
+        font-size: 1rem;
+    }
+}   
+
+@media (max-width: 1000px) {
+    .masthead {
+        height: 33vh;
+    }
+}
+
 @media (max-width: 800px) {
     .box i {
         opacity: 0;
@@ -529,5 +546,11 @@ h1, h2, h3, h4, h5, h6 {
 
     .card {
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    .masthead {
+        height: 30vh
     }
 }
