@@ -3,7 +3,13 @@ This website has been built as a digital cookbook. Where people can upload their
 
 As a notice here - this is the second version of this app I made. The first version had many errors and it was early on in the development project that creating a new repo at that point was the best option. Here is the link to the old repo, [Season-To-Taste](https://github.com/Pur3-MAlice/season-to-taste/tree/main) it has the same Kanban Board and also lots of commits that should be noted.
 
-![Responsive screenshot showing site on different screen sizes]()
+![Responsive screenshot at Desktop]()
+
+![Responsive screenshot at Laptop]()
+
+![Responsive screenshot at Tablet]()
+
+![Responsive screenshot at Mobile]()
 
 [Deployed site]()
 
@@ -95,7 +101,9 @@ Here are some of the sites I used for inspiration for the design of Season To Ta
 ### **Database Schema**
 Below is my initial database schema to map out the relations between users, recipes, comments and categories (also known as tags). This is a rough idea of what the database will look like in general, but at this point in the planning phase, I understand that this is subject to change. 
 ![Database Scheme](/documents/wireframes/db-schema.png)
-On the completion of this project, thsi database, while it does differ in some areas, is pretty much how my datbase structure has gone. Which I am happy with. 
+On the completion of this project, this database, while it does differ in some areas, is pretty much how my datbase structure has gone. Which I am happy with. 
+
+My database is structured at deployment with two main apps which are connected to each other. The recipebook app and the profile app. The recipebook model holds the recipe database which controls the functionality of each individual recipe, each category (diet and season), and the ratings. This is then connected to the profile through the user interface as the user will input on the page. This is part of the website's MVT, say the model of recipe is being passed into the RecipeDetail view and then the user will see the recipe_detail template. This is displayed. The database was extended from the original schema to also include profile elements which would allow the user to properly store their own favourties and access/edit/delete their recipe inputs.   
  
 ## **Surface**
 ### **Color scheme:**
