@@ -79,7 +79,7 @@
                         <tr>
                             <td>
                                 <a href="{% url 'recipe_detail' recipe.slug  %}">
-                                    <h4>{{ recipe.title }}</h4>
+                                    <h4>{{ recipe.title|truncatechars:25 }}</h4>
                                 </a>
                             </td>
                             {% if user.is_authenticated %}
@@ -104,7 +104,7 @@
                         <tr>
                             <td class="align-right">
                                 <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
-                                    <h4>{{ recipe.title }}</h4>
+                                    <h4>{{ recipe.title|truncatechars:25 }}</h4>
                                 </a>
                             </td>
                             <td>

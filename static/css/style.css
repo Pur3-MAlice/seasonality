@@ -493,11 +493,19 @@ h1, h2, h3, h4, h5, h6 {
     li {
         font-size: 1rem;
     }
+
+    .recipe-form {
+        width: 65%;
+    }
 }   
 
 @media (max-width: 1000px) {
     .masthead {
         height: 33vh;
+    }
+
+    .recipe-form {
+        width: 85%;
     }
 }
 
@@ -552,5 +560,33 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 720px) {
     .masthead {
         height: 30vh
+    }
+}
+
+
+@media (max-width: 400px) {
+    .note-editor {
+        width: 52vw;
+    }
+
+    .nutrition-list ul {
+        padding: 0rem;
+    }
+
+    .small {
+        font-size: 14px;
+    }
+
+    .model-content {
+        width: 96%;
+    }
+
+    .sign-out {
+        height: 95%;
+        width: 80%;
+    }
+
+    .small-screen-font p, ul, li {
+    font-size: 14px;
     }
 }
