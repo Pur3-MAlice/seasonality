@@ -106,7 +106,6 @@ h1, h2, h3, h4, h5, h6 {
     color: lightgray;
 }
 
-
 .profile-extras {
     margin-top: 50px;
 }
@@ -114,9 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 .errorlist {
     list-style: none;
 }
-/* Above is Home Styling */
 
-/* Card Styling inspired by https://codepen.io/wisnust10/pen/BKjNNR*/
 .fa-caret-down:hover {
     color: #E8AC33;
 }
@@ -191,8 +188,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.65em;
 }
 
-/*Search Styling */
-
 .input-search {
     padding: 8px;
     width: 350px;
@@ -223,8 +218,6 @@ h1, h2, h3, h4, h5, h6 {
     outline: none !important;
     box-shadow: none;
 }
-
-/* Register and Login CSS inspired by Codemy*/
 
 .bg-image {
     background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
@@ -280,7 +273,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 30px;
 }
 
-/* Sign Out CSS */
 .sign-out {
     margin-top: 10%;
     background-color: #fff8f9;
@@ -304,8 +296,6 @@ h1, h2, h3, h4, h5, h6 {
     outline: none !important;
     box-shadow: none;
 }
-
-/*Profile*/
 
 .alert-success {
     width: 50%;
@@ -373,7 +363,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
-/*Search*/
 .search-pagination li {
     font-size: 2rem;
 }
@@ -386,7 +375,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #E8AC33;
 }
 
-/*Recipe Detail and Forms*/
 .recipe-ratings i {
     font-size: 22px;
 }
@@ -495,8 +483,6 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff8f9;
     border-radius: 12px;
 }
-
-/* FOR MEDIA Qs */
 
 @media (max-width: 800px) {
     .box i {
