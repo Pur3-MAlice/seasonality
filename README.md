@@ -18,10 +18,10 @@ As a notice here - this is the second version of this app I made. The first vers
 * [**Planning Phase**](#planning-phase)
     * [**Site Aims**](#site-aims)
     * [**Epics User Stories Tasks**](#epics-user-stories-tasks)
+    * [**Kanban Agile**](#kanban-agile)
     * [**Research**](#research)
     * [**Skeleton**](#skeleton)
     * [**Surface**](#surface)
-* [**Agile Development Process**](#agile-development-process)
 * [**Future development**](#future-development)
 * [**Features**](#features)
   * [**Site Navigation**](#site-navigation)
@@ -90,6 +90,7 @@ Here is how I broke these down into the Must, Should and Could Haves for this pr
 
 ![Must Should Could](/documents/agile/must-should-could.png)
 
+## **Kanban Agile***
 And here is a progression of my Kanban Board
 ![Kanban Board 1](/documents/agile/starting%20kanban%20board.png)
 
@@ -153,9 +154,6 @@ The final list of colors used has been placed in the below to check contrast sco
 ### **Typography**:
 To find my fonts i used thsi website: https://www.elegantthemes.com/blog/design/best-google-fonts. I went with Playfair Display and Monserrat, for a modern playful feel that would give the website levity.
 
-# **Agile Development Process**
-Using a Kanban Board system
-
 # **Future development**
 1. For the user to be able to change their password and delete their profile.
 1. I think that the ability to like and reply to other comments in the future would be a good addition to the site based on its aims.
@@ -185,7 +183,18 @@ This is the same modal across all pages, logged in or out.
 ![Community Modal](/documents/features/community-modal.png)
 
 ## ***Search***
-![empty Search](/documents/features/search-nothing.png)
+
+Here is a search with no results, it give the user an message saying they didn't search anything and then also prompts them to make a suitable search.
+
+![Empty Search](/documents/features/search-nothing.png)
+
+Here is a page pagnation. I searched a term with more than 8 results and got the below, which means I see the pagination that lets me go through all the results.
+
+![Large Search](/documents/features/search_large.png)
+
+This is a search for an ingredient so only shows up one result with that specific ingridient. Here you can see that there is no pagination due to the results being less than 8.
+
+![Specific Search](/documents/features/searched-ingredient.png)
 
 ## ***Main Page Content***
 
@@ -207,7 +216,7 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 ## ***Recipe Detail***
 
-* Logged in: The logged in user here can view and interact with the recipe. They can rate, fav and comment on this recipe as seen in the image below
+* Logged in: The logged in user here can view and interact with the recipe. They can rate, fav and comment on this recipe as seen in the image below.
 
 ![Logged in Recipe Detail](/documents/features/recipe-detail-none-author-view-logged-in.png)
 
@@ -215,9 +224,21 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 ![Logged out Recipe Detail](/documents/features/recipe-detail-loggedout.png)
 
-* Author / Delete / Update
+* Author Logged in: The logged in user who is also the author can view and interact with the recipe in a more substantial way. They can rate, fav and comment on this recipe as seen in the image below, but they can also update and delete the recipe.
+
+![Logged out Recipe Detail](/documents/features/recipe-detail-author-view.png)
 
 ## ***Commenting***
+
+* Logged Out: The logged out user here can only view comments and click register to create a profile adn eventually comment on the post. 
+
+![Logged out Recipe Comments](/documents/features/comments-logged-out.png)
+
+* Logged in: The logged in user here can view and comment on the recipe with feedback, suggestions and help create a community atmosphere. The user will also get a refresh and a notification of successful comment.
+
+![Logged in Recipe Comments](/documents/features/comments-logged-in.png)
+
+![Logged in Recipe Comments Success](/documents/features/comment-posted.png)
 
 # **Error pages**
 **Sign In:**
@@ -251,6 +272,10 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 **Update Recipe Errors:**
 
 ![Update Recipe Errors]()
+
+**Comment Errors:**
+
+![Comment Error]()
 
 # **Testing Phase**
 ### ***Manual Testing:***
