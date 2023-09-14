@@ -1,4 +1,6 @@
 # **Season to Taste**
+[Seasonality](https://seasonality-c30a72c679d8.herokuapp.com/)
+
 This website has been built as a digital cookbook. Where people can upload their own recipes, comment, favourite and rate other people's submissions (including the admin's). This website aims to target the lack of community and collaboration within recipe websites. User submission give user a level of control, whilst the admin is also in charge of making sure the community is staying safe. It also aims to tackle the preamble that comes before recipes on websites that people find annoying, even if it is good SEO.
 
 As a notice here - this is the second version of this app I made. The first version had many errors and it was early on in the development project that creating a new repo at that point was the best option. Here is the link to the old repo, [Season-To-Taste](https://github.com/Pur3-MAlice/season-to-taste/tree/main) it has the same Kanban Board and also lots of commits that should be noted.
@@ -10,8 +12,6 @@ As a notice here - this is the second version of this app I made. The first vers
 ![Responsive screenshot at Tablet]()
 
 ![Responsive screenshot at Mobile]()
-
-[Seasonality](https://seasonality-c30a72c679d8.herokuapp.com/)
 
 # **Table Of Contents**
 * [**Season-to-Taste**](#season-to-taste)
@@ -40,18 +40,16 @@ The site aims to:
 * Tell the user if they have made any errors whilst using the website and prompt them as such.
 * Give user a lot of control with creation of content. Whilst Admin approves and can remove content that goes against guidelines to promote the community spirit.
 
-How Will This Be Achieved:
 To achieve the above, the site will:
 * Create environment that focuses on sharing own ideas, thoughts whilst also ensuring community guidelines are stuck to.
 * User submission and editing of their own recipe submissions, their own favourite lists and own ratings.
-* Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mis-type.
+* Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mistypes.
 * User validation via error messages.
 
 ## **Epics User Stories Tasks**
 I took the site aims from the above and turned them into Epics, User Stories and then Tasks. Find below a break down of the three Epics and their User Stories/Tasks.
 
 **Epic 1: Recipe Management**
-
 User Stories:
 * As a **Site User**, I can submit my own recipes to the admin so that approved recipes can be added to the site.
 * As a **Site User**, I can change my ratings and saved recipes so that I can reflect how my preferences may change.
@@ -67,7 +65,6 @@ Tasks:
 1. Implement search functionality with title, diet, season, author, and ingredients.
 
 **Epic 2: Community Guidelines and User Sign-in/Sign-up**
-
 User Stories:
 * As a **Site User**, who hasn't yet logged in/up I can sign in/sign up so that I can access features non-signed-in members can't.
 * As a **Site User**, I can get access to the community guidelines so that I can understand how to appropriately join in with the community.
@@ -77,7 +74,6 @@ Tasks:
 1. Provide access to community guidelines for all users.
 
 **Epic 3: Admin Control**
-
 User Stories:
 * As an **Admin**, I can draft recipes so that I can control the website's content and when content will be added to the site.
 * As an **Admin**, I can CRUD recipes and comments so that I can control the site's content to be in line with community guidelines.
@@ -104,7 +100,7 @@ And here is a progression of my Kanban Board
 ![Kanban Board 5](/documents/agile/mid-build-kanban-board.4.png)
 
 ## **Research:**
-One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a logic flow chart and a database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
+One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a reasonable and logical database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
 
 Here are some of the sites I used for inspiration for the design of Season To Taste:
 * [thehappyfoodie](https://thehappyfoodie.co.uk/)
@@ -133,7 +129,9 @@ Here are some of the sites I used for inspiration for the design of Season To Ta
 
 ### **Database Schema**
 Below is my initial database schema to map out the relations between users, recipes, comments and categories (also known as tags). This is a rough idea of what the database will look like in general, but at this point in the planning phase, I understand that this is subject to change. 
+
 ![Database Scheme](/documents/wireframes/db-schema.png)
+
 On the completion of this project, this database, while it does differ in some areas, is pretty much how my datbase structure has gone. Which I am happy with. 
 
 My database is structured at deployment with two main apps which are connected to each other. The recipebook app and the profile app. The recipebook model holds the recipe database which controls the functionality of each individual recipe, each category (diet and season), and the ratings. This is then connected to the profile through the user interface as the user will input on the page. This is part of the website's MVT, say the model of recipe is being passed into the RecipeDetail view and then the user will see the recipe_detail template. This is displayed. The database was extended from the original schema to also include profile elements which would allow the user to properly store their own favourties and access/edit/delete their recipe inputs. 
@@ -211,8 +209,6 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 * Logged out / See Comments 
 * Author / Delete / Update
 
-
-
 ## **Error pages**
 **Sign In:**
 
@@ -240,10 +236,11 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 **Add Recipe Errors:**
 
-![sign-up error](/documents/features/sign-uperror.png)
+![Add Recipe Errors](/documents/features/errors/recipe-add-errors.png)
 
 **Update Recipe Errors:**
 
+![Update Recipe Errors](/documents/features/errors)
 
 # **Testing Phase**
 ### ***Manual Testing:***
@@ -252,7 +249,7 @@ During the development process, I was manually testing in the following ways:-
 * Used the terminal to find errors when saving and psuhing to dev server.
 * Asked a Data Scientist friend to review the pages and the websites responsiveness by following the above procedure often throughout the development of the site. They did not offer any help on the coding nor did they provide feedback other than "this link/button/card" is broken. They did however make a good soundboard for me to talk at while talking through difficult code issues. Below is the spreadsheet I used for user testing.
 
-Logged in 
+Logged in:
 
 ![Logged in Nav](/documents/testing/Logged%20in%20NavBar.png)
 
@@ -272,7 +269,7 @@ Logged in
 
 ![Logged in Update Page](/documents/testing/Logged%20in%20Update%20Recipe.png)
 
-Logged out
+Logged out:
 
 ![Logged out Nav](/documents/testing/Not%20Logged%20in%20NavBar.png)
 
@@ -333,8 +330,6 @@ Below is a list of bugs I found during the development process. A lot of the bug
 #### ***CSS*** - https://jigsaw.w3.org/css-validator/
 * Code passes through with no issues.
 
-
-
 #### ***JavaScript and Python*** - https://jshint.com/  https://www.pythonchecker.com/
 * I also passed the code through a jshint and PEP8 with no issues. 
 
@@ -365,7 +360,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
    * Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
 
 # Credits
-* General references:
+## ***General references:***
 * Whilst I did try to deviate as much as possible, this project was influenced by the CI code project which I built before starting this project.
 * Figma was used to create the wireframes.
 * The site was developed using Gitpod.
@@ -373,6 +368,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * [Article Epics and how to make them](https://www.atlassian.com/agile/project-management/epics#:~:text=Epics%20are%20an%20important%20practice,of%20customers%20or%20end%2Dusers.)
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme.
 * Fonts were taken from [Google Fonts](https://fonts.google.com/)
+* Recipe content was myself, BBC Goodfoods and Feasting At Home.
 * Images:
   * Recipe images taken from [upsplash.com](https://unsplash.com) 
   * Background image designed by me in Canva.
