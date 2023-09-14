@@ -114,6 +114,10 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
 }
 
+/* Above is Home Styling */
+
+/* Card Styling inspired by https://codepen.io/wisnust10/pen/BKjNNR*/
+
 .fa-caret-down:hover {
     color: #E8AC33;
 }
@@ -188,6 +192,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.65em;
 }
 
+/*Search Styling */
+
 .input-search {
     padding: 8px;
     width: 350px;
@@ -218,6 +224,8 @@ h1, h2, h3, h4, h5, h6 {
     outline: none !important;
     box-shadow: none;
 }
+
+/* Register and Login CSS inspired by Codemy*/
 
 .bg-image {
     background-image: url('https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694361977/pexels-skylar-kang-6045219_mxpsyu.jpg');
@@ -297,6 +305,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
+/*Profile*/
 .alert-success {
     width: 50%;
 }
@@ -363,6 +372,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
+/*Search*/
+
 .search-pagination li {
     font-size: 2rem;
 }
@@ -374,6 +385,8 @@ h1, h2, h3, h4, h5, h6 {
 .search-pagination .active {
     color: #E8AC33;
 }
+
+/*Recipe Detail and Forms*/
 
 .recipe-ratings i {
     font-size: 22px;
@@ -414,6 +427,8 @@ h1, h2, h3, h4, h5, h6 {
 .recipe-title, .recipe-subtitle {
     color: #fff8f9;
 }
+
+/* Comments */
 
 .comments {
     padding: 10px;
