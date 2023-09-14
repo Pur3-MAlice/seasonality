@@ -167,23 +167,28 @@ The future development of this project would also to improve the user's inputs a
 # **Features**
 ## ***Site Navigation***
 Below are the screen shots of both the logged in version of the nav bar and the logged out version. S you can see when a user logs in they get access to the profile drop down 
+### ***Search Bar for Both:***
+![search bar](/documents/features/search-bar.png) 
 ### ***Signed Out:***
 ![sign-out nav](/documents/features/signout-nav.png)
 ### ***Signed In:***
 ![sign-in nav](/documents/features/signin-nav.png) 
-
-## ***Signin/up Logout Pages***
-
-
-### ***Sign Out Page:***
-
+## ***Signin Page***
+![sign-in page](/documents/features/signin.png) 
+## ***Register Page***
+![register page](/documents/features/register-page.png) 
+## ***Sign Out Page***
 ![Sign out page](/documents/features/signout.png)
+## ***Community Guidelines Modal***
+This is the same modal across all pages, logged in or out. 
 
-
-
-## ***Community Guidelines***
+![Community Modal](/documents/features/community-modal.png)
 
 ## ***Main Page Content***
+
+* Main page
+* chevrons
+* Diet List
 
 ## ***Add/Update Recipe Forms***
 
@@ -195,22 +200,34 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 ## ***Recipe Detail***
 
+* Logged in / Rate / Fav / Comment
+* Logged out / See Comments 
+* Author / Delete / Update
+
 ## ***Search***
+
+* Empty Search 
 
 ## **Error pages**
 **Sign In:**
-![sign-in form](/documents/features/signout-nav.png)
+
+![sign-in form](g)
+
 **Form Errors:**
-![sign-in error](/documents/features/sign-inerror.png)
+
+![sign-in error]()
+
 **Sign Up:**
+
 ![sign-up form](/documents/features/register.png) 
 
-As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
-**Form Errors:**
+
+
+**Add Recipe Errors:**
+
 ![sign-up error](/documents/features/sign-uperror.png)
 
-As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
-
+**Update Recipe Errors:**
 
 
 # **Testing Phase**
@@ -278,7 +295,7 @@ Below is a list of bugs I found during the development process. A lot of the bug
         * The avg of the recipe page would be affected. But the user input of the stars themselves would not hold the data.
     * ***Solution Used:*** 
         *  Used Javascript local storage to hold the browsers star rating instead. However this does leave an error in the console, the benefit of the user's rating being remebered is not outweighed by this as it does not affect the page's functionality or the user's experience. 
-1. **Intended Outcome** - When deploy to heroku the CSS stay's connected
+1. **Intended Outcome** - When deploying to Heroku the CSS styling stays attached to the website.
     * ***Issue Found:*** 
         * CSS Styling not coming and getting console error of MIME.
     * ***Solution Used:*** 
@@ -301,11 +318,15 @@ Below is a list of bugs I found during the development process. A lot of the bug
 #### ***CSS*** - https://jigsaw.w3.org/css-validator/
 * Code passes through with no issues.
 
-![CSS badge](/documents/css%20validator.png)
 
 
 #### ***JavaScript and Python*** - https://jshint.com/  https://www.pythonchecker.com/
 * I also passed the code through a jshint and PEP8 with no issues. 
+
+#### ***Lighthouse Score***
+* I passed the website through Google's Lighthouse to test accesibility and performance
+
+![Lighthouse Score](/documents/lighthouse-scores.png)
 
 # **Deployment**
 ## ***Final Deployment to Heroku:***  
@@ -344,7 +365,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
     * [@Codemycom](https://www.youtube.com/@Codemycom)
     * [@DigitalFox-tutorials](https://www.youtube.com/@DigitalFox-tutorials)
     * [@Pyplane](https://www.youtube.com/@Pyplane)
-    * [@veryacademy)](https://www.youtube.com/@veryacademy)
+    * [@veryacademy](https://www.youtube.com/@veryacademy)
 * General references:
     * [Stack Overflow](https://stackoverflow.com/)
     * [Code Institute Learning Platform](https://codeinstitute.net/)
