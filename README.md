@@ -88,7 +88,7 @@ Here is how I broke these down into the Must, Should and Could Haves for this pr
 
 ![Must Should Could](/documents/agile/must-should-could.png)
 
-## **Kanban Agile***
+## ***Kanban Agile***
 And here is a progression of my Kanban Board
 ![Kanban Board 1](/documents/agile/starting%20kanban%20board.png)
 
@@ -202,7 +202,19 @@ This is a view of the main page content. You can see here the left and right che
 
 ## ***Profile Features***
 
+Below is the profile, which has features such as a link to the favourites page, a button to remove the recipe from favourites, update and delete recipes from db if author. And a feature to update the user's bio, username and email. 
+
+![Full Profile](/documents/features/profile-page.png)
+
+![My Recipes](/documents/features/my-recipes.png)
+
+![My Favourties](/documents/features/my-favourites.png)
+
 ## ***Favourties Page***
+
+This is a full page of the user's favourties i.e. their digital cookbook, where they can also remove the recipes very easily. 
+
+![Favourties Page](/documents/features/favourite-page.png)
 
 ## ***Add/Update Recipe Forms***
 
