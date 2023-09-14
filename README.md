@@ -1,7 +1,7 @@
 # **Season to Taste**
 [Seasonality](https://seasonality-c30a72c679d8.herokuapp.com/)
 
-This website has been built as a digital cookbook. Where people can upload their own recipes, comment, favourite and rate other people's submissions (including the admin's). This website aims to target the lack of community and collaboration within recipe websites. User submission give user a level of control, whilst the admin is also in charge of making sure the community is staying safe. It also aims to tackle the preamble that comes before recipes on websites that people find annoying, even if it is good SEO.
+This website has been built as a digital cookbook. Where people can upload their own recipes, comment, favourite and rate other people's submissions (including the admin's). This website aims to target the lack of community and collaboration within recipe websites. User submission gives the user a level of control, whilst the admin is also in charge of making sure the community is staying safe. It also aims to tackle the preamble that comes before recipes on websites that people find annoying, even if it is good SEO.
 
 As a notice here - this is the second version of this app I made. The first version had many errors and it was early on in the development project that creating a new repo at that point was the best option. Here is the link to the old repo, [Season-To-Taste](https://github.com/Pur3-MAlice/season-to-taste/tree/main) it has the same Kanban Board and also lots of commits that should be noted.
 
@@ -19,7 +19,7 @@ As a notice here - this is the second version of this app I made. The first vers
 * [**Future development**](#future-development)
 * [**Features**](#features)
   * [**Site Navigation**](#site-navigation)
-  * [**Signin/up Logout Pages**](#signin/up-logout-pages)
+  * [**Sign in/up Logout Pages**](#sign-in/up-logout-pages)
   * [**Community Guidelines**](#community-guidelines)
   * [**Main Page Content**](#main-page-content)
   * [**Main Page Content**](#main-page-content)
@@ -32,26 +32,26 @@ As a notice here - this is the second version of this app I made. The first vers
 # **Planning Phase**
 ## **Site Aims:**
 The site aims to:
-* Create community minded website that can share, favourite, rate and create recipes to create their own digital cookbook.
+* Create community community-minded website that can share, favourite, rate and create recipes to create their own digital cookbook.
 * Tell the user if they have made any errors whilst using the website and prompt them as such.
-* Give user a lot of control with creation of content. Whilst Admin approves and can remove content that goes against guidelines to promote the community spirit.
+* Give users a lot of control over the creation of content. Whilst Admin approves and can remove content that goes against guidelines to promote the community spirit.
 
 To achieve the above, the site will:
-* Create environment that focuses on sharing own ideas, thoughts whilst also ensuring community guidelines are stuck to.
-* User submission and editing of their own recipe submissions, their own favourite lists and own ratings.
-* Author ability to delete and edit their own recipes whenever they would like. Delete function has fail safes incase of mistypes.
+* Create an environment that focuses on sharing own ideas, and thoughts whilst also ensuring community guidelines are stuck to.
+* User submission and editing of their own recipe submissions, their own favourite lists and their own ratings.
+* Author ability to delete and edit their own recipes whenever they would like. The delete function has fail-safes in case of mistypes.
 * User validation via error messages.
 
 ## **Epics User Stories Tasks**
 
-I took the site aims from the above and turned them into Epics, User Stories and then Tasks. Find below a break down of the three Epics and their User Stories/Tasks.
+I took the site aims from the above and turned them into Epics, User Stories and then Tasks. Find below a breakdown of the three Epics and their User Stories/Tasks.
 
 **Epic 1: Recipe Management**
 
 User Stories:
 * As a **Site User**, I can submit my own recipes to the admin so that approved recipes can be added to the site.
 * As a **Site User**, I can change my ratings and saved recipes so that I can reflect how my preferences may change.
-* As a **Site User**, I can save recipes to my own 'digital cookbook' so that I can easily access all my favorite recipes.
+* As a **Site User**, I can save recipes to my own 'digital cookbook' so that I can easily access all my favourite recipes.
 * As a **Site User**, I can comment on recipes so that I can join in with the community and make suggestions.
 * As a **Site User**, I can search recipes on the site by title, diet, season, author, and ingredients so that I can find recipes to my liking.
 
@@ -101,7 +101,7 @@ And here is a progression of my Kanban Board
 ![Kanban Board 5](/documents/agile/mid-build-kanban-board.4.png)
 
 ## **Research:**
-One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a reasonable and logical database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that did keep popping up is the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However due to the community and edit aspect of this website, content can be change upon the community calling for it. The beauty of this site is that the community of users will decide the accpeted formula, which is what is missing in traditional recipe websites. 
+One of the first things I did when building the plan for this website was research. I wanted my website, not only to be useable and have a solid logic base but for it also to look modern and inviting. So part of my Planning Phase was not only wireframing, building a reasonable and logical database schema. But also looking at websites with similar aims, and discussing with friends and family how they use recipe websites. What do they like, what do they dislike, and how can I emulate the good parts whilst removing the annoyance? One thing that kept popping up was the blog post before the recipe, which for this site is not applicable. The user can submit content that is longer, but unless this breaches the guidelines this is the user's content and therefore will be posted. However, due to the community and editing aspect of this website, content can be changed upon the community calling for it. The beauty of this site is that the community of users will decide on the accepted formula, which is what is missing in traditional recipe websites. 
 
 Here are some of the sites I used for inspiration for the design of Season To Taste:
 * [thehappyfoodie](https://thehappyfoodie.co.uk/)
@@ -133,43 +133,43 @@ Below is my initial database schema to map out the relations between users, reci
 
 ![Database Scheme](/documents/wireframes/db-schema.png)
 
-On the completion of this project, this database, while it does differ in some areas, is pretty much how my datbase structure has gone. Which I am happy with. 
+On the completion of this project, this database, while it does differ in some areas, is pretty much how my database structure has gone. Which I am happy with. 
 
-My database is structured at deployment with two main apps which are connected to each other. The recipebook app and the profile app. The recipebook model holds the recipe database which controls the functionality of each individual recipe, each category (diet and season), and the ratings. This is then connected to the profile through the user interface as the user will input on the page. This is part of the website's MVT, say the model of recipe is being passed into the RecipeDetail view and then the user will see the recipe_detail template. This is displayed. The database was extended from the original schema to also include profile elements which would allow the user to properly store their own favourties and access/edit/delete their recipe inputs. 
+My database is structured at deployment with two main apps which are connected to each other. The recipebook app and the profile app. The recipebook model holds the recipe database which controls the functionality of each individual recipe, each category (diet and season), and the ratings. This is then connected to the profile through the user interface as the user will input on the page. This is part of the website's MVT, say the model of a recipe is being passed into the RecipeDetail view and then the user will see the recipe_detail template. This is displayed. The database was extended from the original schema to also include profile elements which would allow the user to properly store their own favourites and access/edit/delete their recipe inputs. 
 
-When it came to actually putting my Database Schema into reality a few things changed. Such as Saved and Categories. Plus I figured out I would need to make a model purely for the rating system I wanted to put in place. MVP this could just be likes, but to differentiate from the base of this project (which was taken from Code Insitutes 'Django Blog App') I wanted to add in this rating system that would calculate a recipes' popularity. This would also be the building block of the carousels on the recipe search page. I plan to have 'Diet' and even 'Season' Caraousels on the recipe search page so that site users can easily see recipes, the rating system will determine which recipes show up on these carousels. Or So I Plan... (Famous last words of a coder).
+When it came to actually putting my Database Schema into reality a few things changed. Such as Saved and Categories. Plus I figured out I would need to make a model purely for the rating system I wanted to put in place. MVP could just be 'likes', but to differentiate from the base of this project (which was taken from Code Institutes' 'Django Blog App') I wanted to add in this rating system that would calculate a recipe's popularity. This would also be the building block of the carousels on the recipe search page. I plan to have 'Diet' and even 'Season' Caraousels on the recipe search page so that site users can easily see recipes, the rating system will determine which recipes show up on these carousels. Or So I Plan... (Famous last words of a coder).
  
 ## **Surface**
 ### **Color scheme:**
-I knew I wanted my main theme to be pink and mustard as they are very in vouge right now. So i used this article https://www.thespruce.com/complementary-colors-that-go-with-pink-5188287 and then used https://coolors.co/f1cacc-df8a70-e8ac33-5a6950-13322c to create my colour Palatte
+I knew I wanted my main theme to be pink and mustard as they are very in vogue right now. So I used this article https://www.thespruce.com/complementary-colors-that-go-with-pink-5188287 and then used https://coolors.co/f1cacc-df8a70-e8ac33-5a6950-13322c to create my colour Palette
 
-The final list of colors used has been placed in the below to check contrast scores.
+The final list of colours used has been placed below to check contrast scores.
 
 ![Color Scheme](/documents/wireframes/color-scheme.png)
 
 ![Color Grid](/documents/wireframes/contrast-grid.png)
 
 ### **Typography**:
-To find my fonts i used thsi website: https://www.elegantthemes.com/blog/design/best-google-fonts. I went with Playfair Display and Monserrat, for a modern playful feel that would give the website levity.
+To find my fonts I used this website: https://www.elegantthemes.com/blog/design/best-google-fonts. I went with Playfair Display and Monserrat, for a modern playful feel that would give the website levity.
 
 # **Future development**
 1. For the user to be able to change their password and delete their profile.
 1. I think that the ability to like and reply to other comments in the future would be a good addition to the site based on its aims.
 1. For the user to be able to develop more than one list of favourites, like playlists of recipes.
-1. I would also like for the users to be able to report recipes and comments to admin, or have a way of getting in touch with admin for site regulation.
+1. I would also like for the users to be able to report recipes and comments to admin or have a way of getting in touch with admin for site regulation.
 
-The future development of this project would also to improve the user's inputs and needs. By changing the ingredient list to a checkbox list. Editing the serv's per recipe and then editing the ingridient amounts. Adding in cook time and cook complexity too. Overall just improving the user's ability to adapt a recipe on the site to their own needs. 
+The future development of this project would also improve the user's inputs and needs. By changing the ingredient list to a checkbox list. Editing the serv's per recipe and then editing the ingredient amounts. Adding in cook time and cook complexity too. Overall just improves the user's ability to adapt a recipe on the site to their own needs. 
 
 # **Features**
 ## ***Site Navigation***
-Below are the screen shots of both the logged in version of the nav bar and the logged out version. S you can see when a user logs in they get access to the profile drop down 
+Below are the screenshots of both the logged-in version of the nav bar and the logged-out version. As you can see when a user logs in they get access to the profile drop down 
 ### ***Search Bar for Both:***
 ![search bar](/documents/features/search-bar.png) 
 ### ***Signed Out:***
 ![sign-out nav](/documents/features/signout-nav.png)
 ### ***Signed In:***
 ![sign-in nav](/documents/features/signin-nav.png) 
-## ***Signin Page***
+## ***Sign in Page***
 ![sign-in page](/documents/features/signin.png) 
 ## ***Register Page***
 ![register page](/documents/features/register-page.png) 
@@ -182,27 +182,27 @@ This is the same modal across all pages, logged in or out.
 
 ## ***Search***
 
-Here is a search with no results, it give the user an message saying they didn't search anything and then also prompts them to make a suitable search.
+Here is a search with no results, it gives the user a message saying they didn't search anything and then also prompts them to make a suitable search.
 
 ![Empty Search](/documents/features/search-nothing.png)
 
-Here is a page pagnation. I searched a term with more than 8 results and got the below, which means I see the pagination that lets me go through all the results.
+Here is a page pagination. I searched a term with more than 8 results and got the below, which means I see the pagination that lets me go through all the results.
 
 ![Large Search](/documents/features/search_large.png)
 
-This is a search for an ingredient so only shows up one result with that specific ingridient. Here you can see that there is no pagination due to the results being less than 8.
+This is a search for an ingredient so only shows up one result with that specific ingredient. Here you can see that there is no pagination due to the results being less than 8.
 
 ![Specific Search](/documents/features/searched-ingredient.png)
 
 ## ***Main Page Content***
 
-This is a view of the main page content. You can see here the left and right chevron as this is the second row of the recent recipe list. This list is paginated by 4 and after each 4 recipes the next recipe goes unto the next row. You can also see the start of the diet lists, which is maxed out at three diets on the home page. These also populate with the latest additions to these diets. 
+This is a view of the main page content. You can see here the left and right chevron as this is the second row of the recent recipe list. This list is paginated by 4 and after each 4 recipes, the next recipe goes unto the next row. You can also see the start of the diet lists, which is maxed out at three diets on the home page. These also populate with the latest additions to these diets. 
 
 ![Main Page](/documents/features/main-page-chevron.png)
 
 ## ***Profile Features***
 
-Below is the profile, which has features such as a link to the favourites page, a button to remove the recipe from favourites, update and delete recipes from db if author. And a feature to update the user's bio, username and email. 
+Below is the profile, which has features such as a link to the favourites page, a button to remove the recipe from favourites, and update and delete recipes from db if author. And a feature to update the user's bio, username and email. 
 
 ![Full Profile](/documents/features/profile-page.png)
 
@@ -212,13 +212,13 @@ Below is the profile, which has features such as a link to the favourites page, 
 
 ## ***Favourties Page***
 
-This is a full page of the user's favourties i.e. their digital cookbook, where they can also remove the recipes very easily. 
+This is a full page of the user's favourites i.e. their digital cookbook, where they can also remove the recipes very easily. 
 
 ![Favourties Page](/documents/features/favourite-page.png)
 
 ## ***Add/Update Recipe Forms***
 
-Below are images of the Add recipe and Update recipe form. They are formatted the same apart from two distinctions, only the author of the recipe can access the update recipe form for a specifc recipe id, and the update recipe form is already up to date with the current recipe content. Excluded from these forms is the slug feild, which is automatically generated through javascript code, the favourites list which should only be affected by other users adding or removing the recipe from their own favourites/digital cookbook, and the author which is also automatically applied as the logged in user == the author of the recipe.
+Below are images of the Add recipe and Update recipe form. They are formatted the same apart from two distinctions, only the author of the recipe can access the updated recipe form for a specific recipe ID, and the update recipe form is already up to date with the current recipe content. Excluded from these forms is the slug field, which is automatically generated through javascript code, the favourites list which should only be affected by other users adding or removing the recipe from their own favourites/digital cookbook, and the author which is also automatically applied as the logged in user == the author of the recipe.
 
 ![add recipe](/documents/features/add-recipe.png)
 
@@ -226,11 +226,11 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 ## ***Recipe Detail***
 
-* Logged in: The logged in user here can view and interact with the recipe. They can rate, fav and comment on this recipe as seen in the image below.
+* Logged in: The logged-in user here can view and interact with the recipe. They can rate, favourite and comment on this recipe as seen in the image below.
 
 ![Logged in Recipe Detail](/documents/features/recipe-detail-none-author-view-logged-in.png)
 
-* Logged out: The logged out user here can only view the avg rating, the comments and the fav button. When they click on the fav button they get taken to the registration page. This is done as the site's aim is to get users to sign up, by showing them one feature that they would most likely interact with and then taking them to a reg page, the user is more likely to sign up. The sites aims are supported by this feature. 
+* Logged out: The logged-out user here can only view the average rating, the comments and the fav button. When they click on the fav button they get taken to the registration page. This is done as the site's aim is to get users to sign up, by showing them one feature that they would most likely interact with and then taking them to a reg page, the user is more likely to sign up. The site's aims are supported by this feature. 
 
 ![Logged out Recipe Detail](/documents/features/recipe-detail-loggedout.png)
 
@@ -257,7 +257,7 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 ![sign-in password error](/documents/features/errors/sign-in-password-error.png)
 
-**Registeration:**
+**Registration:**
 
 ![Registration email error](/documents/features/errors/register-email-error.png)
 
@@ -336,22 +336,22 @@ Below is a list of bugs I found during the development process. A lot of the bug
     * ***Issue Found:*** 
         * Due to some database issues I could not migrate any changes after I had done my first migration.
     * ***Solution Used:*** 
-        * Restarted the project and used db.sqlite3 instead of my main postgres db, and implemented a DEV environment.
-1. **Intended Outcome** - Only have certain number of diet categories on the home page.
+        * Restarted the project and used db.sqlite3 instead of my main Postgres db, and implemented a DEV environment.
+1. **Intended Outcome** - Only have a certain number of diet categories on the home page.
     * ***Issue Found:*** 
-        * I wanted to only have three of my categories on the main page, I ended up aving all the categories being listed out on the front page which isn't good UI/UX.
+        * I wanted to only have three of my categories on the main page, I ended up having all the categories listed on the front page which isn't good UI/UX.
     * ***Solution Used:*** 
-        * Discovered I could splice in the django html templates.
-1. **Intended Outcome** - Be able to search entire db for recipes and their FKs
+        * Discovered I could splice in the Django html templates.
+1. **Intended Outcome** - Be able to search the entire db for recipes and their FKs
     * ***Issue Found:*** 
         * I wanted to be able too not only search the content of the recipes in the search bar but also search if they were connected to the FK.
     * ***Solution Used:*** 
-        *   i discovered I could use the Q search to see if what FKs were connected to which recipe. Meaning that the user can search categories and get all recipes related to that category shown back to them.
+        *   I discovered I could use the Q search to see what FKs were connected to which recipe. Meaning that the user can search categories and get all recipes related to that category shown back to them.
 1. **Intended Outcome** - Be able to rate a recipe and have my rating remembered on the UI whilst also updating the rating average.
     * ***Issue Found:*** 
-        * The avg of the recipe page would be affected. But the user input of the stars themselves would not hold the data.
+        * The average of the recipe page would be affected. However the user input of the stars themselves would not hold the data.
     * ***Solution Used:*** 
-        *  Used Javascript local storage to hold the browsers star rating instead. However this does leave an error in the console, the benefit of the user's rating being remebered is not outweighed by this as it does not affect the page's functionality or the user's experience. 
+        *  Used Javascript local storage to hold the browser's star rating instead. However this does leave an error in the console, the benefit of the user's rating being remembered is not outweighed by this as it does not affect the page's functionality or the user's experience. 
 1. **Intended Outcome** - When deploying to Heroku the CSS styling stays attached to the website.
     * ***Issue Found:*** 
         * CSS Styling not coming and getting console error of MIME.
@@ -362,12 +362,12 @@ Below is a list of bugs I found during the development process. A lot of the bug
   1. Chrome
   2. Firefox  
   4. Edge
-* I also consistently used the devtools to simulate different screen sizes/devices from 320px up to 2200px in width. 
+* I also consistently used the dev tools to simulate different screen sizes/devices from 320px up to 2200px in width. 
 * In addition to this, I used the dev tools to simulate different products such as the iPhone XR, iPhone 12 Pro, Samsung Galaxy S8+, iPad Air, iPad Mini, Surface Pro 7 and Nest Hub.
 * I also got friends and my partner to test the site on their own devices - Samsung, Dell Laptops, Self-built desktops and Apple products. 
 
 #### ***HTML*** - https://validator.w3.org/nu/#textarea
-* Code passes through without issues after adding in alt titles to images. 
+* Code passes through without issues after adding alt titles to images. 
 * Used "view page source" to get the pure HTML code of each page.  
 
 ![HTML validator](/documents/html%20validator.png)
@@ -379,7 +379,7 @@ Below is a list of bugs I found during the development process. A lot of the bug
 * I also passed the code through a jshint and PEP8 with no issues. 
 
 #### ***Lighthouse Score***
-* I passed the website through Google's Lighthouse to test accesibility and performance
+* I passed the website through Google's Lighthouse to test accessibility and performance
 
 ![Lighthouse Score](/documents/lighthouse-scores.png)
 
@@ -400,8 +400,8 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 1. From the deploy tab select Github as the deployment method.
 1. Confirm you want to connect to GitHub.
 1. Search for the repo and click the connect button.
-1. From the bottom of the deploy page select your preferred deployment type by follow one of the below steps:  
-   * Clicking “Enable Automatic Deploys" for automatic deployment when you push updates to Github.
+1. From the bottom of the deploy page select your preferred deployment type by following one of the below steps:  
+   * Clicking “Enable Automatic Deploys" for automatic deployment when you push updates to GitHub.
    * Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
 
 # Credits
@@ -417,7 +417,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * Images:
   * Recipe images taken from [upsplash.com](https://unsplash.com) 
   * Background image and recipe default image designed by me in Canva.
-* For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life.
+* For this project I researched lots of other Django projects. Through other tutorials, I learned more about how to properly utilise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life.
     * [@Codemycom](https://www.youtube.com/@Codemycom)
     * [@DigitalFox-tutorials](https://www.youtube.com/@DigitalFox-tutorials)
     * [@Pyplane](https://www.youtube.com/@Pyplane)
