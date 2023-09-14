@@ -28,10 +28,12 @@ As a notice here - this is the second version of this app I made. The first vers
   * [**Signin/up Logout Pages**](#signin/up-logout-pages)
   * [**Community Guidelines**](#community-guidelines)
   * [**Main Page Content**](#main-page-content)
-  * [**Error pages**](#error-pages)
+  * [**Main Page Content**](#main-page-content)
+  * [**Main Page Content**](#main-page-content)
+* [**Error pages**](#error-pages)
 * [**Testing Phase**](#testing-phase)
 * [**Deployment**](#deployment)
-* [Credits](#credits)
+* [**Credits**](#credits)
 
 # **Planning Phase**
 ## **Site Aims:**
@@ -205,11 +207,19 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 ## ***Recipe Detail***
 
-* Logged in / Rate / Fav / Comment
-* Logged out / See Comments 
+* Logged in: The logged in user here can view and interact with the recipe. They can rate, fav and comment on this recipe as seen in the image below
+
+![Logged in Recipe Detail](/documents/features/recipe-detail-none-author-view-logged-in.png)
+
+* Logged out: The logged out user here can only view the avg rating, the comments and the fav button. When they click on the fav button they get taken to the registration page. This is done as the site's aim is to get users to sign up, by showing them one feature that they would most likely interact with and then taking them to a reg page, the user is more likely to sign up. The sites aims are supported by this feature. 
+
+![Logged out Recipe Detail](/documents/features/recipe-detail-loggedout.png)
+
 * Author / Delete / Update
 
-## **Error pages**
+## ***Commenting***
+
+# **Error pages**
 **Sign In:**
 
 ![sign-in error](/documents/features/errors/sign-in-error.png)
@@ -240,7 +250,7 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 **Update Recipe Errors:**
 
-![Update Recipe Errors](/documents/features/errors)
+![Update Recipe Errors]()
 
 # **Testing Phase**
 ### ***Manual Testing:***
@@ -371,7 +381,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * Recipe content was myself, BBC Goodfoods and Feasting At Home.
 * Images:
   * Recipe images taken from [upsplash.com](https://unsplash.com) 
-  * Background image designed by me in Canva.
+  * Background image and recipe default image designed by me in Canva.
 * For this project I researched lots of other Django projects. Through other tutorials I learned more about how to properly utlise all of Django's capabilities. Some code in this project has been inspired by these walkthroughs, although significant changes have been made to ensure that the code works with and for this specific Django App. Here is a comprehensive list of YouTube Pages that helped this project come to life.
     * [@Codemycom](https://www.youtube.com/@Codemycom)
     * [@DigitalFox-tutorials](https://www.youtube.com/@DigitalFox-tutorials)
