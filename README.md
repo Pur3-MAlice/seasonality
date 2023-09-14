@@ -184,11 +184,18 @@ This is the same modal across all pages, logged in or out.
 
 ![Community Modal](/documents/features/community-modal.png)
 
+## ***Search***
+![empty Search](/documents/features/search-nothing.png)
+
 ## ***Main Page Content***
 
 * Main page
 * chevrons
 * Diet List
+
+## ***Profile Features***
+
+## ***Favourties Page***
 
 ## ***Add/Update Recipe Forms***
 
@@ -204,24 +211,32 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 * Logged out / See Comments 
 * Author / Delete / Update
 
-## ***Search***
 
-* Empty Search 
 
 ## **Error pages**
 **Sign In:**
 
-![sign-in form](g)
+![sign-in error](/documents/features/errors/sign-in-error.png)
 
-**Form Errors:**
+![sign-in password error](/documents/features/errors/sign-in-password-error.png)
 
-![sign-in error]()
+**Registeration:**
 
-**Sign Up:**
+![Registration email error](/documents/features/errors/register-email-error.png)
 
-![sign-up form](/documents/features/register.png) 
+![Registration password empty](/documents/features/errors/register-password-empty-error.png) 
 
+![Registration password match](/documents/features/errors/register-password-match-error.png) 
 
+![Registration password other](/documents/features/errors/register-password-other-errors.png)
+
+![Registration short error](/documents/features/errors/register-password-short-error.png) 
+
+**Profile Updating:**
+
+![Profile detail email error](/documents/features/errors/profile-details-formerror-email.png)
+
+![Profile detail form error](/documents/features/errors/profile-details-formerror.png) 
 
 **Add Recipe Errors:**
 
