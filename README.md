@@ -157,35 +157,47 @@ To find my fonts i used thsi website: https://www.elegantthemes.com/blog/design/
 Using a Kanban Board system
 
 # **Future development**
+1. For the user to be able to change their password and delete their profile.
 1. I think that the ability to like and reply to other comments in the future would be a good addition to the site based on its aims.
 1. For the user to be able to develop more than one list of favourites, like playlists of recipes.
 1. I would also like for the users to be able to report recipes and comments to admin, or have a way of getting in touch with admin for site regulation.
 
-The future development of this project would also to improve the user's inputs and needs. By changing the ingridient list to a checkbox list. Editing the serv's per recipe and then editing the ingridient amounts. Adding in cook time and cook complexity too. Overall just improving the user's ability to adapt a recipe on the site to their own needs. 
+The future development of this project would also to improve the user's inputs and needs. By changing the ingredient list to a checkbox list. Editing the serv's per recipe and then editing the ingridient amounts. Adding in cook time and cook complexity too. Overall just improving the user's ability to adapt a recipe on the site to their own needs. 
+
 # **Features**
-## **Site Navigation**
+## ***Site Navigation***
+Below are the screen shots of both the logged in version of the nav bar and the logged out version. S you can see when a user logs in they get access to the profile drop down 
 ### ***Signed Out:***
 ![sign-out nav](/documents/features/signout-nav.png)
-#### ***Signed In:***
+### ***Signed In:***
 ![sign-in nav](/documents/features/signin-nav.png) 
 
-### **Signin/up Logout Pages**
+## ***Signin/up Logout Pages***
 
-### **Community Guidelines**
 
-### **Main Page Content**
+### ***Sign Out Page:***
 
-### **Add/Update Recipe Forms**
+![Sign out page](/documents/features/signout.png)
+
+
+
+## ***Community Guidelines***
+
+## ***Main Page Content***
+
+## ***Add/Update Recipe Forms***
+
+Below are images of the Add recipe and Update recipe form. They are formatted the same apart from two distinctions, only the author of the recipe can access the update recipe form for a specifc recipe id, and the update recipe form is already up to date with the current recipe content. Excluded from these forms is the slug feild, which is automatically generated through javascript code, the favourites list which should only be affected by other users adding or removing the recipe from their own favourites/digital cookbook, and the author which is also automatically applied as the logged in user == the author of the recipe.
 
 ![add recipe](/documents/features/add-recipe.png)
 
 ![update recipe](/documents/features/update-recipe.png)
 
-### **Recipe Detail**
+## ***Recipe Detail***
 
-### **Search**
+## ***Search***
 
-### **Error pages**
+## **Error pages**
 **Sign In:**
 ![sign-in form](/documents/features/signout-nav.png)
 **Form Errors:**
@@ -198,10 +210,9 @@ As described in the testing below - more errors are tried and tested with these 
 ![sign-up error](/documents/features/sign-uperror.png)
 
 As described in the testing below - more errors are tried and tested with these forms and the other forms on the website.
-**Sign Out:**
-![Sign out page](/documents/features/signout.png)
 
-1. Change password and Delete Profile
+
+
 # **Testing Phase**
 ### ***Manual Testing:***
 During the development process, I was manually testing in the following ways:-
@@ -281,6 +292,10 @@ Below is a list of bugs I found during the development process. A lot of the bug
 * In addition to this, I used the dev tools to simulate different products such as the iPhone XR, iPhone 12 Pro, Samsung Galaxy S8+, iPad Air, iPad Mini, Surface Pro 7 and Nest Hub.
 * I also got friends and my partner to test the site on their own devices - Samsung, Dell Laptops, Self-built desktops and Apple products. 
 
+#### ***HTML*** - https://validator.w3.org/nu/#textarea
+* Code passes through without issues after adding in alt titles to images. 
+* Used "view page source" to get the pure HTML code of each page.  
+
 ![HTML validator](/documents/html%20validator.png)
 
 #### ***CSS*** - https://jigsaw.w3.org/css-validator/
@@ -288,6 +303,8 @@ Below is a list of bugs I found during the development process. A lot of the bug
 
 ![CSS badge](/documents/css%20validator.png)
 
+
+#### ***JavaScript and Python*** - https://jshint.com/  https://www.pythonchecker.com/
 * I also passed the code through a jshint and PEP8 with no issues. 
 
 # **Deployment**

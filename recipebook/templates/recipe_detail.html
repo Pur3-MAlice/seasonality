@@ -23,9 +23,9 @@
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img class="card-img-top"
                     src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383398/seasonality_background.png"
-                    alt="bowl of berries next to rubarb and flowers">
+                    alt="default recipe image">
                 {% else %}
-                <img class="card-img-top" src="{{ recipe.featured_image.url }}">
+                <img class="card-img-top" src="{{ recipe.featured_image.url }}" alt="recipe image">
                 {% endif %}
             </div>
         </div>
@@ -135,7 +135,7 @@
 </div>
 
 <!-- Recipe Modal -->
-<div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModalTitle"
+<div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

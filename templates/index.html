@@ -17,9 +17,9 @@
                             {% if "placeholder" in recipe.featured_image.url %}
                             <img class="img-card"
                                 src="https://res.cloudinary.com/dnyfx3g7s/image/upload/v1694383398/seasonality_background.png"
-                                alt="bowl of berries next to rubarb and flowers">
+                                alt="default recipe image">
                             {% else %}
-                            <img class="img-card" src="{{ recipe.featured_image.url }}">
+                            <img class="img-card" src="{{ recipe.featured_image.url }}" alt="recipe image">
                             {% endif %}
                             <div class="image-flash">
                                 <p class="author">Author: {{ recipe.author }}</p>
