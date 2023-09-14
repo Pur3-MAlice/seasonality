@@ -5,13 +5,7 @@ This website has been built as a digital cookbook. Where people can upload their
 
 As a notice here - this is the second version of this app I made. The first version had many errors and it was early on in the development project that creating a new repo at that point was the best option. Here is the link to the old repo, [Season-To-Taste](https://github.com/Pur3-MAlice/season-to-taste/tree/main) it has the same Kanban Board and also lots of commits that should be noted.
 
-![Responsive screenshot at Desktop]()
-
-![Responsive screenshot at Laptop]()
-
-![Responsive screenshot at Tablet]()
-
-![Responsive screenshot at Mobile]()
+![Responsive screenshot]()
 
 # **Table Of Contents**
 * [**Season-to-Taste**](#season-to-taste)
@@ -275,11 +269,11 @@ Below are images of the Add recipe and Update recipe form. They are formatted th
 
 **Update Recipe Errors:**
 
-![Update Recipe Errors]()
+![Update Recipe Errors](/documents/features/errors/update-errors.png)
 
 **Comment Errors:**
 
-![Comment Error]()
+![Comment Error](/documents/features/errors/comment-error.png)
 
 # **Testing Phase**
 ### ***Manual Testing:***
