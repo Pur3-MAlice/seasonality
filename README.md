@@ -49,9 +49,11 @@ To achieve the above, the site will:
 * User validation via error messages.
 
 ## **Epics User Stories Tasks**
+
 I took the site aims from the above and turned them into Epics, User Stories and then Tasks. Find below a break down of the three Epics and their User Stories/Tasks.
 
 **Epic 1: Recipe Management**
+
 User Stories:
 * As a **Site User**, I can submit my own recipes to the admin so that approved recipes can be added to the site.
 * As a **Site User**, I can change my ratings and saved recipes so that I can reflect how my preferences may change.
@@ -67,6 +69,7 @@ Tasks:
 1. Implement search functionality with title, diet, season, author, and ingredients.
 
 **Epic 2: Community Guidelines and User Sign-in/Sign-up**
+
 User Stories:
 * As a **Site User**, who hasn't yet logged in/up I can sign in/sign up so that I can access features non-signed-in members can't.
 * As a **Site User**, I can get access to the community guidelines so that I can understand how to appropriately join in with the community.
@@ -76,6 +79,7 @@ Tasks:
 1. Provide access to community guidelines for all users.
 
 **Epic 3: Admin Control**
+
 User Stories:
 * As an **Admin**, I can draft recipes so that I can control the website's content and when content will be added to the site.
 * As an **Admin**, I can CRUD recipes and comments so that I can control the site's content to be in line with community guidelines.
@@ -198,9 +202,9 @@ This is a search for an ingredient so only shows up one result with that specifi
 
 ## ***Main Page Content***
 
-* Main page
-* chevrons
-* Diet List
+This is a view of the main page content. You can see here the left and right chevron as this is the second row of the recent recipe list. This list is paginated by 4 and after each 4 recipes the next recipe goes unto the next row. You can also see the start of the diet lists, which is maxed out at three diets on the home page. These also populate with the latest additions to these diets. 
+
+![Main Page](/documents/features/main-page-chevron.png)
 
 ## ***Profile Features***
 
